@@ -47,46 +47,91 @@ html, body {
 }
 
 /* ============================================== */
-/* Page Body */
+/* Main Page */
 /* ============================================== */
-
-.pgBd {
+.MainPage {
     max-width: 700px;
+    margin: auto;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    position: relative;
+}
+
+.MainPageBg {
+    height: 200px;
 }
 
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
-.ParallaxImg {
+.Parallax .Img {
     background-image: url("/img/img_parallax.jpg");
-    height: 500px;
+    min-height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
-.ParallaxCtn {
+.Parallax .Img .Caption {
+    background-color: #051039;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.Parallax .Img .Caption .Text {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+}
+
+.Parallax .Body {
     height: 500px;
     background-color: #f67b20;
     font-size: 36px;
     color: white;
+    padding: 10px;
 }
 
-.ParallaxImg2 {
-    background-image: url("/img/img_parallax.jpg");
-    height: 500px;
+.Parallax2 .Img {
+    background-image: url("/img/img_parallax2.jpg");
+    min-height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
-.ParallaxCtn2 {
+.Parallax2 .Img .Caption {
+    background-color: #051039;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.Parallax2 .Img .Caption .Text {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+}
+
+.Parallax2 .Body {
     height: 500px;
     background-color: #89a830;
     font-size: 36px;
     color: white;
+    padding: 10px;
 }
 /* ============================================== */
 /* Responsive Web Design */

@@ -13,15 +13,31 @@
         </div>
     </div>
     <!-- ============================================ -->
-    <div class="ParallaxImg" style='background-image: url("/img/img_parallax.jpg");'></div>
-    <div class="ParallaxCtn">
-        Acceuil
+    <div class="Parallax">
+        <div class="Img">
+            <div class="Caption">
+                <span class="Text">ACCUEIL</span>
+            </div>
+        </div>
+        <div class="Body">
+            <div>Eglise Harriste de France</div>
+            <div>Accueil...</div>
+        </div>
     </div>
     <!-- ============================================ -->
-    <div class="ParallaxImg2" style='background-image: url("/img/img_parallax2.jpg");'></div>
-    <div class="ParallaxCtn2">
-        Presentation
+    <div class="Parallax2">
+        <div class="Img">
+            <div class="Caption">
+                <span class="Text">PRESENTATION</span>
+            </div>
+        </div>
+        <div class="Body">
+            <div>Eglise Harriste de France</div>
+            <div>Accueil...</div>
+        </div>
     </div>
+    <!-- ============================================ -->
+    <div class="MainPageBackColor"></div>
     <!-- ============================================ -->
 </div>
 <!-- ============================================ -->
