@@ -27,8 +27,12 @@ body {
 }
 
 .HeaderMenu .item:hover {
-  background-color: #555;
-  color: white;
+    background-color: #555;
+    color: white;
+}
+
+.HeaderMenu .item.icon {
+    display: none;
 }
 
 .active {
