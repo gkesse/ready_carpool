@@ -11,10 +11,10 @@
 		<div class="Header">
 			<!-- ============================================ -->
 			<div class="HeaderMenu">
-				<a href="#">Menu</a>
-				<a href="#">Menu</a>
-				<a href="#">Menu</a>
-				<a href="#">Menu</a>
+				<a class="item" href="#">Accueil</a>
+				<a class="item" href="#">Presentation</a>
+				<a class="item" href="#">Ministère</a>
+                <span class="item icon"><i class="fa fa-bars"></i></span>
 			</div>
 			<!-- ============================================ -->
 		</div>
