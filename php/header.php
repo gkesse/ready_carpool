@@ -23,8 +23,10 @@
             <div class="BodyPage Mrg Pdd">
                 <!-- ============================================ -->
                 <div class="Logo">
-                    EGLISE HARRISTE<br>
-                    FRANCE
+                    <div class="Txt">
+                        EGLISE HARRISTE<br/>
+                        FRANCE
+                    </div>
                 </div>
                 <!-- ============================================ -->
                 <div class="Header">
