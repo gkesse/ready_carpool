@@ -15,7 +15,7 @@
     <!-- ============================================ -->
     <div class="MainPage">
         <!-- ============================================ -->
-        <div class="Parallax Mhg2">
+        <div class="Parallax">
             <div class="Img">
                 <div class="Caption">
                     <div class="Text">ACCUEIL</div>
@@ -54,12 +54,12 @@
         <div class="Parallax Img4 Bgr4">
             <div class="Img">
                 <div class="Caption">
-                    <div class="Text">MINISTERE</div>
+                    <div class="Text">EVENEMENTS</div>
                 </div>
             </div>
             <div class="Body">
                 <div>Eglise Harriste de France</div>
-                <div>MINISTERE...</div>
+                <div>EVENEMENTS...</div>
             </div>
         </div>
         <!-- ============================================ -->

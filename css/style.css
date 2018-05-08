@@ -4,7 +4,6 @@
 html, body {
 	margin: 0;
 	padding: 0;
-    height: 100%;
 }
 
 /* ============================================== */
@@ -50,28 +49,26 @@ html, body {
 /* Body Page */
 /* ============================================== */
 .BodyPage {
-    height: 100%;
+
 }
 
 .BodyPage.Cfg {
     max-width: 700px;
     margin: auto;
+    padding-top: 250px;
+    padding-bottom: 250px;
 }
 
 /* ============================================== */
 /* Main Page */
 /* ============================================== */
 .MainPage {
-    height: 100%;
+
 }
 
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
-.Parallax {
-    height: 100%;
-}
-
 .Parallax .Img {
     background-image: url("/img/img_parallax.jpg");
     min-height: 500px;
@@ -119,10 +116,6 @@ html, body {
 
 .Parallax.Img4 .Img {
     background-image: url("/img/img_parallax4.jpg");
-}
-
-.Parallax.Mhg2 .Img {
-    min-height: 100%;
 }
 
 .Parallax.Bgr2 .Body {
