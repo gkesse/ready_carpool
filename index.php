@@ -2,7 +2,7 @@
 	require $_SERVER["DOCUMENT_ROOT"]."/php/header.php"; 
 ?>
 <!-- ============================================ -->
-<div class="MainPage">
+<div class="BodyPage Cfg">
     <!-- ============================================ -->
     <div class="Header">
         <div class="HeaderMenu" id="HeaderMenuId">
@@ -13,43 +13,57 @@
         </div>
     </div>
     <!-- ============================================ -->
-    <div class="Parallax">
-        <div class="Img">
-            <div class="Caption">
-                <div class="Text">ACCUEIL</div>
+    <div class="MainPage">
+        <!-- ============================================ -->
+        <div class="Parallax Mhg2">
+            <div class="Img">
+                <div class="Caption">
+                    <div class="Text">ACCUEIL</div>
+                </div>
+            </div>
+            <div class="Body">
+                <div>Eglise Harriste de France</div>
+                <div>Accueil...</div>
             </div>
         </div>
-        <div class="Body">
-            <div>Eglise Harriste de France</div>
-            <div>Accueil...</div>
-        </div>
-    </div>
-    <!-- ============================================ -->
-    <div class="Parallax Img2 Bgr2">
-        <div class="Img">
-            <div class="Caption">
-                <div class="Text">PRESENTATION</div>
+        <!-- ============================================ -->
+        <div class="Parallax Img2 Bgr2">
+            <div class="Img">
+                <div class="Caption">
+                    <div class="Text">PRESENTATION</div>
+                </div>
+            </div>
+            <div class="Body">
+                <div>Eglise Harriste de France</div>
+                <div>Accueil...</div>
             </div>
         </div>
-        <div class="Body">
-            <div>Eglise Harriste de France</div>
-            <div>Accueil...</div>
-        </div>
-    </div>
-    <!-- ============================================ -->
-    <div class="Parallax Img3 Bgr3">
-        <div class="Img">
-            <div class="Caption">
-                <div class="Text">MINISTERE</div>
+        <!-- ============================================ -->
+        <div class="Parallax Img3 Bgr3">
+            <div class="Img">
+                <div class="Caption">
+                    <div class="Text">MINISTERE</div>
+                </div>
+            </div>
+            <div class="Body">
+                <div>Eglise Harriste de France</div>
+                <div>MINISTERE...</div>
             </div>
         </div>
-        <div class="Body">
-            <div>Eglise Harriste de France</div>
-            <div>MINISTERE...</div>
+        <!-- ============================================ -->
+        <div class="Parallax Img4 Bgr4">
+            <div class="Img">
+                <div class="Caption">
+                    <div class="Text">MINISTERE</div>
+                </div>
+            </div>
+            <div class="Body">
+                <div>Eglise Harriste de France</div>
+                <div>MINISTERE...</div>
+            </div>
         </div>
+        <!-- ============================================ -->
     </div>
-    <!-- ============================================ -->
-    <div class="MainPageBackColor"></div>
     <!-- ============================================ -->
 </div>
 <!-- ============================================ -->
