@@ -11,19 +11,22 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <div class="Banner Pos1"></div>
+            <div class="Banner Pos1">
+            </div>
+            <!-- ============================================ -->
             <div class="Banner Pos2 Img2"></div>
+            <!-- ============================================ -->
             <div class="Banner Pos3 Img3"></div>
             <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
                 <!-- ============================================ -->
                 <div class="Header">
-                    <div class="HeaderMenu" id="HeaderMenuId">
-                        <div class="menu"><a class="item" href="#">Accueil</a></div>
-                        <div class="menu"><a class="item" href="#">Présentation</a></div>
-                        <div class="menu"><a class="item" href="#">Ministère</a></div>
-                        <div class="menu"><a class="item" href="#">Evènements</a></div>
-                        <div class="menu icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
+                    <div class="Menu" id="HeaderMenu">
+                        <div class="Link"><a class="Item" href="#">Accueil</a></div>
+                        <div class="Link"><a class="Item" href="#">Présentation</a></div>
+                        <div class="Link"><a class="Item" href="#">Ministère</a></div>
+                        <div class="Link"><a class="Item" href="#">Evènements</a></div>
+                        <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
                 </div>
                 <!-- ============================================ -->

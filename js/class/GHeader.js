@@ -7,7 +7,7 @@ var GHeader = (function() {
         return {
             //===============================================
             openHeaderMenu: function(obj) {
-				var lHeaderMenu = document.getElementById("HeaderMenuId");
+				var lHeaderMenu = document.getElementById("HeaderMenu");
 				var lBars = '<i class="fa fa-bars"></i>';
 				if(obj.innerHTML == lBars) {
 					lBars = '<i class="fa fa-close"></i>';
