@@ -56,8 +56,6 @@ html, body {
     background-color: #5CAF50;
     background-image: url("/img/banner.jpg");
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
 }
 
