@@ -1,9 +1,27 @@
 /* ============================================== */
 /* Html Body */
 /* ============================================== */
-html, body {
-	margin: 0px;
-	padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus { 
+    border: none;
+    outline: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    color: white;
+    background: #051039;
+    font-family: arial;
+    font-size: 16px;
 }
 /* ============================================== */
 /* Html Page */
@@ -32,13 +50,15 @@ html, body {
     position: absolute;
     top: 100px;
     left: 0px;
-    font-family: impact;
-    font-size: 40px;
-    color: white;
+    padding: 10px;
 }
 
 .BodyPage .Logo .Txt {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(1,1,1,0.2);
+    font-family: Anton;
+    font-size: 25px;
+    color: white;
+    padding: 10px;
 }
 /* ============================================== */
 /* Header */
@@ -46,6 +66,9 @@ html, body {
 .Header {
 	overflow: hidden;
 	background-color: #333;
+}
+/* ============================================== */
+.Header .Menu {
     position: relative;
 }
 /* ============================================== */
@@ -53,6 +76,7 @@ html, body {
     display: inline-block;
     text-align: center;
     font-size: 17px;
+    font-family: Aclonica;
 }
 
 .Header .Menu .Link .Item,
@@ -163,14 +187,17 @@ html, body {
     padding: 18px;
     font-size: 25px;
     display: inline;
+    font-family: Anton;
+    letter-spacing: 5px;
 }
 
 .Parallax .Body {
     height: 500px;
     background-color: #803300;
-    font-size: 36px;
+    font-size: 20px;
     color: white;
     padding: 10px;
+    font-family: Archivo Narrow;
 }
 
 .Parallax.Img2 .Img {
@@ -198,16 +225,6 @@ html, body {
 }
 /* ============================================== */
 /* Responsive Web Design */
-/* ============================================== */
-@media screen and (max-width: 750px) {
-    /* ============================================== */
-    /* Body Page */
-    /* ============================================== */
-    .BodyPage .Logo {
-        left: 10px;
-    }
-    /* ============================================== */
-}
 /* ============================================== */
 @media screen and (max-width: 600px) {
     /* ============================================== */
