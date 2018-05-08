@@ -14,11 +14,18 @@
             <div class="Banner Pos1">
             </div>
             <!-- ============================================ -->
-            <div class="Banner Pos2 Img2"></div>
+            <div class="Banner Pos2 Img2">
+            </div>
             <!-- ============================================ -->
-            <div class="Banner Pos3 Img3"></div>
+            <div class="Banner Pos3 Img3">
+            </div>
             <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
+                <!-- ============================================ -->
+                <div class="Logo">
+                    EGLISE HARRISTE<br>
+                    FRANCE
+                </div>
                 <!-- ============================================ -->
                 <div class="Header">
                     <div class="Menu" id="HeaderMenu">

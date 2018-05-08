@@ -5,7 +5,37 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 }
+/* ============================================== */
+/* Html Page */
+/* ============================================== */
+.HtmlPage {
+    position: relative;
+}
+/* ============================================== */
+/* Body Page */
+/* ============================================== */
+.BodyPage {
+    position: relative;
+}
+/* ============================================== */
+.BodyPage.Mrg {
+    max-width: 700px;
+    margin: auto;
+}
 
+.BodyPage.Pdd {
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+/* ============================================== */
+.BodyPage .Logo {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    font-family: impact;
+    font-size: 40px;
+    color: white;
+}
 /* ============================================== */
 /* Header */
 /* ============================================== */
@@ -14,7 +44,7 @@ html, body {
 	background-color: #333;
     position: relative;
 }
-
+/* ============================================== */
 .Header .Menu .Link {
     display: inline-block;
     text-align: center;
@@ -47,7 +77,6 @@ html, body {
     background-color: #4CAF50;
     color: white;
 }
-
 /* ============================================== */
 /* Banner */
 /* ============================================== */
@@ -88,31 +117,6 @@ html, body {
 .Banner.Img3 {
     background-image: url("/img/banner3.jpg");
 }
-
-/* ============================================== */
-/* Html Page */
-/* ============================================== */
-.HtmlPage {
-    position: relative;
-}
-
-/* ============================================== */
-/* Body Page */
-/* ============================================== */
-.BodyPage.Mrg {
-    max-width: 700px;
-}
-
-.BodyPage.Mrg {
-    max-width: 700px;
-    margin: auto;
-}
-
-.BodyPage.Pdd {
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
-
 /* ============================================== */
 /* Main Page */
 /* ============================================== */
@@ -125,7 +129,6 @@ html, body {
     padding-top: 250px;
     padding-bottom: 250px;
 }
-
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
@@ -189,7 +192,6 @@ html, body {
 .Parallax.Bgr4 .Body {
     background-color: #00004d;
 }
-
 /* ============================================== */
 /* Responsive Web Design */
 /* ============================================== */
