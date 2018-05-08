@@ -100,7 +100,7 @@ html, body {
 
 .Parallax .Body {
     height: 500px;
-    background-color: #f67b20;
+    background-color: #803300;
     font-size: 36px;
     color: white;
     padding: 10px;
@@ -119,15 +119,15 @@ html, body {
 }
 
 .Parallax.Bgr2 .Body {
-    background-color: #89a830;
+    background-color: #006666;
 }
 
 .Parallax.Bgr3 .Body {
-    background-color: #433343;
+    background-color: #2d2d86;
 }
 
 .Parallax.Bgr4 .Body {
-    background-color: #435343;
+    background-color: #00004d;
 }
 
 /* ============================================== */
