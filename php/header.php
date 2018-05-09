@@ -1,54 +1,54 @@
 <?php     
     GMetaData::Instance()->getData();
-    $m_title = GConfig::Instance()->getData("title"); 
+    $lTitle = GConfig::Instance()->getData("title"); 
     GUrl::Instance()->lastUrl();
     
-    $m_existstMenu = GConfig::Instance()->existData("menu");
-    if($m_existstMenu == true) {
-        $m_menu = GConfig::Instance()->getData("menu"); 
+    $lExiststMenu = GConfig::Instance()->existData("menu");
+    if($lExiststMenu == true) {
+        $lMenu = GConfig::Instance()->getData("menu"); 
     }
     
-    $m_existstLink = GConfig::Instance()->existData("link");
-    if($m_existstLink == true) {
-        $m_link = GConfig::Instance()->getData("link"); 
-        }
-    
-    $m_existstView = GConfig::Instance()->existData("view");
-    if($m_existstView == true) {
-        $m_viewTag = GConfig::Instance()->getData("view"); 
-        $m_viewNum = GView::Instance()->getView($m_viewTag);
+    $lExiststLink = GConfig::Instance()->existData("link");
+    if($lExiststLink == true) {
+        $lLink = GConfig::Instance()->getData("link"); 
     }
     
-    $m_existMetaDesc = GConfig::Instance()->existData("meta_desc");
-    $m_metaDesc = "";
-    if($m_existMetaDesc == true) {
-        $m_metaDesc = join(" ", GConfig::Instance()->getData("meta_desc")); 
-        $m_metaDesc = mb_strimwidth($m_metaDesc, 0, 160, "...");
+    $lExiststView = GConfig::Instance()->existData("view");
+    if($lExiststView == true) {
+        $lViewTag = GConfig::Instance()->getData("view"); 
+        $lViewNum = GView::Instance()->getView($lViewTag);
     }
     
-    $m_existMetaRobots = GConfig::Instance()->existData("meta_robo");
-    if($m_existMetaRobots == true) {
-        $m_metaRobots = GConfig::Instance()->getData("meta_robo"); 
+    $lExistMetaDesc = GConfig::Instance()->existData("meta_desc");
+    $lMetaDesc = "";
+    if($lExistMetaDesc == true) {
+        $lMetaDesc = join(" ", GConfig::Instance()->getData("meta_desc")); 
+        $lMetaDesc = mb_strimwidth($lMetaDesc, 0, 160, "...");
     }
     
-    $m_existMetaCano = GConfig::Instance()->existData("meta_cano");
-    if($m_existMetaCano == true) {
-        $m_metaCano = GConfig::Instance()->getData("meta_cano"); 
-        $m_metaCano = GGlobal::Instance()->getUrl($m_metaCano); 
+    $lExistMetaRobots = GConfig::Instance()->existData("meta_robo");
+    if($lExistMetaRobots == true) {
+        $lMetaRobots = GConfig::Instance()->getData("meta_robo"); 
     }
-    $m_codePrettify = GConfig::Instance()->getData("code_prettify");
-    $m_headerData = GJson::Instance()->getData("data/json/header.json"); 
+    
+    $lExistMetaCano = GConfig::Instance()->existData("meta_cano");
+    if($lExistMetaCano == true) {
+        $lMetaCano = GConfig::Instance()->getData("meta_cano"); 
+        $lMetaCano = GGlobal::Instance()->getUrl($lMetaCano); 
+    }
+    $lCodePrettify = GConfig::Instance()->getData("code_prettify");
+    $lHeaderData = GJson::Instance()->getData("data/json/header.json"); 
 ?>
 <!-- ============================================ -->
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <?php 
-            $m_ds = $m_headerData["site"];
+            $m_ds = $lHeaderData["site"];
             $m_siteName = $m_ds["name"];
         ?>
         <!-- ============================================ -->
-        <title><?php echo $m_title; ?> | <?php echo $m_ds["name"]; ?></title>
+        <title><?php echo $lTitle; ?> | <?php echo $m_ds["name"]; ?></title>
         <meta charset="UTF-8"/>
         <link rel="shortcut icon" type="image/png" href="/img/logo.png"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -58,14 +58,14 @@
         <!-- ============================================ -->
         <!-- Google -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <?php if($m_existMetaDesc == true) { ?>
-        <meta name="description" content="<?php echo $m_metaDesc; ?>"/>
+        <?php if($lExistMetaDesc == true) { ?>
+        <meta name="description" content="<?php echo $lMetaDesc; ?>"/>
         <?php } ?>
-        <?php if($m_existMetaRobots == true) { ?>
-        <meta name="robots" content="<?php echo $m_metaRobots; ?>"/>
+        <?php if($lExistMetaRobots == true) { ?>
+        <meta name="robots" content="<?php echo $lMetaRobots; ?>"/>
         <?php } ?>
-        <?php if($m_existMetaCano == true) { ?>
-        <link rel="canonical" href="<?php echo $m_metaCano; ?>" />
+        <?php if($lExistMetaCano == true) { ?>
+        <link rel="canonical" href="<?php echo $lMetaCano; ?>" />
         <?php } ?>
         <!-- ============================================ -->
         <!-- OpenGraph -->
@@ -76,12 +76,12 @@
         <meta property="og:image:width" content="440"/>
         <meta property="og:image:height" content="440"/>        
         <meta property="og:locale" content="fr_FR"/>
-        <?php if($m_existMetaCano == true) { ?>
-        <meta property="og:url" content="<?php echo $m_metaCano; ?>"/>
+        <?php if($lExistMetaCano == true) { ?>
+        <meta property="og:url" content="<?php echo $lMetaCano; ?>"/>
         <?php } ?>
-        <meta property="og:title" content="<?php echo $m_title; ?> | <?php echo $m_ds["name"]; ?>"/>
-        <?php if($m_existMetaDesc == true) { ?>
-        <meta property="og:description" content="<?php echo $m_metaDesc; ?>"/>
+        <meta property="og:title" content="<?php echo $lTitle; ?> | <?php echo $m_ds["name"]; ?>"/>
+        <?php if($lExistMetaDesc == true) { ?>
+        <meta property="og:description" content="<?php echo $lMetaDesc; ?>"/>
         <?php } ?>
         <meta property="og:site_name" content="<?php echo $m_ds["name"]; ?>"/>
         <!-- ============================================ -->
@@ -92,7 +92,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <!-- ============================================ -->
-        <?php if($m_codePrettify) { ?>
+        <?php if($lCodePrettify) { ?>
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
         <?php } ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -137,10 +137,14 @@
                 <!-- ============================================ -->
                 <div class="Header">
                     <div class="Menu" id="HeaderMenu">
-                        <div class="Link"><a class="Item" href="#">Accueil</a></div>
-                        <div class="Link"><a class="Item" href="#">Présentation</a></div>
-                        <div class="Link"><a class="Item" href="#">Ministère</a></div>
-                        <div class="Link"><a class="Item" href="#">Evènements</a></div>
+                        <?php
+                            
+                            for($i = 0; $i < count($lHeaderData["menu"]); $i++) {
+                                $lName = $lHeaderData["menu"][$i]["name"];
+                                $lHref = $lHeaderData["menu"][$i]["link"];
+                        ?>
+                        <div class="Link"><a class="Item" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
+                        <?php } ?>
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
                 </div>

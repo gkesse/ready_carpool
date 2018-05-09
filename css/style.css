@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    color: white;
+    color: black;
     background: #051039;
     font-family: arial;
     font-size: 16px;
@@ -33,6 +33,7 @@ body {
 /* ============================================== */
 .Header .Menu {
     position: relative;
+    font-size: 0px;
 }
 /* ============================================== */
 .Header .Menu .Link {
@@ -55,6 +56,10 @@ body {
 .Header .Menu .Link.Icon:hover {
     background-color: #555;
     color: white;
+}
+
+.Header .Menu .Link .Item.Active {
+    background-color: red;
 }
 
 .Header .Menu .Link.Icon {
