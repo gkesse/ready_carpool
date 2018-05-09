@@ -10,7 +10,7 @@
 <!-- ============================================ -->
 <div class="MainPage">
     <!-- ============================================ -->
-    <div class="Parallax">
+    <div class="Parallax Item1">
         <div class="Img">
             <div class="Caption">
                 <div class="Text">ACCUEIL</div>
@@ -22,7 +22,7 @@
         </div>
     </div>
     <!-- ============================================ -->
-    <div class="Parallax Img2 Bgr2">
+    <div class="Parallax Item2">
         <div class="Img">
             <div class="Caption">
                 <div class="Text">PRESENTATION</div>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <!-- ============================================ -->
-    <div class="Parallax Img3 Bgr3">
+    <div class="Parallax Item3">
         <div class="Img">
             <div class="Caption">
                 <div class="Text">MINISTERE</div>
@@ -46,7 +46,7 @@
         </div>
     </div>
     <!-- ============================================ -->
-    <div class="Parallax Img4 Bgr4">
+    <div class="Parallax Item4">
         <div class="Img">
             <div class="Caption">
                 <div class="Text">EVENEMENTS</div>

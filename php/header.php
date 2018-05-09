@@ -117,13 +117,13 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <div class="Banner Pos1">
+            <div class="Banner Item1">
             </div>
             <!-- ============================================ -->
-            <div class="Banner Pos2 Img2">
+            <div class="Banner Item2">
             </div>
             <!-- ============================================ -->
-            <div class="Banner Pos3 Img3">
+            <div class="Banner Item3">
             </div>
             <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
