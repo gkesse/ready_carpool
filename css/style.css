@@ -194,7 +194,7 @@ body {
 }
 
 .Parallax .Body {
-    height: 500px;
+    min-height: 500px;
     background-color: #803300;
     font-size: 20px;
     color: white;
@@ -218,6 +218,10 @@ body {
     background-image: url("/img/img_parallax4.jpg");
 }
 
+.Parallax.Item5 .Img {
+    background-image: url("/img/erreur.jpg");
+}
+
 .Parallax.Item2 .Body {
     background-color: #006666;
 }
@@ -228,6 +232,13 @@ body {
 
 .Parallax.Item4 .Body {
     background-color: #00004d;
+}
+
+.Parallax.Item5 .Body {
+    min-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-family: Allan;
 }
 
 .Parallax.Scroll .Img {
