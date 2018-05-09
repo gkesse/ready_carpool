@@ -59,7 +59,8 @@ body {
 }
 
 .Header .Menu .Link .Item.Active {
-    background-color: red;
+    background-color: #ff0000;
+    background-image: url("/img/active2.jpg");
 }
 
 .Header .Menu .Link.Icon {
@@ -67,11 +68,6 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
-}
-
-.Header .Menu .Link .Item.active {
-    background-color: #4CAF50;
-    color: white;
 }
 /* ============================================== */
 /* Banner */
@@ -132,17 +128,27 @@ body {
 /* ============================================== */
 .BodyPage .Logo {
     position: absolute;
-    top: 100px;
+    top: 30px;
     left: 0px;
     padding: 10px;
 }
 
+.BodyPage .Logo .Img {
+    height: 150px;
+    background-color: rgba(1,1,1,0.0);
+    background-image: url("/img/logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .BodyPage .Logo .Txt {
-    background-color: rgba(1,1,1,0.2);
-    font-family: Anton;
-    font-size: 25px;
+    background-color: rgba(1,1,1,0.0);
+    font-family: Archivo Narrow;
+    font-size: 16px;
     color: white;
-    padding: 10px;
+    padding: 5px;
+    text-align: center;
 }
 /* ============================================== */
 /* Main Page */

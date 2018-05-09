@@ -1,10 +1,10 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/php/class/GAutoloadRegister.php";
     
-    $m_data = GJson::Instance()->getData("data/json/Accueil.json");
-    GConfig::Instance()->setData("title", "Accueil");
-    GConfig::Instance()->setData("menu", "Accueil");
-    GConfig::Instance()->setData("view", "Accueil");
+    $m_data = GJson::Instance()->getData("data/json/Evenements.json");
+    GConfig::Instance()->setData("title", "Evenements");
+    GConfig::Instance()->setData("menu", "Evènements");
+    GConfig::Instance()->setData("view", "Evenements");
     require $_SERVER["DOCUMENT_ROOT"]."/php/header.php";
 ?>
 <!-- ============================================ -->

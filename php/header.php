@@ -129,9 +129,9 @@
             <div class="BodyPage Mrg Pdd">
                 <!-- ============================================ -->
                 <div class="Logo">
+                    <div class="Img"></div>
                     <div class="Txt">
-                        EGLISE HARRISTE<br/>
-                        FRANCE
+                        EGLISE HARRISTE FRANCE
                     </div>
                 </div>
                 <!-- ============================================ -->
@@ -142,8 +142,14 @@
                             for($i = 0; $i < count($lHeaderData["menu"]); $i++) {
                                 $lName = $lHeaderData["menu"][$i]["name"];
                                 $lHref = $lHeaderData["menu"][$i]["link"];
+                                $lActive = "";
+                                if($lExiststMenu == true) {
+                                    if($lName == $lMenu) {
+                                        $lActive = " Active";
+                                    }
+                                }
                         ?>
-                        <div class="Link"><a class="Item" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
+                        <div class="Link"><a class="Item <?php echo $lActive; ?>" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
                         <?php } ?>
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
