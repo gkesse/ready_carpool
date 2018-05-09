@@ -6,6 +6,10 @@ var GHeader = (function() {
     var Container = function() {
         return {
             //===============================================
+            init: function(obj) {
+
+            },
+            //===============================================
             openHeaderMenu: function(obj) {
 				var lHeaderMenu = document.getElementById("HeaderMenu");
 				var lBars = '<i class="fa fa-bars"></i>';
@@ -33,4 +37,6 @@ var GHeader = (function() {
     };
     //===============================================
 })();
+//===============================================
+GHeader.Instance().init();
 //===============================================

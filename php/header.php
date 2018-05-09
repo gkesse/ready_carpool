@@ -50,52 +50,52 @@
         <!-- ============================================ -->
         <title><?php echo $m_title; ?> | <?php echo $m_ds["name"]; ?></title>
         <meta charset="UTF-8"/>
-        <link rel="shortcut icon" type="image/png" href="/img/readydev.png" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="shortcut icon" type="image/png" href="/img/logo.png"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <!-- ============================================ -->
         <!-- Responsive Web Design -->
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no"/>
         <!-- ============================================ -->
         <!-- Google -->
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <?php if($m_existMetaDesc == true) { ?>
-            <meta name="description" content="<?php echo $m_metaDesc; ?>"/>
+        <meta name="description" content="<?php echo $m_metaDesc; ?>"/>
         <?php } ?>
         <?php if($m_existMetaRobots == true) { ?>
-            <meta name="robots" content="<?php echo $m_metaRobots; ?>"/>
+        <meta name="robots" content="<?php echo $m_metaRobots; ?>"/>
         <?php } ?>
         <?php if($m_existMetaCano == true) { ?>
-            <link rel="canonical" href="<?php echo $m_metaCano; ?>" />
+        <link rel="canonical" href="<?php echo $m_metaCano; ?>" />
         <?php } ?>
         <!-- ============================================ -->
         <!-- OpenGraph -->
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content='/img/logo.jpg'>
-        <meta property="og:image:secure_url" content="/img/readydev-440x440.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="440" />
-        <meta property="og:image:height" content="440" />        
-        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content='/img/logo.jpg'/>
+        <meta property="og:image:secure_url" content="/img/logo-440x440.jpg"/>
+        <meta property="og:image:type" content="image/png"/>
+        <meta property="og:image:width" content="440"/>
+        <meta property="og:image:height" content="440"/>        
+        <meta property="og:locale" content="fr_FR"/>
         <?php if($m_existMetaCano == true) { ?>
-            <meta property="og:url" content="<?php echo $m_metaCano; ?>"/>
+        <meta property="og:url" content="<?php echo $m_metaCano; ?>"/>
         <?php } ?>
         <meta property="og:title" content="<?php echo $m_title; ?> | <?php echo $m_ds["name"]; ?>"/>
         <?php if($m_existMetaDesc == true) { ?>
-            <meta property="og:description" content="<?php echo $m_metaDesc; ?>"/>
+        <meta property="og:description" content="<?php echo $m_metaDesc; ?>"/>
         <?php } ?>
         <meta property="og:site_name" content="<?php echo $m_ds["name"]; ?>"/>
         <!-- ============================================ -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allan"/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo Narrow"/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo Narrow"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <!-- ============================================ -->
-		<?php if($m_codePrettify) { ?>
+        <?php if($m_codePrettify) { ?>
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
         <?php } ?>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- ============================================ -->
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <!--script async src="https://www.googletagmanager.com/gtag/js?id=UA-109595989-1"></script>
@@ -108,11 +108,11 @@
         </script-->
         <!-- ============================================ -->
         <link rel="stylesheet" href="/css/style.css"/>
-		<!-- ============================================ -->
-		<script src="/js/class/GHeader.js"></script>
-		<script src="/js/header.js"></script>
         <!-- ============================================ -->
-</head>
+        <script src="/js/class/GHeader.js"></script>
+        <script src="/js/header.js"></script>
+        <!-- ============================================ -->
+    </head>
     <body>
         <!-- ============================================ -->
         <div class="HtmlPage">

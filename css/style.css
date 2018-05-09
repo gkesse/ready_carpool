@@ -224,6 +224,10 @@ body {
 .Parallax.Item4 .Body {
     background-color: #00004d;
 }
+
+.Parallax.Scroll .Img {
+    background-attachment: scroll;
+}
 /* ============================================== */
 /* Responsive Web Design */
 /* ============================================== */
@@ -242,16 +246,6 @@ body {
     .Header .Menu.RWD .Link {
         display: block;
         text-align: left;
-    }
-    /* ============================================== */
-}
-/* ============================================== */
-@media screen and (max-width: 350px) {
-    /* ============================================== */
-    /* Parallax */
-    /* ============================================== */
-    .Parallax .Img {
-        background-attachment: scroll;
     }
     /* ============================================== */
 }
