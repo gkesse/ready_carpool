@@ -33,7 +33,7 @@ var GConnection = (function() {
                     lMessage = "Email est incorrect";
                 }
                 else if(!lPassword.value.length) {
-                    lMessage = "Password est obligatoire";
+                    lMessage = "Mot de passe est obligatoire";
                 }
                 
                 if(lMessage.length) {
@@ -55,9 +55,9 @@ var GConnection = (function() {
                 lXmlhttp.open("POST", "/php/connection.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"Req="+"CONNECT"+
-					"&Email="+email+
-					"&Password="+pass
+					"REQ="+"CONNECT"+
+					"&EMAIL="+email+
+					"&PASSWORD="+pass
                     );            
                 }
             //===============================================
