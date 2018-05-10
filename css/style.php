@@ -17,6 +17,11 @@
     outline: none;
 }
 
+input {
+    font-size: 16px;
+    border-radius: 0px;
+}
+
 html {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -28,6 +33,20 @@ body {
     font-family: arial;
     font-size: 16px;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: white ;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 /* ============================================== */
 /* Header */
 /* ============================================== */
@@ -155,8 +174,15 @@ body {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;   
+    margin-left: 150px;
+}
+
+.Header .Connection .Body .Text .Row .Field .Data {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    height: 100%;   
+    width: 100%;
     padding: 5px 10px;
-    margin-left: 154px;
 }
 
 .Header .Connection .Body .Text .Button {

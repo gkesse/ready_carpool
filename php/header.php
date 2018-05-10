@@ -165,15 +165,14 @@
                                 <div class="Desc">Entrez vos identifiants de connexion.</div>
                                 <div class="Row">
                                     <div class="Label">Email :</div>
-                                    <div class="Field"></div>
+                                    <div class="Field"><input class="Data" type="text" name="Email"/></div>
                                 </div>
                                 <div class="Row">
                                     <div class="Label">Mot de passe :</div>
-                                    <div class="Field"></div>
+                                    <div class="Field"><input class="Data" type="password" name="Password"/></div>
                                 </div>
                                 <div class="Button">
-                                    <div class="Item"><i class="fa fa-paper-plane-o"></i> Se Connecter
-                                    </div>
+                                    <div class="Item" onclick="connect(this)"><i class="fa fa-paper-plane-o"></i> Se Connecter</div>
                                 </div>
                             </div>
                         </div>
