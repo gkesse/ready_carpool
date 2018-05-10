@@ -164,7 +164,7 @@
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
                     <!-- ============================================ -->
-                    <div class="Modal Connection" id="HeaderConnection" >
+                    <div class="Modal Connection" id="HeaderConnection">
                         <div class="Body">
                             <div class="Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Connexion</div>
@@ -186,7 +186,7 @@
                         <div class="Msg" id="ConnectionMsg"></div>
                     </div>
                     <!-- ============================================ -->
-                    <div class="Modal Disconnection" id="HeaderDisconnection" >
+                    <div class="Modal Disconnection" id="HeaderDisconnection">
                         <div class="Body">
                             <div class="Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Déconnexion</div>
@@ -197,7 +197,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="Msg" id="DeconnectionMsg"></div>
+                        <div class="Msg" id="DisconnectionMsg"></div>
                     </div>
                     <!-- ============================================ -->
                 </div>

@@ -15,6 +15,10 @@ function closeConnection(obj) {
 	GConnection.Instance().closeConnection(obj);
 }
 //===============================================
+function closeConnection(obj) {
+	GConnection.Instance().closeConnection(obj);
+}
+//===============================================
 function closeDisconnection(obj) {
 	GConnection.Instance().closeDisconnection(obj);
 }

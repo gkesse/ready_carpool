@@ -64,16 +64,16 @@ var GConnection = (function() {
             },
             //===============================================
             disconnect: function(obj) {
-				var lDeconnectionMsg = document.getElementById("DeconnectionMsg");
+				var lDisconnectionMsg = document.getElementById("DisconnectionMsg");
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lHtml = "<i class='fa fa-power-off'></i> "; 
                         lHtml += lData; 
-                        lDeconnectionMsg.innerHTML = lHtml;
-                        lDeconnectionMsg.style.color = "#339933";
-                        lDeconnectionMsg.style.display = "block";
+                        lDisconnectionMsg.innerHTML = lHtml;
+                        lDisconnectionMsg.style.color = "#339933";
+                        lDisconnectionMsg.style.display = "block";
                     }
                 }
                 lXmlhttp.open("POST", "/php/connection.php", true);
