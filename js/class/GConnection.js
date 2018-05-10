@@ -74,6 +74,7 @@ var GConnection = (function() {
                         lDisconnectionMsg.innerHTML = lHtml;
                         lDisconnectionMsg.style.color = "#339933";
                         lDisconnectionMsg.style.display = "block";
+                        location.reload();
                     }
                 }
                 lXmlhttp.open("POST", "/php/connection.php", true);
@@ -105,7 +106,7 @@ var GConnection = (function() {
                             lConnectionMsg.innerHTML = lHtml;
                             lConnectionMsg.style.display = "block";
                             lConnectionMsg.style.color = "#339933";
-                            ConnectionForm.submit();
+                            lConnectionForm.submit();
                         }
                     }
                 }

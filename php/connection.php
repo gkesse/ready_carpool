@@ -36,9 +36,9 @@
 	}
 	//===============================================
 	if($lReq == "DISCONNECT") {
-        /*if(isset($_SESSION["LOGIN"])) {
+        if(isset($_SESSION["LOGIN"])) {
             unset($_SESSION["LOGIN"]);
-        }*/
+        }
         print_r("Bonne Déconnexion");
 	}
 	//===============================================
