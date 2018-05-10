@@ -25,7 +25,21 @@
         }
         $lData["STATUS"] = true;
         $lData["MSG"] = "Bonne Connexion";
-        $lData["GROUP"] = GGlobal::Instance()->getData($lUserMap["USERS"], "EMAIL", $lEmail, "GROUP");
+        $lGroup = GGlobal::Instance()->getData($lUserMap["USERS"], "EMAIL", $lEmail, "GROUP");
+        if(!isset($_SESSION["LOGIN"])) {
+            $_SESSION["LOGIN"] = array(
+            "EMAIL" => $lEmail,
+            "GROUP" => $lGroup
+            );
+        }
         print_r(json_encode($lData));
 	}
+	//===============================================
+	if($lReq == "DISCONNECT") {
+        if(isset($_SESSION["LOGIN"])) {
+            unset($_SESSION["LOGIN"]);
+        }
+        print_r("Bonne Déconnexion");
+	}
+	//===============================================
 ?>

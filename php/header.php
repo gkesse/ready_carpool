@@ -1,4 +1,6 @@
-<?php     
+<?php    
+    GPostRedirectGet::Instance()->redirect();
+
     GMetaData::Instance()->getData();
     $lTitle = GConfig::Instance()->getData("title"); 
     GUrl::Instance()->lastUrl();
@@ -119,6 +121,10 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
+            <?php  if(isset($_SESSION["LOGIN"]) && $_SESSION["LOGIN"]["GROUP"] == "ADMIN") {?>
+            <div class="Button BannerMod"><i class="fa fa-pencil"></i></div>
+            <?php } ?>
+            <!-- ============================================ -->
             <div class="Banner Item1">
             </div>
             <!-- ============================================ -->
@@ -153,15 +159,19 @@
                         ?>
                         <div class="Link"><a class="Item <?php echo $lActive; ?>" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
                         <?php } ?>
+                        <?php  if(!isset($_SESSION["LOGIN"])) {?>
                         <div class="Link"><div class="Item" onclick="openConnection(this)">Connexion</div></div>
+                        <?php } else { ?>
+                        <div class="Link"><div class="Item" onclick="openDisconnection(this)">Déconnexion</div></div>
+                        <?php } ?>
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
                     <!-- ============================================ -->
-                    <div class="Connection" id="HeaderConnection" >
+                    <div class="Modal Connection" id="HeaderConnection">
                         <div class="Body">
-                            <div class="Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
+                            <div class="Button Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Connexion</div>
-                            <div class="Text">
+                            <form class="Text" id="ConnectionForm" method="post" action="">
                                 <div class="Desc">Entrez vos identifiants de connexion.</div>
                                 <div class="Row">
                                     <div class="Label">Email :</div>
@@ -171,12 +181,26 @@
                                     <div class="Label">Mot de passe :</div>
                                     <div class="Field"><input class="Data" type="password" name="Password"/></div>
                                 </div>
-                                <div class="Button">
+                                <div class="ButtonMap">
                                     <div class="Item" onclick="connect(this)"><i class="fa fa-paper-plane-o"></i> Se Connecter</div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="Msg" id="ConnectionMsg"></div>
+                    </div>
+                    <!-- ============================================ -->
+                    <div class="Modal Disconnection" id="HeaderDisconnection">
+                        <div class="Body">
+                            <div class="Button Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
+                            <div class="Title">Déconnexion</div>
+                            <div class="Text" id="ConnectionForm" method="post" action="">
+                                <div class="Desc">Êtes-vous sûr de vous déconnecter ?</div>
+                                <div class="ButtonMap">
+                                    <div class="Item" onclick="disconnect(this)"><i class="fa fa-power-off"></i> Se Déconnecter</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="Msg" id="ConnectionMsg"></div>
+                        <div class="Msg" id="DisconnectionMsg"></div>
                     </div>
                     <!-- ============================================ -->
                 </div>
