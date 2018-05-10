@@ -107,7 +107,8 @@
             gtag('config', 'UA-109595989-1');
         </script-->
         <!-- ============================================ -->
-        <link rel="stylesheet" href="/css/style.css"/>
+        <!--link rel="stylesheet" media="screen" type="text/css" href="css/moncss.php" /-->
+        <link rel="stylesheet" href="/css/style.php"/>
         <!-- ============================================ -->
         <script src="/js/class/GHeader.js"></script>
         <script src="/js/header.js"></script>

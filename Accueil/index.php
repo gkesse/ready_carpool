@@ -5,6 +5,7 @@
     GConfig::Instance()->setData("title", "Accueil");
     GConfig::Instance()->setData("menu", "Accueil");
     GConfig::Instance()->setData("view", "Accueil");
+    
     require $_SERVER["DOCUMENT_ROOT"]."/php/header.php";
 ?>
 <!-- ============================================ -->
