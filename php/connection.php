@@ -19,7 +19,7 @@
         $lExist = GGlobal::Instance()->existData($lUserMap["USERS"], "PASSWORD", $lEncrypt);
         if(!$lExist) {
             $lData["STATUS"] = false;
-            $lData["MSG"] = "Mot de passe n'existe pas";
+            $lData["MSG"] = "Mot de passe est incorrect";
             print_r(json_encode($lData));
             return;
         }

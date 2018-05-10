@@ -176,6 +176,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="Msg" id="ConnectionMsg"></div>
                     </div>
                     <!-- ============================================ -->
                 </div>

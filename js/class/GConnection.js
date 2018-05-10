@@ -17,12 +17,15 @@ var GConnection = (function() {
             //===============================================
             closeConnection: function(obj) {
 				var lHeaderConnection = document.getElementById("HeaderConnection");
+				var lConnectionMsg = document.getElementById("ConnectionMsg");
+                lConnectionMsg.style.display = "none";
 				lHeaderConnection.style.display = "none";	
             },
             //===============================================
             connect: function(obj) {
 				var lEmail = document.getElementsByName("Email")[0];
 				var lPassword = document.getElementsByName("Password")[0];
+				var lConnectionMsg = document.getElementById("ConnectionMsg");
                 var lRegExp = /\S+@\S+\.\S+/;
                 var lMessage = "";
 
@@ -37,7 +40,10 @@ var GConnection = (function() {
                 }
                 
                 if(lMessage.length) {
-                    alert(lMessage);
+                    var lHtml = "<i class='fa fa-book'></i> "; 
+                    lHtml += lMessage; 
+                    lConnectionMsg.innerHTML = lHtml;
+                    lConnectionMsg.style.display = "block";
                 }
                 else {
                     this.sendConnection(lEmail.value, lPassword.value);
@@ -45,11 +51,18 @@ var GConnection = (function() {
             },
             //===============================================
             sendConnection: function(email, pass) {
+				var lConnectionMsg = document.getElementById("ConnectionMsg");
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
-                        alert(lData);
+                        var lDataMap = JSON.parse(lData);
+                        if(!lDataMap["STATUS"]) {
+                            var lHtml = "<i class='fa fa-book'></i> "; 
+                            lHtml += lDataMap["MSG"]; 
+                            lConnectionMsg.innerHTML = lHtml;
+                            lConnectionMsg.style.display = "block";
+                        }
                     }
                 }
                 lXmlhttp.open("POST", "/php/connection.php", true);

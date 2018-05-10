@@ -115,7 +115,6 @@ textarea:-webkit-autofill:focus {
     margin: auto;
     max-width: 500px;
     margin-top: -100px;
-    border: 1px solid #888;
     position: relative;
 }
 
@@ -203,6 +202,17 @@ textarea:-webkit-autofill:focus {
 .Header .Connection .Body .Text .Button .Item:hover {
     background-color: rgba(0,0,0,0.4);
 }
+
+.Header .Connection .Msg {
+    background-color: rgba(0,0,0,0.4);
+    margin: auto;
+    max-width: 500px;
+    padding: 5px 10px;
+    font-family: Archivo Narrow;
+    color: white;
+    display: none;
+}
+
 /* ============================================== */
 /* Banner */
 /* ============================================== */
