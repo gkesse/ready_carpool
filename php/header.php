@@ -121,6 +121,8 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
+            <div class="Button Banner"><i class="Color fa fa-pencil"></i></div>
+            <!-- ============================================ -->
             <div class="Banner Item1">
             </div>
             <!-- ============================================ -->
@@ -165,7 +167,7 @@
                     <!-- ============================================ -->
                     <div class="Modal Connection" id="HeaderConnection">
                         <div class="Body">
-                            <div class="Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
+                            <div class="Button Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Connexion</div>
                             <form class="Text" id="ConnectionForm" method="post" action="">
                                 <div class="Desc">Entrez vos identifiants de connexion.</div>
@@ -177,7 +179,7 @@
                                     <div class="Label">Mot de passe :</div>
                                     <div class="Field"><input class="Data" type="password" name="Password"/></div>
                                 </div>
-                                <div class="Button">
+                                <div class="ButtonMap">
                                     <div class="Item" onclick="connect(this)"><i class="fa fa-paper-plane-o"></i> Se Connecter</div>
                                 </div>
                             </form>
@@ -187,11 +189,11 @@
                     <!-- ============================================ -->
                     <div class="Modal Disconnection" id="HeaderDisconnection">
                         <div class="Body">
-                            <div class="Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
+                            <div class="Button Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Déconnexion</div>
                             <div class="Text" id="ConnectionForm" method="post" action="">
                                 <div class="Desc">Êtes-vous sûr de vous déconnecter ?</div>
-                                <div class="Button">
+                                <div class="ButtonMap">
                                     <div class="Item" onclick="disconnect(this)"><i class="fa fa-power-off"></i> Se Déconnecter</div>
                                 </div>
                             </div>

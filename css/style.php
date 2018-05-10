@@ -46,7 +46,65 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
+/* ============================================== */
+/* Html Page */
+/* ============================================== */
+.HtmlPage {
+    position: relative;
+}
+/* ============================================== */
+/* Body Page */
+/* ============================================== */
+.BodyPage {
+    position: relative;
+}
+/* ============================================== */
+.BodyPage.Mrg {
+    max-width: 1000px;
+    margin: auto;
+}
 
+.BodyPage.Pdd {
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+/* ============================================== */
+.BodyPage .Logo {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    padding: 10px;
+}
+
+.BodyPage .Logo .Img {
+    height: 150px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: url("/img/logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.BodyPage .Logo .Txt {
+    background-color: rgba(1,1,1,0.0);
+    font-family: Archivo Narrow;
+    font-size: 16px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+/* ============================================== */
+/* Main Page */
+/* ============================================== */
+.MainPage.Mrg {
+    max-width: 700px;
+    margin: auto;
+}
+
+.MainPage.Pdd {
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
 /* ============================================== */
 /* Header */
 /* ============================================== */
@@ -118,23 +176,6 @@ textarea:-webkit-autofill:focus {
     position: relative;
 }
 
-.Header .Modal .Body .Close {
-    background-color: rgba(0,0,0,0.2);
-    width: 30px;
-    line-height: 30px;
-    border-radius: 15px;
-    font-size: 20px;
-    text-align: center;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-}
-
-.Header .Modal .Body .Close:hover {
-    background-color: rgba(0,0,0,0.4);
-}
-
 .Header .Modal .Body .Title {
     background-color: rgba(0,0,0,0.2);
     padding: 0px 10px;
@@ -184,13 +225,13 @@ textarea:-webkit-autofill:focus {
     padding: 5px 10px;
 }
 
-.Header .Modal .Body .Text .Button {
+.Header .Modal .Body .Text .ButtonMap {
     text-align: right;
     font-size: 0px;
     padding-top: 10px;
 }
 
-.Header .Modal .Body .Text .Button .Item {
+.Header .Modal .Body .Text .ButtonMap .Item {
     display: inline-block;
     background-color: rgba(0,0,0,0.2);
     padding: 0px 10px;
@@ -199,7 +240,7 @@ textarea:-webkit-autofill:focus {
     cursor: pointer;
 }
 
-.Header .Modal .Body .Text .Button .Item:hover {
+.Header .Modal .Body .Text .ButtonMap .Item:hover {
     background-color: rgba(0,0,0,0.4);
 }
 
@@ -212,7 +253,6 @@ textarea:-webkit-autofill:focus {
     color: white;
     display: none;
 }
-
 /* ============================================== */
 /* Banner */
 /* ============================================== */
@@ -248,63 +288,37 @@ textarea:-webkit-autofill:focus {
     background-image: url("<?php echo $lCssData["Banner"]["Item3"]["Img"]; ?>");
 }
 /* ============================================== */
-/* Html Page */
+/* Button */
 /* ============================================== */
-.HtmlPage {
-    position: relative;
-}
-/* ============================================== */
-/* Body Page */
-/* ============================================== */
-.BodyPage {
-    position: relative;
-}
-/* ============================================== */
-.BodyPage.Mrg {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.BodyPage.Pdd {
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
-/* ============================================== */
-.BodyPage .Logo {
-    position: absolute;
-    top: 30px;
-    left: 0px;
-    padding: 10px;
-}
-
-.BodyPage .Logo .Img {
-    height: 150px;
-    background-color: rgba(1,1,1,0.0);
-    background-image: url("/img/logo.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.BodyPage .Logo .Txt {
-    background-color: rgba(1,1,1,0.0);
-    font-family: Archivo Narrow;
-    font-size: 16px;
-    color: white;
-    padding: 5px;
+.Button {
+    background-color: rgba(0,0,0,0.2);
+    width: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 20px;
     text-align: center;
-}
-/* ============================================== */
-/* Main Page */
-/* ============================================== */
-.MainPage.Mrg {
-    max-width: 700px;
-    margin: auto;
+    cursor: pointer;
 }
 
-.MainPage.Pdd {
-    padding-top: 250px;
-    padding-bottom: 250px;
+.Button:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.Button:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.Button.Close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.Button.Banner {
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: #ff9933;
 }
 /* ============================================== */
 /* Parallax */
