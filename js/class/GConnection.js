@@ -40,9 +40,26 @@ var GConnection = (function() {
                     alert(lMessage);
                 }
                 else {
-                    alert("Bonne Connexion");
+                    this.sendConnection(lEmail.value, lPassword.value);
                 }
-            }
+            },
+            //===============================================
+            sendConnection: function(email, pass) {
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        alert(lData);
+                    }
+                }
+                lXmlhttp.open("POST", "/php/connection.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"Req="+"CONNECT"+
+					"&Email="+email+
+					"&Password="+pass
+                    );            
+                }
             //===============================================
         };
     }

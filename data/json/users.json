@@ -1,0 +1,9 @@
+{
+    "Users":
+    [
+        {"Email":"superadmin@harriste.com","Pass":"c2881f88f7ff98d6ad3bc0451538b272","Group":"Super"},
+        {"Email":"admin@harriste.com","Pass":"a74ca3d53179150deb03e0db45ec2894","Group":"Admin"},
+        {"Email":"taye@harriste.com","Pass":"95356c9dcdb11c42744070fe54f52276","Group":"User"},
+        {"Email":"gahia@harriste.com","Pass":"07e40b57a4a1d8e02119e21d2956fe91","Group":"User"}
+    ]
+}
