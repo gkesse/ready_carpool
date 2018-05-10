@@ -40,7 +40,7 @@ body {
     position: relative;
     font-size: 0px;
 }
-/* ============================================== */
+
 .Header .Menu .Link {
     display: inline-block;
     text-align: center;
@@ -73,6 +73,30 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
+}
+/* ============================================== */
+.Header .Connection {
+    /*display: none;*/
+    position: fixed;
+    z-index: 1;
+    padding: 10px;
+    padding-top: 50vh;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(50,50,100,0.9);
+}
+
+.Header .Connection .Body {
+    background-color: #fefefe;
+    margin: auto;
+    max-width: 500px;
+    min-height: 500px;
+    margin-top: -250px;
+    padding: 20px;
+    border: 1px solid #888;
 }
 /* ============================================== */
 /* Banner */

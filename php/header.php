@@ -152,8 +152,17 @@
                         ?>
                         <div class="Link"><a class="Item <?php echo $lActive; ?>" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
                         <?php } ?>
+                        <div class="Link"><div class="Item" onclick="openConnection(this)">Connexion</div></div>
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
+                    <!-- ============================================ -->
+                    <div id="myModal" class="Connection">
+                        <div class="Body">
+                            <span class="close">&times;</span>
+                            <p>Some text in the Modal..</p>
+                        </div>
+                    </div>
+                    <!-- ============================================ -->
                 </div>
                 <!-- ============================================ -->
                 
