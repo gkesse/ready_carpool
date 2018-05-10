@@ -14,22 +14,22 @@
         }
         //===============================================
         public function getView($page) {
-            $m_file = "data/json/views.json";
-            $m_data = GJson::Instance()->getData($m_file);
-            $m_page = strtolower($page);
+            $lFile = "data/json/views.json";
+            $lData = GJson::Instance()->getData($lFile);
+            $lPage = strtolower($page);
             
-            if(!isset($m_data[$m_page])) {
-                $m_data[$m_page] = 250; 
+            if(!isset($lData[$lPage])) {
+                $lData[$lPage] = 250; 
             }
             else {
-                if($m_data[$m_page] < 250) $m_data[$m_page] = 250;
+                if($lData[$lPage] < 250) $lData[$lPage] = 250;
             }
             
-            $m_data[$m_page]++;
-            ksort($m_data);
+            $lData[$lPage]++;
+            ksort($lData);
             
-            GJson::Instance()->saveData($m_file, $m_data);
-            return $m_data[$m_page];
+            GJson::Instance()->saveData($lFile, $lData);
+            return $lData[$lPage];
         }
         //===============================================
     }

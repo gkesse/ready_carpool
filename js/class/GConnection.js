@@ -53,6 +53,7 @@ var GConnection = (function() {
             //===============================================
             sendConnection: function(email, pass) {
 				var lConnectionMsg = document.getElementById("ConnectionMsg");
+				var lConnectionForm = document.getElementById("ConnectionForm");
                 lConnectionMsg.style.display = "none";
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
@@ -72,6 +73,7 @@ var GConnection = (function() {
                             lConnectionMsg.innerHTML = lHtml;
                             lConnectionMsg.style.display = "block";
                             lConnectionMsg.style.color = "#339933";
+                            ConnectionForm.submit();
                         }
                     }
                 }

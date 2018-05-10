@@ -1,4 +1,6 @@
-<?php     
+<?php    
+    GPostRedirectGet::Instance()->redirect();
+    
     GMetaData::Instance()->getData();
     $lTitle = GConfig::Instance()->getData("title"); 
     GUrl::Instance()->lastUrl();
@@ -161,7 +163,7 @@
                         <div class="Body">
                             <div class="Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
                             <div class="Title">Connexion</div>
-                            <div class="Text">
+                            <form class="Text" id="ConnectionForm" method="post" action="">
                                 <div class="Desc">Entrez vos identifiants de connexion.</div>
                                 <div class="Row">
                                     <div class="Label">Email :</div>
@@ -174,7 +176,7 @@
                                 <div class="Button">
                                     <div class="Item" onclick="connect(this)"><i class="fa fa-paper-plane-o"></i> Se Connecter</div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="Msg" id="ConnectionMsg"></div>
                     </div>
