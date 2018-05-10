@@ -4,5 +4,9 @@
         "Item1":{"Img":"/img/banner.jpg"},
         "Item2":{"Img":"/img/banner2.jpg"},
         "Item3":{"Img":"/img/banner3.jpg"}
+    },
+    "Connection":
+    {
+        "Img":"/img/connection.jpg"
     }
 }

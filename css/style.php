@@ -87,7 +87,8 @@ body {
     top: 0px;
     width: 100%;
     height: 100vh;
-    background-color: rgba(50,50,100,0.9);
+    background-image: url("<?php echo $lCssData["Connection"]["Img"]; ?>");
+    background-color: rgba(255,255,255,0.2);
 }
 
 .Header .Connection .Body {
@@ -125,7 +126,7 @@ body {
 }
 
 .Header .Connection .Body .Text {
-    background-color: rgba(255,0,0,0.2);
+    background-color: rgba(0,0,0,0.2);
     border-top: 1px solid rgba(0,0,0,0.2);
     padding: 10px;
 }
