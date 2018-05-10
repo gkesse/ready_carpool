@@ -4,6 +4,10 @@ function openHeaderMenu(obj) {
 }
 //===============================================
 function openConnection(obj) {
-	GHeader.Instance().openConnection(obj);
+	GConnection.Instance().openConnection(obj);
+}
+//===============================================
+function closeConnection(obj) {
+	GConnection.Instance().closeConnection(obj);
 }
 //===============================================

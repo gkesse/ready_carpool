@@ -159,8 +159,23 @@
                     <!-- ============================================ -->
                     <div class="Connection" id="HeaderConnection" >
                         <div class="Body">
-                            <span class="close">&times;</span>
-                            <p>Some text in the Modal..</p>
+                            <div class="Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
+                            <div class="Title">Connexion</div>
+                            <div class="Text">
+                                <div class="Desc">Entrez vos identifiants de connexion.</div>
+                                <div class="Row">
+                                    <div class="Label">Email :</div>
+                                    <div class="Field"></div>
+                                </div>
+                                <div class="Row">
+                                    <div class="Label">Mot de passe :</div>
+                                    <div class="Field"></div>
+                                </div>
+                                <div class="Button">
+                                    <div class="Item"><i class="fa fa-paper-plane-o"></i> Se Connecter
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- ============================================ -->

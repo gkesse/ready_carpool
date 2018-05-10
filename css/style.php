@@ -51,7 +51,8 @@ body {
 .Header .Menu .Link .Item,
 .Header .Menu .Link.Icon {
     display: inline-block;
-    padding: 14px 16px;
+    padding: 0px 16px;
+    line-height: 50px;
     color: #f2f2f2;
     text-decoration: none;
     cursor: pointer;
@@ -73,6 +74,7 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
+    font-size: 25px;
 }
 /* ============================================== */
 .Header .Connection {
@@ -85,7 +87,6 @@ body {
     top: 0px;
     width: 100%;
     height: 100vh;
-    overflow: auto;
     background-color: rgba(50,50,100,0.9);
 }
 
@@ -93,10 +94,87 @@ body {
     background-color: #fefefe;
     margin: auto;
     max-width: 500px;
-    min-height: 200px;
     margin-top: -100px;
-    padding: 20px;
     border: 1px solid #888;
+    position: relative;
+}
+
+.Header .Connection .Body .Close {
+    background-color: rgba(0,0,0,0.2);
+    width: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.Header .Connection .Body .Close:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.Header .Connection .Body .Title {
+    background-color: rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    font-family: Anton;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.Header .Connection .Body .Text {
+    background-color: rgba(255,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.Header .Connection .Body .Text .Desc {
+    margin-bottom: 10px;    
+}
+
+.Header .Connection .Body .Text .Row {
+    background-color: rgba(0,0,0,0.0);
+    margin: 4px 0px;
+    position: relative;
+}
+
+.Header .Connection .Body .Text .Row .Label {
+    background-color: rgba(0,0,0,0.2);
+    min-width: 150px; 
+    line-height: 30px;   
+    padding: 0px 10px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.Header .Connection .Body .Text .Row .Field {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    height: 30px;   
+    padding: 5px 10px;
+    margin-left: 154px;
+}
+
+.Header .Connection .Body .Text .Button {
+    text-align: right;
+    font-size: 0px;
+    padding-top: 10px;
+}
+
+.Header .Connection .Body .Text .Button .Item {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.2);
+    padding: 0px 10px;
+    line-height: 30px; 
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Header .Connection .Body .Text .Button .Item:hover {
+    background-color: rgba(0,0,0,0.4);
 }
 /* ============================================== */
 /* Banner */
