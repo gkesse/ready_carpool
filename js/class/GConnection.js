@@ -11,7 +11,9 @@ var GConnection = (function() {
             },
             //===============================================
             openConnection: function(obj) {
-
+                alert("ooooooooooooooo");
+				var lHeaderConnection = document.getElementById("HeaderConnection");
+				lHeaderConnection.style.display = "block";	
             }
             //===============================================
         };

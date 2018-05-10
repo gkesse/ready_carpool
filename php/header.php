@@ -110,6 +110,7 @@
         <!--link rel="stylesheet" media="screen" type="text/css" href="css/moncss.php" /-->
         <link rel="stylesheet" href="/css/style.php"/>
         <!-- ============================================ -->
+        <script src="/js/class/GConnection.js"></script>
         <script src="/js/class/GHeader.js"></script>
         <script src="/js/header.js"></script>
         <!-- ============================================ -->
@@ -156,7 +157,7 @@
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>
                     </div>
                     <!-- ============================================ -->
-                    <div id="myModal" class="Connection">
+                    <div class="Connection" id="HeaderConnection" >
                         <div class="Body">
                             <span class="close">&times;</span>
                             <p>Some text in the Modal..</p>

@@ -76,7 +76,7 @@ body {
 }
 /* ============================================== */
 .Header .Connection {
-    /*display: none;*/
+    display: none;
     position: fixed;
     z-index: 1;
     padding: 10px;
@@ -85,7 +85,7 @@ body {
     top: 0px;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     background-color: rgba(50,50,100,0.9);
 }
 
@@ -93,8 +93,8 @@ body {
     background-color: #fefefe;
     margin: auto;
     max-width: 500px;
-    min-height: 500px;
-    margin-top: -250px;
+    min-height: 200px;
+    margin-top: -100px;
     padding: 20px;
     border: 1px solid #888;
 }
