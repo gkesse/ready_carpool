@@ -121,7 +121,9 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <div class="Button Banner"><i class="Color fa fa-pencil"></i></div>
+            <?php  if(isset($_SESSION["LOGIN"]) && $_SESSION["LOGIN"]["GROUP"] == "ADMIN") {?>
+            <div class="Button BannerMod"><i class="fa fa-pencil"></i></div>
+            <?php } ?>
             <!-- ============================================ -->
             <div class="Banner Item1">
             </div>

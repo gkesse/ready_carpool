@@ -314,7 +314,8 @@ textarea:-webkit-autofill:focus {
     right: 5px;
 }
 
-.Button.Banner {
+.Button.BannerMod {
+    position: absolute;
     top: 10px;
     right: 10px;
     z-index: 1;
