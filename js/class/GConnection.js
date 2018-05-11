@@ -12,26 +12,9 @@ var GConnection = (function() {
             //===============================================
             openConnection: function(obj) {
 				var lModalConnection = document.getElementById("ModalConnection");
+				var lEmail = document.getElementsByName("Email")[0];
 				lModalConnection.style.display = "block";	
-            },
-            //===============================================
-            openDisconnection: function(obj) {
-				var lModalDisconnection = document.getElementById("ModalDisconnection");
-				lModalDisconnection.style.display = "block";	
-            },
-            //===============================================
-            closeConnection: function(obj) {
-				var lModalConnection = document.getElementById("ModalConnection");
-				var lConnectionMsg = document.getElementById("ConnectionMsg");
-                lConnectionMsg.style.display = "none";
-				lModalConnection.style.display = "none";	
-            },
-            //===============================================
-            closeDisconnection: function(obj) {
-				var lModalDisconnection = document.getElementById("ModalDisconnection");
-				var lDisconnectionMsg = document.getElementById("DisconnectionMsg");
-                lDisconnectionMsg.style.display = "none";
-				lModalDisconnection.style.display = "none";	
+                lEmail.focus();
             },
             //===============================================
             connect: function(obj) {
@@ -63,6 +46,24 @@ var GConnection = (function() {
                 }
             },
             //===============================================
+            closeConnection: function(obj) {
+				var lModalConnection = document.getElementById("ModalConnection");
+				var lConnectionMsg = document.getElementById("ConnectionMsg");
+                lConnectionMsg.style.display = "none";
+				lModalConnection.style.display = "none";	
+            },
+            //===============================================
+            keyConnection: function(obj, e) {
+                if(e.keyCode == 13) {
+                    connect(obj);
+                }
+            },
+            //===============================================
+            openDisconnection: function(obj) {
+				var lModalDisconnection = document.getElementById("ModalDisconnection");
+				lModalDisconnection.style.display = "block";	
+            },
+            //===============================================
             disconnect: function(obj) {
 				var lDisconnectionMsg = document.getElementById("DisconnectionMsg");
                 var lXmlhttp = new XMLHttpRequest();
@@ -82,6 +83,13 @@ var GConnection = (function() {
                 lXmlhttp.send(
 					"req="+"DISCONNECT"
                     );            
+            },
+            //===============================================
+            closeDisconnection: function(obj) {
+				var lModalDisconnection = document.getElementById("ModalDisconnection");
+				var lDisconnectionMsg = document.getElementById("DisconnectionMsg");
+                lDisconnectionMsg.style.display = "none";
+				lModalDisconnection.style.display = "none";	
             },
             //===============================================
             sendConnection: function(email, pass) {

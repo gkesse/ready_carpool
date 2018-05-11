@@ -142,11 +142,11 @@
             <!-- ============================================ -->
             <div class="Background Item3"></div>
             <!-- ============================================ -->
-            <div class="Modal Connection" id="ModalConnection">
+            <div class="Modal Connection" id="ModalConnection" onkeypress="keyConnection(this, event)">
                 <div class="Body">
                     <div class="Button Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
                     <div class="Title">Connexion</div>
-                    <form class="Text" id="ConnectionForm" method="post" action="">
+                    <form class="Text" id="ConnectionForm" method="post">
                         <div class="Desc">Entrez vos identifiants de connexion.</div>
                         <div class="Row">
                             <div class="Label">Email :</div>
@@ -199,7 +199,7 @@
             <div class="Modal BackgroundMod2" id="ModalBackgroundMod2">
                 <div class="Body">
                     <div class="Button Close" onclick="closeBackgroundMod2(this)"><i class="fa fa-close"></i></div>
-                    <div class="Title">Modification du fond d'écran du haut</div>
+                    <div class="Title">Modification du fond d'écran du milieu</div>
                     <div class="Text" id="ConnectionForm" method="post" action="">
                         <div class="Desc">Saisissez les nouvelles données.</div>
                         <div class="Row">
@@ -217,7 +217,7 @@
             <div class="Modal BackgroundMod3" id="ModalBackgroundMod3">
                 <div class="Body">
                     <div class="Button Close" onclick="closeBackgroundMod3(this)"><i class="fa fa-close"></i></div>
-                    <div class="Title">Modification du fond d'écran du haut</div>
+                    <div class="Title">Modification du fond d'écran du bas</div>
                     <div class="Text" id="ConnectionForm" method="post" action="">
                         <div class="Desc">Saisissez les nouvelles données.</div>
                         <div class="Row">

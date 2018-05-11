@@ -1,13 +1,13 @@
 {
     "background": {
         "item1": {
-            "img": "\/img\/background.jpg"
+            "img": "\/img\/background2.jpg"
         },
         "item2": {
-            "img": "\/img\/background.jpg"
+            "img": "\/img\/background2.jpg"
         },
         "item3": {
-            "img": "\/img\/background3.jpg"
+            "img": "\/img\/background2.jpg"
         }
     },
     "modal": {
