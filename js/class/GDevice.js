@@ -1,7 +1,7 @@
 //===============================================
 var GDevice = (function() {
     //===============================================
-    var linstance;
+    var m_instance;
     //===============================================
     var Container = function() {
         return {
@@ -59,10 +59,10 @@ var GDevice = (function() {
     //===============================================
     return {
         Instance: function() {
-            if (!linstance) {
-                linstance = Container();
+            if (!m_instance) {
+                m_instance = Container();
             }
-            return linstance;
+            return m_instance;
         }
     };
     //===============================================

@@ -316,7 +316,7 @@ textarea:-webkit-autofill:focus {
     right: 5px;
 }
 
-.Button.BackgroundMod {
+.Button.BackgroundMod1 {
     position: absolute;
     top: 10px;
     right: 10px;
