@@ -10,6 +10,22 @@
             "L'Église Harriste de France vous accueille et vous accompagne dans votre vie chrétienne."
         ],
         "meta_cano":"/Accueil/"
+    },
+    "home":
+    {
+        "text":"Accueil Harriste de France"
+    },
+    "presentation":
+    {
+        "text":"presentation Harriste de France"
+    },
+    "ministry":
+    {
+        "text":"ministry Harriste de France"
+    },
+    "events":
+    {
+        "text":"events Harriste de France"
     }
 }
                         
