@@ -154,7 +154,9 @@ textarea:-webkit-autofill:focus {
     font-size: 25px;
 }
 /* ============================================== */
-.Header .Modal {
+/* Modal */
+/* ============================================== */
+.Modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -168,7 +170,7 @@ textarea:-webkit-autofill:focus {
     background-color: rgba(255,255,255,0.2);
 }
 
-.Header .Modal .Body {
+.Modal .Body {
     background-color: #fefefe;
     margin: auto;
     max-width: 500px;
@@ -176,7 +178,7 @@ textarea:-webkit-autofill:focus {
     position: relative;
 }
 
-.Header .Modal .Body .Title {
+.Modal .Body .Title {
     background-color: rgba(0,0,0,0.2);
     padding: 0px 10px;
     font-family: Anton;
@@ -184,23 +186,23 @@ textarea:-webkit-autofill:focus {
     line-height: 50px;
 }
 
-.Header .Modal .Body .Text {
+.Modal .Body .Text {
     background-color: rgba(0,0,0,0.2);
     border-top: 1px solid rgba(0,0,0,0.2);
     padding: 10px;
 }
 
-.Header .Modal .Body .Text .Desc {
+.Modal .Body .Text .Desc {
     margin-bottom: 10px;    
 }
 
-.Header .Modal .Body .Text .Row {
+.Modal .Body .Text .Row {
     background-color: rgba(0,0,0,0.0);
     margin: 4px 0px;
     position: relative;
 }
 
-.Header .Modal .Body .Text .Row .Label {
+.Modal .Body .Text .Row .Label {
     background-color: rgba(0,0,0,0.2);
     min-width: 150px; 
     line-height: 30px;   
@@ -210,14 +212,14 @@ textarea:-webkit-autofill:focus {
     left: 0px;
 }
 
-.Header .Modal .Body .Text .Row .Field {
+.Modal .Body .Text .Row .Field {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;   
     margin-left: 150px;
 }
 
-.Header .Modal .Body .Text .Row .Field .Data {
+.Modal .Body .Text .Row .Field .Data {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 100%;   
@@ -225,13 +227,13 @@ textarea:-webkit-autofill:focus {
     padding: 5px 10px;
 }
 
-.Header .Modal .Body .Text .ButtonMap {
+.Modal .Body .Text .ButtonMap {
     text-align: right;
     font-size: 0px;
     padding-top: 10px;
 }
 
-.Header .Modal .Body .Text .ButtonMap .Item {
+.Modal .Body .Text .ButtonMap .Item {
     display: inline-block;
     background-color: rgba(0,0,0,0.2);
     padding: 0px 10px;
@@ -240,11 +242,11 @@ textarea:-webkit-autofill:focus {
     cursor: pointer;
 }
 
-.Header .Modal .Body .Text .ButtonMap .Item:hover {
+.Modal .Body .Text .ButtonMap .Item:hover {
     background-color: rgba(0,0,0,0.4);
 }
 
-.Header .Modal .Msg {
+.Modal .Msg {
     background-color: rgba(0,0,0,0.4);
     margin: auto;
     max-width: 500px;

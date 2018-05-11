@@ -11,27 +11,27 @@ var GConnection = (function() {
             },
             //===============================================
             openConnection: function(obj) {
-				var lHeaderConnection = document.getElementById("HeaderConnection");
-				lHeaderConnection.style.display = "block";	
+				var lModalConnection = document.getElementById("ModalConnection");
+				lModalConnection.style.display = "block";	
             },
             //===============================================
             openDisconnection: function(obj) {
-				var lHeaderDisconnection = document.getElementById("HeaderDisconnection");
-				lHeaderDisconnection.style.display = "block";	
+				var lModalDisconnection = document.getElementById("ModalDisconnection");
+				lModalDisconnection.style.display = "block";	
             },
             //===============================================
             closeConnection: function(obj) {
-				var lHeaderConnection = document.getElementById("HeaderConnection");
+				var lModalConnection = document.getElementById("ModalConnection");
 				var lConnectionMsg = document.getElementById("ConnectionMsg");
                 lConnectionMsg.style.display = "none";
-				lHeaderConnection.style.display = "none";	
+				lModalConnection.style.display = "none";	
             },
             //===============================================
             closeDisconnection: function(obj) {
-				var lHeaderDisconnection = document.getElementById("HeaderDisconnection");
+				var lModalDisconnection = document.getElementById("ModalDisconnection");
 				var lDisconnectionMsg = document.getElementById("DisconnectionMsg");
                 lDisconnectionMsg.style.display = "none";
-				lHeaderDisconnection.style.display = "none";	
+				lModalDisconnection.style.display = "none";	
             },
             //===============================================
             connect: function(obj) {
