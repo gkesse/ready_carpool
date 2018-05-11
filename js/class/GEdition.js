@@ -178,7 +178,7 @@ var GEdition = (function() {
                 m_instance = Container();
             }
             return m_instance;
-        }
+        }   
     };
     //===============================================
 })();
