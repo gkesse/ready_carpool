@@ -166,7 +166,7 @@ textarea:-webkit-autofill:focus {
     top: 0px;
     width: 100%;
     height: 100vh;
-    background-image: url("<?php echo $lCssData["Modal"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["modal"]["img"]; ?>");
     background-color: rgba(255,255,255,0.2);
 }
 
@@ -261,7 +261,7 @@ textarea:-webkit-autofill:focus {
 .Background {
     min-height: 300px;
     background-color: #5CAF50;
-    background-image: url("<?php echo $lCssData["Background"]["Item1"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["background"]["item1"]["img"]; ?>");
     background-position: center;
     position: absolute;
 }
@@ -279,7 +279,7 @@ textarea:-webkit-autofill:focus {
     left: 0px;
     right: 0px;
     z-index: -1;
-    background-image: url("<?php echo $lCssData["Background"]["Item2"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["background"]["item2"]["img"]; ?>");
 }
 
 .Background.Item3 {
@@ -287,7 +287,7 @@ textarea:-webkit-autofill:focus {
     left: 0px;
     right: 0px;
     z-index: -1;
-    background-image: url("<?php echo $lCssData["Background"]["Item3"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["background"]["item3"]["img"]; ?>");
 }
 /* ============================================== */
 /* Button */

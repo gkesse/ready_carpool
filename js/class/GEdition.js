@@ -11,6 +11,7 @@ var GEdition = (function() {
             },
             //===============================================
             openBackgroundMod1: function(obj) {
+                
 				var lModalBackgroundMod1 = document.getElementById("ModalBackgroundMod1");
 				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
 				var lBackgroundMod1Msg = document.getElementById("BackgroundMod1Msg");
@@ -21,13 +22,14 @@ var GEdition = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        lBackgroundMod1Img.value = lDataMap["Img"];
+                        lBackgroundMod1Img.value = lDataMap["img"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"REQ="+"OPEN_BACKGROUNDMOD1"
+					"req="+"OPEN_BACKGROUNDMOD"+
+					"&item="+"item1"+
                     );            
             },
             //===============================================
@@ -56,8 +58,62 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"REQ="+"SAVE_BACKGROUNDMOD1"+
-					"&IMG="+lImg                    
+					"req="+"SAVE_BACKGROUNDMOD1"+
+					"&item="+"item1"+
+					"&img="+lImg                    
+                    );            
+            },
+            //===============================================
+            openBackgroundMod2: function(obj) {
+				var lModalBackgroundMod2 = document.getElementById("ModalBackgroundMod2");
+				var lBackgroundMod2Img = document.getElementsByName("BackgroundMod2Img")[0];
+				var lBackgroundMod2Msg = document.getElementById("BackgroundMod2Msg");
+				lModalBackgroundMod2.style.display = "block";	
+				lBackgroundMod2Msg.style.display = "none";	
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        lBackgroundMod2Img.value = lDataMap["Img"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"OPEN_BACKGROUNDMOD"+
+					"&item="+"item2"+
+                    );            
+            },
+            //===============================================
+            closeBackgroundMod2: function(obj) {
+				var lModalBackgroundMod2 = document.getElementById("ModalBackgroundMod2");
+				lModalBackgroundMod2.style.display = "none";	
+            },
+            //===============================================
+            saveBackgroundMod2: function(obj) {
+				var lBackgroundMod2Img = document.getElementsByName("BackgroundMod2Img")[0];
+				var lBackgroundMod2Msg = document.getElementById("BackgroundMod2Msg");
+                var lImg = lBackgroundMod2Img.value;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        var lHtml = "<i class='fa fa-check-circle'></i> "; 
+                        lHtml += lDataMap["Msg"]; 
+                        lBackgroundMod2Msg.innerHTML = lHtml;
+                        lBackgroundMod2Msg.style.display = "block";
+                        lBackgroundMod2Msg.style.color = "#339933";
+                        location.reload();
+                    }
+                }
+                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"SAVE_BACKGROUNDMOD"+
+					"&item="+"item2"+
+					"&img="+lImg                    
                     );            
             }
             //===============================================

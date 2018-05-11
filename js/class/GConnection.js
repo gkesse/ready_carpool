@@ -80,7 +80,7 @@ var GConnection = (function() {
                 lXmlhttp.open("POST", "/php/connection.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"REQ="+"DISCONNECT"
+					"req="+"DISCONNECT"
                     );            
             },
             //===============================================
@@ -93,16 +93,16 @@ var GConnection = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        if(!lDataMap["STATUS"]) {
+                        if(!lDataMap["status"]) {
                             var lHtml = "<i class='fa fa-exclamation-triangle'></i> "; 
-                            lHtml += lDataMap["MSG"]; 
+                            lHtml += lDataMap["msg"]; 
                             lConnectionMsg.innerHTML = lHtml;
                             lConnectionMsg.style.color = "#ff9933";
                             lConnectionMsg.style.display = "block";
                         }
                         else {
                             var lHtml = "<i class='fa fa-check-circle'></i> "; 
-                            lHtml += lDataMap["MSG"]; 
+                            lHtml += lDataMap["msg"]; 
                             lConnectionMsg.innerHTML = lHtml;
                             lConnectionMsg.style.display = "block";
                             lConnectionMsg.style.color = "#339933";
@@ -113,9 +113,9 @@ var GConnection = (function() {
                 lXmlhttp.open("POST", "/php/connection.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"REQ="+"CONNECT"+
-					"&EMAIL="+email+
-					"&PASSWORD="+pass
+					"req="+"CONNECT"+
+					"&email="+email+
+					"&password="+pass
                     );            
             }
             //===============================================

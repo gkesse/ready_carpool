@@ -124,15 +124,15 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
+            <?php  if(isset($_SESSION["login"]) && in_array("admin", explode("|", $_SESSION["login"]["group"]))) {?>
             <div class="Button BackgroundMod1" onclick="openBackgroundMod1(this)"><i class="fa fa-pencil"></i></div>
             <?php } ?>
             <!-- ============================================ -->
-            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-            <div class="Button BackgroundMod2"><i class="fa fa-pencil"></i></div>
+            <?php  if(isset($_SESSION["login"]) && in_array("admin", explode("|", $_SESSION["login"]["group"]))) {?>
+            <div class="Button BackgroundMod2" onclick="openBackgroundMod2(this)"><i class="fa fa-pencil"></i></div>
             <?php } ?>
             <!-- ============================================ -->
-            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
+            <?php  if(isset($_SESSION["login"]) && in_array("admin", explode("|", $_SESSION["login"]["group"]))) {?>
             <div class="Button BackgroundMod3"><i class="fa fa-pencil"></i></div>
             <?php } ?>
             <!-- ============================================ -->
@@ -196,6 +196,24 @@
                 <div class="Msg" id="BackgroundMod1Msg"></div>
             </div>
             <!-- ============================================ -->
+            <div class="Modal BackgroundMod2" id="ModalBackgroundMod2">
+                <div class="Body">
+                    <div class="Button Close" onclick="closeBackgroundMod2(this)"><i class="fa fa-close"></i></div>
+                    <div class="Title">Modification du fond d'écran du haut</div>
+                    <div class="Text" id="ConnectionForm" method="post" action="">
+                        <div class="Desc">Saisissez les nouvelles données.</div>
+                        <div class="Row">
+                            <div class="Label">Fond d'écran :</div>
+                            <div class="Field"><input class="Data" type="text" name="BackgroundMod2Img"/></div>
+                        </div>
+                        <div class="ButtonMap">
+                            <div class="Item" onclick="saveBackgroundMod2(this)"><i class="fa fa-floppy-o"></i> Enregistrer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Msg" id="BackgroundMod2Msg"></div>
+            </div>
+            <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
                 <!-- ============================================ -->
                 <div class="Logo">
@@ -221,7 +239,7 @@
                         ?>
                         <div class="Link"><a class="Item <?php echo $lActive; ?>" href="<?php echo $lHref; ?>"><?php echo $lName; ?></a></div>
                         <?php } ?>
-                        <?php  if(!isset($_SESSION["LOGIN"])) {?>
+                        <?php  if(!isset($_SESSION["login"])) {?>
                         <div class="Link"><div class="Item" onclick="openConnection(this)">Connexion</div></div>
                         <?php } else { ?>
                         <div class="Link"><div class="Item" onclick="openDisconnection(this)">Déconnexion</div></div>

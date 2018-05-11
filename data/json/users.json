@@ -1,9 +1,9 @@
 {
-    "USERS":
+    "users":
     [
-        {"EMAIL":"superadmin@harriste.com","PASSWORD":"c2881f88f7ff98d6ad3bc0451538b272","GROUP":"SUPER|ADMIN"},
-        {"EMAIL":"admin@harriste.com","PASSWORD":"a74ca3d53179150deb03e0db45ec2894","GROUP":"ADMIN"},
-        {"EMAIL":"taye@harriste.com","PASSWORD":"95356c9dcdb11c42744070fe54f52276","GROUP":"USER"},
-        {"EMAIL":"gahia@harriste.com","PASSWORD":"07e40b57a4a1d8e02119e21d2956fe91","GROUP":"USER"}
+        {"email":"superadmin@harriste.com","password":"c2881f88f7ff98d6ad3bc0451538b272","group":"super|admin"},
+        {"email":"admin@harriste.com","password":"a74ca3d53179150deb03e0db45ec2894","group":"admin"},
+        {"email":"taye@harriste.com","password":"95356c9dcdb11c42744070fe54f52276","group":"user"},
+        {"email":"gahia@harriste.com","password":"07e40b57a4a1d8e02119e21d2956fe91","group":"user"}
     ]
 }

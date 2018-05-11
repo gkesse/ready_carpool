@@ -1,22 +1,24 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/php/class/GAutoloadRegister.php";	
 	//===============================================
-	$lReq = $_REQUEST["REQ"];
+	$lReq = $_REQUEST["req"];
 	//===============================================
-	if($lReq == "OPEN_BACKGROUNDMOD1") {
+	if($lReq == "OPEN_BACKGROUNDMOD") {
+        $lItem = $_REQUEST["item"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");
         $lDataMap = array();
-        $lDataMap["Img"] = $lCssData["Background"]["Item1"]["Img"];
+        $lDataMap["img"] = $lCssData["background"][$lItem]["img"];
         print_r(json_encode($lDataMap));
 	}
 	//===============================================
-	else if($lReq == "SAVE_BACKGROUNDMOD1") {
-        $lImg = $_REQUEST["IMG"];
+	else if($lReq == "SAVE_BACKGROUNDMOD") {
+        $lItem = $_REQUEST["item"];
+        $lImg = $_REQUEST["img"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");
-        $lCssData["Background"]["Item1"]["Img"] = $lImg;
+        $lCssData["background"][$lItem]["img"] = $lImg;
         GJson::Instance()->saveData("data/json/css.json", $lCssData);
         $lDataMap = array();
-        $lDataMap["Msg"] = "Vos modifications ont été enregistrées";
+        $lDataMap["msg"] = "Vos modifications ont été enregistrées";
         print_r(json_encode($lDataMap));
 	}
 	//===============================================

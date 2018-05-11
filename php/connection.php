@@ -1,43 +1,43 @@
 <?php
     require $_SERVER["DOCUMENT_ROOT"]."/php/class/GAutoloadRegister.php";	
 	//===============================================
-	$lReq = $_REQUEST["REQ"];
+	$lReq = $_REQUEST["req"];
 	//===============================================
 	if($lReq == "CONNECT") {
-		$lEmail= $_REQUEST["EMAIL"];
-		$lPassword = $_REQUEST["PASSWORD"];
+		$lEmail= $_REQUEST["email"];
+		$lPassword = $_REQUEST["password"];
         $lUserMap = GJson::Instance()->getData("data/json/users.json");
-        $lExist = GGlobal::Instance()->existData($lUserMap["USERS"], "EMAIL", $lEmail);
+        $lExist = GGlobal::Instance()->existData($lUserMap["users"], "email", $lEmail);
         $lData = array();
         if(!$lExist) {
-            $lData["STATUS"] = false;
-            $lData["MSG"] = "Email n'existe pas";
+            $lData["status"] = false;
+            $lData["msg"] = "Email n'existe pas";
             print_r(json_encode($lData));
             return;
         }
         $lEncrypt = md5($lEmail."|".$lPassword);
-        $lExist = GGlobal::Instance()->existData($lUserMap["USERS"], "PASSWORD", $lEncrypt);
+        $lExist = GGlobal::Instance()->existData($lUserMap["users"], "password", $lEncrypt);
         if(!$lExist) {
-            $lData["STATUS"] = false;
-            $lData["MSG"] = "Mot de passe est incorrect";
+            $lData["status"] = false;
+            $lData["msg"] = "Mot de passe est incorrect";
             print_r(json_encode($lData));
             return;
         }
-        $lData["STATUS"] = true;
-        $lData["MSG"] = "Bonne Connexion";
-        $lGroup = GGlobal::Instance()->getData($lUserMap["USERS"], "EMAIL", $lEmail, "GROUP");
-        if(!isset($_SESSION["LOGIN"])) {
-            $_SESSION["LOGIN"] = array(
-            "EMAIL" => $lEmail,
-            "GROUP" => $lGroup
+        $lData["status"] = true;
+        $lData["msg"] = "Bonne Connexion";
+        $lGroup = GGlobal::Instance()->getData($lUserMap["users"], "email", $lEmail, "group");
+        if(!isset($_SESSION["login"])) {
+            $_SESSION["login"] = array(
+            "email" => $lEmail,
+            "group" => $lGroup
             );
         }
         print_r(json_encode($lData));
 	}
 	//===============================================
 	if($lReq == "DISCONNECT") {
-        if(isset($_SESSION["LOGIN"])) {
-            unset($_SESSION["LOGIN"]);
+        if(isset($_SESSION["login"])) {
+            unset($_SESSION["login"]);
         }
         print_r("Bonne Déconnexion");
 	}
