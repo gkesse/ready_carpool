@@ -323,6 +323,22 @@ textarea:-webkit-autofill:focus {
     z-index: 1;
     color: #ff9933;
 }
+
+.Button.BackgroundMod2 {
+    position: absolute;
+    top: 310px;
+    right: 10px;
+    z-index: 1;
+    color: #ff9933;
+}
+
+.Button.BackgroundMod3 {
+    position: absolute;
+    bottom: 260px;
+    right: 10px;
+    z-index: 1;
+    color: #ff9933;
+}
 /* ============================================== */
 /* Parallax */
 /* ============================================== */

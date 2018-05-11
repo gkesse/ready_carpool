@@ -121,23 +121,23 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <div class="Background Item1">
-                <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
-                <?php } ?>
-            </div>
+            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
+            <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
+            <?php } ?>
             <!-- ============================================ -->
-            <div class="Background Item2">
-                <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
-                <?php } ?>
-            </div>
+            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
+            <div class="Button BackgroundMod2"><i class="fa fa-pencil"></i></div>
+            <?php } ?>
             <!-- ============================================ -->
-            <div class="Background Item3">
-                <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
-                <?php } ?>
-            </div>
+            <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
+            <div class="Button BackgroundMod3"><i class="fa fa-pencil"></i></div>
+            <?php } ?>
+            <!-- ============================================ -->
+            <div class="Background Item1"></div>
+            <!-- ============================================ -->
+            <div class="Background Item2"></div>
+            <!-- ============================================ -->
+            <div class="Background Item3"></div>
             <!-- ============================================ -->
             <div class="Modal Connection" id="ModalConnection">
                 <div class="Body">
