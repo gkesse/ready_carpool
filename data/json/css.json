@@ -1,12 +1,16 @@
 {
-    "Background":
-    {
-        "Item1":{"Img":"/img/background.jpg"},
-        "Item2":{"Img":"/img/background2.jpg"},
-        "Item3":{"Img":"/img/background3.jpg"}
+    "Background": {
+        "Item1": {
+            "Img": "\/img\/background.jpg"
+        },
+        "Item2": {
+            "Img": "\/img\/background2.jpg"
+        },
+        "Item3": {
+            "Img": "\/img\/background3.jpg"
+        }
     },
-    "Modal":
-    {
-        "Img":"/img/modal.jpg"
+    "Modal": {
+        "Img": "\/img\/modal.jpg"
     }
 }
