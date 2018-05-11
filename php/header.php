@@ -121,21 +121,21 @@
         <!-- ============================================ -->
         <div class="HtmlPage">
             <!-- ============================================ -->
-            <div class="Banner Item1">
+            <div class="Background Item1">
                 <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BannerMod"><i class="fa fa-pencil"></i></div>
+                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
                 <?php } ?>
             </div>
             <!-- ============================================ -->
-            <div class="Banner Item2">
+            <div class="Background Item2">
                 <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BannerMod"><i class="fa fa-pencil"></i></div>
+                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
                 <?php } ?>
             </div>
             <!-- ============================================ -->
-            <div class="Banner Item3">
+            <div class="Background Item3">
                 <?php  if(isset($_SESSION["LOGIN"]) && in_array("ADMIN", explode("|", $_SESSION["LOGIN"]["GROUP"]))) {?>
-                <div class="Button BannerMod"><i class="fa fa-pencil"></i></div>
+                <div class="Button BackgroundMod"><i class="fa fa-pencil"></i></div>
                 <?php } ?>
             </div>
             <!-- ============================================ -->
@@ -175,7 +175,7 @@
                 <div class="Msg" id="DisconnectionMsg"></div>
             </div>
             <!-- ============================================ -->
-            <div class="Modal Disconnection" id="ModalDisconnection">
+            <div class="Modal Background1" id="ModalDisconnection">
                 <div class="Body">
                     <div class="Button Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
                     <div class="Title">Déconnexion</div>

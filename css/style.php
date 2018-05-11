@@ -166,7 +166,7 @@ textarea:-webkit-autofill:focus {
     top: 0px;
     width: 100%;
     height: 100vh;
-    background-image: url("<?php echo $lCssData["Connection"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["Modal"]["Img"]; ?>");
     background-color: rgba(255,255,255,0.2);
 }
 
@@ -256,38 +256,38 @@ textarea:-webkit-autofill:focus {
     display: none;
 }
 /* ============================================== */
-/* Banner */
+/* Background */
 /* ============================================== */
-.Banner {
+.Background {
     min-height: 300px;
     background-color: #5CAF50;
-    background-image: url("<?php echo $lCssData["Banner"]["Item1"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["Background"]["Item1"]["Img"]; ?>");
     background-position: center;
     position: absolute;
 }
 
-.Banner.Item1 {
+.Background.Item1 {
     top: 0px;
     left: 0px;
     right: 0px;
     z-index: -1;
 }
 
-.Banner.Item2 {
+.Background.Item2 {
     top: 300px;
     bottom: 300px;
     left: 0px;
     right: 0px;
     z-index: -1;
-    background-image: url("<?php echo $lCssData["Banner"]["Item2"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["Background"]["Item2"]["Img"]; ?>");
 }
 
-.Banner.Item3 {
+.Background.Item3 {
     bottom: 0px;
     left: 0px;
     right: 0px;
     z-index: -1;
-    background-image: url("<?php echo $lCssData["Banner"]["Item3"]["Img"]; ?>");
+    background-image: url("<?php echo $lCssData["Background"]["Item3"]["Img"]; ?>");
 }
 /* ============================================== */
 /* Button */
@@ -316,7 +316,7 @@ textarea:-webkit-autofill:focus {
     right: 5px;
 }
 
-.Button.BannerMod {
+.Button.BackgroundMod {
     position: absolute;
     top: 10px;
     right: 10px;
