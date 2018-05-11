@@ -181,23 +181,10 @@ var GEdition = (function() {
 				var lModalHomeText = document.getElementById("ModalHomeText");
 				var lHomeTextData = document.getElementById("HomeTextData");
 				var lHomeTextCtn = document.getElementById("HomeTextCtn");
+				var lHomeTextMsg = document.getElementById("HomeTextMsg");
                 lHomeTextData.innerHTML = lHomeTextCtn.innerHTML;
 				lModalHomeText.style.display = "block";	
 				lHomeTextMsg.style.display = "none";	
-                var lXmlhttp = new XMLHttpRequest();
-                lXmlhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        var lData = this.responseText;
-                        var lDataMap = JSON.parse(lData);
-                        lHomeTextImg.value = lDataMap["img"];
-                    }
-                }
-                lXmlhttp.open("POST", "/php/edition.php", true);
-                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                lXmlhttp.send(
-					"req="+"OPEN_HOME"+
-					"&item="+"item3"
-                    );       
             },
             //===============================================
             closeHomeText: function(obj) {
@@ -206,9 +193,9 @@ var GEdition = (function() {
             },
             //===============================================
             saveHomeText: function(obj) {
-				var lHomeTextImg = document.getElementsByName("HomeTextImg")[0];
+				var lHomeTextData = document.getElementById("HomeTextData");
 				var lHomeTextMsg = document.getElementById("HomeTextMsg");
-                var lImg = lHomeTextImg.value;
+                var lText = lHomeTextData.innerHTML;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -225,9 +212,8 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"SAVE_BACKGROUNDMOD"+
-					"&item="+"item3"+
-					"&img="+lImg                    
+					"req="+"SAVE_HOMETEXT"+
+					"&text="+lText
                     );         
             }
             //===============================================
