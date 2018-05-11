@@ -133,7 +133,7 @@
             <?php } ?>
             <!-- ============================================ -->
             <?php  if(isset($_SESSION["login"]) && in_array("admin", explode("|", $_SESSION["login"]["group"]))) {?>
-            <div class="Button BackgroundMod3"><i class="fa fa-pencil"></i></div>
+            <div class="Button BackgroundMod3" onclick="openBackgroundMod3(this)"><i class="fa fa-pencil"></i></div>
             <?php } ?>
             <!-- ============================================ -->
             <div class="Background Item1"></div>
@@ -212,6 +212,24 @@
                     </div>
                 </div>
                 <div class="Msg" id="BackgroundMod2Msg"></div>
+            </div>
+            <!-- ============================================ -->
+            <div class="Modal BackgroundMod3" id="ModalBackgroundMod3">
+                <div class="Body">
+                    <div class="Button Close" onclick="closeBackgroundMod3(this)"><i class="fa fa-close"></i></div>
+                    <div class="Title">Modification du fond d'écran du haut</div>
+                    <div class="Text" id="ConnectionForm" method="post" action="">
+                        <div class="Desc">Saisissez les nouvelles données.</div>
+                        <div class="Row">
+                            <div class="Label">Fond d'écran :</div>
+                            <div class="Field"><input class="Data" type="text" name="BackgroundMod3Img"/></div>
+                        </div>
+                        <div class="ButtonMap">
+                            <div class="Item" onclick="saveBackgroundMod3(this)"><i class="fa fa-floppy-o"></i> Enregistrer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Msg" id="BackgroundMod3Msg"></div>
             </div>
             <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
