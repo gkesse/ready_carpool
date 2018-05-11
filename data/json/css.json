@@ -1,16 +1,31 @@
 {
     "background": {
         "item1": {
-            "img": "\/img\/background2.jpg"
+            "img": "\/img\/background.jpg"
         },
         "item2": {
             "img": "\/img\/background.jpg"
         },
         "item3": {
-            "img": "\/img\/background2.jpg"
+            "img": "\/img\/background3.jpg"
         }
     },
     "modal": {
         "img": "\/img\/modal.jpg"
+    },
+    "home": {
+        "img": "\/img\/img_parallax.jpg"
+    },
+    "presentation": {
+        "img": "\/img\/img_parallax2.jpg"
+    },
+    "ministry": {
+        "img": "\/img\/img_parallax3.jpg"
+    },
+    "events": {
+        "img": "\/img\/img_parallax4.jpg"
+    },
+    "error": {
+        "img": "\/img\/erreur.jpg"
     }
 }

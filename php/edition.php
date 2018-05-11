@@ -22,4 +22,14 @@
         print_r(json_encode($lDataMap));
 	}
 	//===============================================
+	else if($lReq == "SAVE_HOMETEXT") {
+        $lText = $_REQUEST["text"];
+        $lHomeData = GJson::Instance()->getData("data/json/Accueil.json");
+        $lHomeData["home"]["text"] = $lText;
+        GJson::Instance()->saveData("data/json/Accueil.json", $lHomeData);
+        $lDataMap = array();
+        $lDataMap["msg"] = $lText;
+        print_r(json_encode($lDataMap));
+	}
+	//===============================================
 ?>

@@ -1,15 +1,24 @@
 {
-    "sitemap":"yes",
-    "meta_data":
-    {
-        "meta_desc":
-        [
-            "L'Église Harriste est une Église indépendante de type prophétique qui a foi en Jésus Christ.",
-            "Implantée en Côte d'Ivoire, Elle a été fondée au début du XXe siècle par William Wade Harris Wury.",
-            "L'Église Harriste fait partie du Conseil Œcuménisme des Églises (COE) depuis 1998.",
-            "L'Église Harriste de France vous accueille et vous accompagne dans votre vie chrétienne."
+    "sitemap": "yes",
+    "meta_data": {
+        "meta_desc": [
+            "L'\u00c9glise Harriste est une \u00c9glise ind\u00e9pendante de type proph\u00e9tique qui a foi en J\u00e9sus Christ.",
+            "Implant\u00e9e en C\u00f4te d'Ivoire, Elle a \u00e9t\u00e9 fond\u00e9e au d\u00e9but du XXe si\u00e8cle par William Wade Harris Wury.",
+            "L'\u00c9glise Harriste fait partie du Conseil \u0152cum\u00e9nisme des \u00c9glises (COE) depuis 1998.",
+            "L'\u00c9glise Harriste de France vous accueille et vous accompagne dans votre vie chr\u00e9tienne."
         ],
-        "meta_cano":"/Accueil/"
+        "meta_cano": "\/Accueil\/"
+    },
+    "home": {
+        "text": "Accueil Harriste de France bg<br>"
+    },
+    "presentation": {
+        "text": "presentation Harriste de France"
+    },
+    "ministry": {
+        "text": "ministry Harriste de France"
+    },
+    "events": {
+        "text": "events Harriste de France"
     }
 }
-                        

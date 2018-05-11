@@ -10,6 +10,8 @@ var GEdition = (function() {
 
             },
             //===============================================
+            // BackgroundMod1
+            //===============================================
             openBackgroundMod1: function(obj) {
 				var lModalBackgroundMod1 = document.getElementById("ModalBackgroundMod1");
 				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
@@ -62,6 +64,8 @@ var GEdition = (function() {
 					"&img="+lImg                    
                     );        
             },
+            //===============================================
+            // BackgroundMod2
             //===============================================
             openBackgroundMod2: function(obj) {
 				var lModalBackgroundMod2 = document.getElementById("ModalBackgroundMod2");
@@ -116,6 +120,8 @@ var GEdition = (function() {
                     );         
             },
             //===============================================
+            // BackgroundMod3
+            //===============================================
             openBackgroundMod3: function(obj) {
 				var lModalBackgroundMod3 = document.getElementById("ModalBackgroundMod3");
 				var lBackgroundMod3Img = document.getElementsByName("BackgroundMod3Img")[0];
@@ -166,6 +172,48 @@ var GEdition = (function() {
 					"req="+"SAVE_BACKGROUNDMOD"+
 					"&item="+"item3"+
 					"&img="+lImg                    
+                    );         
+            },
+            //===============================================
+            // HomeText
+            //===============================================
+            openHomeText: function(obj) {
+				var lModalHomeText = document.getElementById("ModalHomeText");
+				var lHomeTextData = document.getElementById("HomeTextData");
+				var lHomeTextCtn = document.getElementById("HomeTextCtn");
+				var lHomeTextMsg = document.getElementById("HomeTextMsg");
+                lHomeTextData.innerHTML = lHomeTextCtn.innerHTML;
+				lModalHomeText.style.display = "block";	
+				lHomeTextMsg.style.display = "none";	
+            },
+            //===============================================
+            closeHomeText: function(obj) {
+				var lModalHomeText = document.getElementById("ModalHomeText");
+				lModalHomeText.style.display = "none";	
+            },
+            //===============================================
+            saveHomeText: function(obj) {
+				var lHomeTextData = document.getElementById("HomeTextData");
+				var lHomeTextMsg = document.getElementById("HomeTextMsg");
+                var lText = lHomeTextData.innerHTML;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        var lHtml = "<i class='fa fa-check-circle'></i> "; 
+                        lHtml += lDataMap["msg"]; 
+                        lHomeTextMsg.innerHTML = lHtml;
+                        lHomeTextMsg.style.display = "block";
+                        lHomeTextMsg.style.color = "#339933";
+                        location.reload();
+                    }
+                }
+                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"SAVE_HOMETEXT"+
+					"&text="+lText
                     );         
             }
             //===============================================

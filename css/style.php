@@ -143,7 +143,6 @@ textarea:-webkit-autofill:focus {
 
 .Header .Menu .Link .Item.Active {
     background-color: #ff0000;
-    background-image: url("/img/active2.jpg");
 }
 
 .Header .Menu .Link.Icon {
@@ -159,9 +158,8 @@ textarea:-webkit-autofill:focus {
 .Modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     padding: 10px;
-    padding-top: 50vh;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -174,7 +172,6 @@ textarea:-webkit-autofill:focus {
     background-color: #fefefe;
     margin: auto;
     max-width: 500px;
-    margin-top: -100px;
     position: relative;
 }
 
@@ -202,6 +199,13 @@ textarea:-webkit-autofill:focus {
     position: relative;
 }
 
+.Modal .Body .Text .Col {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 4px 0px;
+    position: relative;
+}
+
 .Modal .Body .Text .Row .Label {
     background-color: rgba(0,0,0,0.2);
     min-width: 150px; 
@@ -212,11 +216,23 @@ textarea:-webkit-autofill:focus {
     left: 0px;
 }
 
+.Modal .Body .Text .Col .Label {
+    background-color: rgba(0,0,0,0.2);
+    line-height: 30px;   
+    padding: 0px 10px;
+}
+
 .Modal .Body .Text .Row .Field {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;   
     margin-left: 150px;
+}
+
+.Modal .Body .Text .Col .Field {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    min-height: 300px;   
 }
 
 .Modal .Body .Text .Row .Field .Data {
@@ -225,6 +241,14 @@ textarea:-webkit-autofill:focus {
     height: 100%;   
     width: 100%;
     padding: 5px 10px;
+}
+
+.Modal .Body .Text .Col .Field .Data {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.0);
+    height: 300px;   
+    padding: 5px 10px;
+    overflow: auto; 
 }
 
 .Modal .Body .Text .ButtonMap {
@@ -339,11 +363,31 @@ textarea:-webkit-autofill:focus {
     z-index: 1;
     color: #ff9933;
 }
+
+.Button.HomeImg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    color: #ff9933;
+}
+
+.Button.HomeText {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: #ff9933;
+}
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
+.Parallax {
+    position: relative;
+}
+
 .Parallax .Img {
-    background-image: url("/img/img_parallax.jpg");
+    background-image: url("<?php echo $lCssData["home"]["img"]; ?>");
     min-height: 500px;
     position: relative;
     opacity: 0.65;
@@ -377,6 +421,7 @@ textarea:-webkit-autofill:focus {
 }
 
 .Parallax .Body {
+    position: relative;
     min-height: 500px;
     background-color: #803300;
     font-size: 20px;
@@ -390,19 +435,19 @@ textarea:-webkit-autofill:focus {
 }
 
 .Parallax.Item2 .Img {
-    background-image: url("/img/img_parallax2.jpg");
+    background-image: url("<?php echo $lCssData["presentation"]["img"]; ?>");
 }
 
 .Parallax.Item3 .Img {
-    background-image: url("/img/img_parallax3.jpg");
+    background-image: url("<?php echo $lCssData["ministry"]["img"]; ?>");
 }
 
 .Parallax.Item4 .Img {
-    background-image: url("/img/img_parallax4.jpg");
+    background-image: url("<?php echo $lCssData["events"]["img"]; ?>");
 }
 
 .Parallax.Item5 .Img {
-    background-image: url("/img/erreur.jpg");
+    background-image: url("<?php echo $lCssData["error"]["img"]; ?>");
 }
 
 .Parallax.Item2 .Body {
