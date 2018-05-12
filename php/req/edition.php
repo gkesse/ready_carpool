@@ -26,7 +26,7 @@
             else if($lViewType == "icon"){
                 $lDataFile .= "<div class='DataCol'>";
             }
-			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\")'>";
+			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\",\"".$lFileName."\")'>";
             if($lViewType == "list") {
                 $lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
             }

@@ -5,6 +5,7 @@ var GEdition = (function() {
     var m_curDir;
     var m_rootDir;
     var m_viewType;
+    var m_selectFile;
     //===============================================
     var Container = function() {
         return {
@@ -13,6 +14,7 @@ var GEdition = (function() {
                 m_curDir = "";
                 m_rootDir = "img";
                 m_viewType = "icon";
+                m_selectFile = "";
             },
             //===============================================
             // BackgroundMod1
@@ -130,7 +132,7 @@ var GEdition = (function() {
                     );        
             },
             //===============================================
-            openFile: function(obj, type, name) {
+            openFile: function(obj, type, name, filename) {
 				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
 				for(var i = 0; i < lDataViewBlock.length; i++) {
 					var lBlock = lDataViewBlock[i];
@@ -138,6 +140,7 @@ var GEdition = (function() {
 				}
 				if(!type) {
                     obj.className += " Active";
+                    m_selectFile = filename;
 					return;
 				}
                 m_curDir += "/" + name;
