@@ -476,7 +476,8 @@ textarea:-webkit-autofill:focus {
     color: #051039;
 }
 
-.DataView .DataCol .Block .Icon .ImgView {
+.DataView .DataCol .Block .Icon .ImgView,
+.Block.Overflow .Icon .ImgView {
     width:50px;
     height:50px;
 }
