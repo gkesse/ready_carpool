@@ -26,7 +26,7 @@
             else if($lViewType == "icon"){
                 $lDataFile .= "<div class='DataCol'>";
             }
-			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\");'>";
+			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\")'>";
             if($lViewType == "list") {
                 $lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
             }
@@ -48,25 +48,29 @@
 		
 		$lFilePath = GFilesystem::Instance()->getPath2($lRootPath, $lDirPath);
         
-		$lDataMenu = '';
-		$lDataMenu .= '<div class="DataViewLink">';
-		$lDataMenu .= '<div class="Link" onclick="openLink(this);">';
-		$lDataMenu .= '<i class="fa fa-folder clrg"></i>';
-		$lDataMenu .= '</div> ';
+        $lIndex = 0;
+		$lDataMenu = "";
+		$lDataMenu .= "<div class='DataViewLink'>";
+		$lDataMenu .= "<div class='Link DataViewLinkItem' onclick='openLink(this,".$lIndex.")'>";
+		$lDataMenu .= "<i class='fa fa-folder'></i>";
+		$lDataMenu .= "</div> ";
+        $lIndex++;
+        
 		if($lFilePath != "") {
 			$lFilePathArr = explode("/", $lFilePath);
 			for($i = 0; $i < count($lFilePathArr); $i++) {
 				$lFilePathItem = $lFilePathArr[$i];
 				if($lFilePathItem == "") continue;
-				$lDataMenu .= '<div class="Sep">';
-				$lDataMenu .= '<i class="fa fa-chevron-right"></i>';
-				$lDataMenu .= '</div>';
-				$lDataMenu .= '<div class="Link" onclick="openLink(this);">';
+				$lDataMenu .= "<div class='Sep'>";
+				$lDataMenu .= "<i class='fa fa-chevron-right'></i>";
+				$lDataMenu .= "</div>";
+				$lDataMenu .= "<div class='Link DataViewLinkItem' onclick='openLink(this,".$lIndex.")'>";
 				$lDataMenu .= $lFilePathItem;
-				$lDataMenu .= '</div> ';
+				$lDataMenu .= "</div> ";
+                $lIndex++;
 			}
 		}
-		$lDataMenu .= '</div> ';
+		$lDataMenu .= "</div> ";
 		$lDataMap = array();
 		$lDataMap["menu"] = $lDataMenu;
 		$lDataMap["file"] = $lDataFile;

@@ -31,6 +31,10 @@ function openFile(obj, type, name) {
 	GEdition.Instance().openFile(obj, type, name);
 }
 //===============================================
+function openLink(obj, index) {
+	GEdition.Instance().openLink(obj, index);
+}
+//===============================================
 // BackgroundMod2
 //===============================================
 function openBackgroundMod2(obj) {

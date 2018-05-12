@@ -132,11 +132,6 @@ var GEdition = (function() {
             //===============================================
             openFile: function(obj, type, name) {
 				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
-				/*var lFileEdit = document.getElementById("FileEdit");
-                var lDirName = obj.innerHTML;
-				var lEditorDir = GConfig.Instance().getData("EditorDir");
-				var lDirPath = lEditorDir + "/" + lDirName;
-				var lObjParent = obj.parentNode;*/
 				for(var i = 0; i < lDataViewBlock.length; i++) {
 					var lBlock = lDataViewBlock[i];
 					lBlock.className = lBlock.className.replace(" Active", "");
@@ -146,6 +141,19 @@ var GEdition = (function() {
 					return;
 				}
                 m_curDir += "/" + name;
+				this.openBackgroundMod1Modify(obj);
+            },
+            //===============================================
+            openLink: function(obj, index) {
+				var lDataViewLinkItem = document.getElementsByClassName("DataViewLinkItem");
+				var lDirPath = "";
+				for(var i = 0; i < lDataViewLinkItem.length; i ++) {
+					var lLinkItem = lDataViewLinkItem[i];
+					var lLinkName = lLinkItem.innerText;
+					lDirPath += "/" + lLinkName;
+					if(i == index) break;
+				}
+                m_curDir = lDirPath;
 				this.openBackgroundMod1Modify(obj);
             },
             //===============================================
