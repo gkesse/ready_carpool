@@ -123,29 +123,21 @@ var GEdition = (function() {
             },
             //===============================================
             openFile: function(obj, type) {
-                alert(type);
-				/*var lFileList = document.getElementsByClassName("FileList");
-				var lFileEdit = document.getElementById("FileEdit");
+				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
+				/*var lFileEdit = document.getElementById("FileEdit");
                 var lDirName = obj.innerHTML;
 				var lEditorDir = GConfig.Instance().getData("EditorDir");
 				var lDirPath = lEditorDir + "/" + lDirName;
-				var lObjParent = obj.parentNode;
-				for(var i = 0; i < lFileList.length; i++) {
-					var lNode = lFileList[i];
-					lNode.className = lNode.className.replace(" bgrc", "");
+				var lObjParent = obj.parentNode;*/
+				for(var i = 0; i < lDataViewBlock.length; i++) {
+					var lBlock = lDataViewBlock[i];
+					lBlock.className = lBlock.className.replace(" Active", "");
 				}
-				if(!dir) {
-					var lRes = confirm("Êtes-vous sûr de vouloir sélectionner ce fichier ?");
-					if(!lRes) return;
-					lObjParent.className += " bgrc";
-					var lEditorFile = lDirPath;
-					lEditorFile = lEditorFile.replace(/\\/gi, "/");
-					lFileEdit.innerHTML = lEditorFile;
-					GConfig.Instance().setData("EditorFile", lEditorFile);
-					this.readFile();
+				if(!type) {
+                    obj.className += " Active";
 					return;
 				}
-				this.selectFile(lDirPath);*/
+				/*this.selectFile(lDirPath);*/
             },
             //===============================================
             // BackgroundMod2

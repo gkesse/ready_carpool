@@ -449,6 +449,11 @@ textarea:-webkit-autofill:focus {
     background-color: rgba(0,0,0,0.2);
 }
 
+.DataView .DataCol .Block.Active {
+    background-color: #051039;
+    color: white;
+}
+
 .DataView .DataCol .Block .Icon {
     background-color: rgba(255,0,0,0.0);
 }
