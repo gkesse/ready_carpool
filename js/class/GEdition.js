@@ -2,12 +2,17 @@
 var GEdition = (function() {
     //===============================================
     var m_instance;
+    var m_curDir;
+    var m_rootDir;
+    var m_viewType;
     //===============================================
     var Container = function() {
         return {
             //===============================================
             init: function(obj) {
-
+                m_curDir = "";
+                m_rootDir = "img";
+                m_viewType = "icon";
             },
             //===============================================
             // BackgroundMod1
@@ -85,9 +90,9 @@ var GEdition = (function() {
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUND_MODIFY"+
-					"&root="+"img"+
-					"&dir="+""+
-					"&view="+"icon"
+					"&root="+m_rootDir+
+					"&dir="+m_curDir+
+					"&view="+m_viewType
                     );    
             },
             //===============================================
@@ -122,7 +127,7 @@ var GEdition = (function() {
                     );        
             },
             //===============================================
-            openFile: function(obj, type) {
+            openFile: function(obj, type, name) {
 				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
 				/*var lFileEdit = document.getElementById("FileEdit");
                 var lDirName = obj.innerHTML;
@@ -137,7 +142,8 @@ var GEdition = (function() {
                     obj.className += " Active";
 					return;
 				}
-				/*this.selectFile(lDirPath);*/
+                m_curDir = name;
+				this.openBackgroundMod1Modify(obj);
             },
             //===============================================
             // BackgroundMod2
