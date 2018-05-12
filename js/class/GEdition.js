@@ -2,12 +2,17 @@
 var GEdition = (function() {
     //===============================================
     var m_instance;
+    var m_curDir;
+    var m_rootDir;
+    var m_viewType;
     //===============================================
     var Container = function() {
         return {
             //===============================================
             init: function(obj) {
-
+                m_curDir = "";
+                m_rootDir = "img";
+                m_viewType = "icon";
             },
             //===============================================
             // BackgroundMod1
@@ -69,8 +74,9 @@ var GEdition = (function() {
             //===============================================
             openBackgroundMod1Modify: function(obj) {
 				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
-				var lDataBackgroundMod1Modify = document.getElementById("DataBackgroundMod1Modify");
+				var lBackgroundMod1ModifyData = document.getElementById("BackgroundMod1ModifyData");
 				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
+				var lBackgroundMod1ModifyLabel = document.getElementById("BackgroundMod1ModifyLabel");
 				lModalBackgroundMod1Modify.style.display = "block";	
 				lBackgroundMod1ModifyMsg.style.display = "none";	
                 var lXmlhttp = new XMLHttpRequest();
@@ -78,16 +84,17 @@ var GEdition = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        lDataBackgroundMod1Modify.innerHTML = lDataMap["file"];
+                        lBackgroundMod1ModifyData.innerHTML = lDataMap["file"];
+                        lBackgroundMod1ModifyLabel.innerHTML = lDataMap["menu"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUND_MODIFY"+
-					"&root="+"img"+
-					"&dir="+""+
-					"&view="+"icon"
+					"&root="+m_rootDir+
+					"&dir="+m_curDir+
+					"&view="+m_viewType
                     );    
             },
             //===============================================
@@ -122,7 +129,7 @@ var GEdition = (function() {
                     );        
             },
             //===============================================
-            openFile: function(obj, type) {
+            openFile: function(obj, type, name) {
 				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
 				/*var lFileEdit = document.getElementById("FileEdit");
                 var lDirName = obj.innerHTML;
@@ -137,7 +144,8 @@ var GEdition = (function() {
                     obj.className += " Active";
 					return;
 				}
-				/*this.selectFile(lDirPath);*/
+                m_curDir = name;
+				this.openBackgroundMod1Modify(obj);
             },
             //===============================================
             // BackgroundMod2
