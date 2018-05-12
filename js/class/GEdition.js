@@ -86,7 +86,8 @@ var GEdition = (function() {
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUND_MODIFY"+
 					"&root="+"img"+
-					"&dir="+""
+					"&dir="+""+
+					"&view="+"list"
                     );    
             },
             //===============================================

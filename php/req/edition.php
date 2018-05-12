@@ -14,16 +14,19 @@
 	else if($lReq == "OPEN_BACKGROUND_MODIFY") {        
 		$lRootPath = $_REQUEST["root"];
 		$lDirPath = $_REQUEST["dir"];
+		$lViewType = $_REQUEST["view"];
 		$lDirMap = GFilesystem::Instance()->getFile2($lRootPath, $lDirPath);
 		$lDataFile = "";
 		$lDataFile .= "<div class='DataView'>";
 		for($i = 0; $i < count($lDirMap); $i++) {
 			$lDirName = $lDirMap[$i];
+            if($lDirName[3] != "img") continue;
 			$lFileName = "/".$lDirName[3]."/".$lDirName[1];
-			$lDataFile .= "<div class='DataCol'>";
+            if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
+            else {$lDataFile .= "<div class='DataCol'>";}
 			$lDataFile .= "<div class='Block'>";
-			//$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
-			$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";
+            if($lViewType == "list") {$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";}
+            else {$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";}
 			$lDataFile .= "<div class='Name'";
 			$lDataFile .= "onclick='openFile(this, \"".$lDirName[3]."\");'>";
 			$lDataFile .= $lDirName[1];

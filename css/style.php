@@ -437,6 +437,10 @@ textarea:-webkit-autofill:focus {
     text-align: center;
 }
 
+.DataView .DataCol .Block.Active {
+    background-color: rgba(0,0,255,0.2);
+}
+
 .DataView .DataCol .Block:hover {
     background-color: rgba(0,0,0,0.4);
 }
