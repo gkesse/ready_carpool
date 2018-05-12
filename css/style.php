@@ -233,8 +233,14 @@ textarea:-webkit-autofill:focus {
 
 .Modal .Body .Text .Col .Label {
     background-color: rgba(0,0,0,0.2);
-    line-height: 30px;   
-    padding: 0px 10px;
+    padding: 5px 10px;
+}
+
+.Modal .Body .Text .Col .Label.File {
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #051039;
+    font-weight: bold;
 }
 
 .Modal .Body .Text .Col .Field {

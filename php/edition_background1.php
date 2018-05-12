@@ -28,6 +28,7 @@
             <div class="Desc">Sélectionner le nouveau fichier.</div>
             <div class="Col">
                 <div class="Label" id="BackgroundMod1ModifyLabel"></div>
+                <div class="Label File"><span>File : </span><span id="BackgroundMod1ModifyFile"></span></div>
                 <div class="Field"><div class="Data View" id="BackgroundMod1ModifyData"></div></div>
             </div>
             <div class="ButtonMap">
