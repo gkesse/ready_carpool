@@ -21,7 +21,7 @@ var GEdition = (function() {
             //===============================================
             openBackgroundMod1: function(obj) {
 				var lModalBackgroundMod1 = document.getElementById("ModalBackgroundMod1");
-				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
+				var lBackgroundMod1Img = document.getElementById("BackgroundMod1Img");
 				var lBackgroundMod1Msg = document.getElementById("BackgroundMod1Msg");
 				lModalBackgroundMod1.style.display = "block";	
 				lBackgroundMod1Msg.style.display = "none";	
@@ -30,7 +30,18 @@ var GEdition = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        lBackgroundMod1Img.value = lDataMap["img"];
+                        var lNameMap = lDataMap['img'].split("/");
+                        var lName = lNameMap[lNameMap.length - 1];
+                        var lHtml = "";
+                        lHtml += "<div class='Block Overflow'>";
+                        lHtml += "<div class='Icon'>";
+                        lHtml += "<img class='ImgView' src='"+lDataMap['img']+"'/>";
+                        lHtml += "</div>";
+                        lHtml += "<div class='Name'>";
+                        lHtml += lName;
+                        lHtml += "</div>";
+                        lHtml += "</div>";
+                        lBackgroundMod1Img.innerHTML = lHtml;
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
@@ -141,7 +152,6 @@ var GEdition = (function() {
 				if(!type) {
                     obj.className += " Active";
                     m_selectFile = filename;
-                    alert(m_selectFile);
 					return;
 				}
                 m_curDir += "/" + name;

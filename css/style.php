@@ -240,19 +240,26 @@ textarea:-webkit-autofill:focus {
 .Modal .Body .Text .Col .Field {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
-    min-height: 300px;   
 }
 
 .Modal .Body .Text .Col .Field .Data {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.0);
-    height: 300px;   
+    min-height: 300px;   
     padding: 5px 10px;
     overflow: auto; 
 }
 
 .Modal .Body .Text .Col .Field .Data.View {
     padding: 5px;
+}
+
+.Modal .Body .Text .Col .Field .Data.Min {
+    min-height: 0px;
+}
+
+.Modal .Body .Text .Col .Field .Data.Center {
+    text-align: center;
 }
 
 .Modal .Body .Text .ButtonMap {
@@ -470,10 +477,6 @@ textarea:-webkit-autofill:focus {
 
 .DataView .DataCol .Block .Name {
     word-break: break-all;
-}
-
-.DataViewLink {
-
 }
 
 .DataViewLink .Link {
