@@ -38,8 +38,7 @@
                     $lDataFile .= "<div class='Icon'><i class='IconView fa fa-".$lDirName[2]."'></i></div>";
                 }
             }
-			$lDataFile .= "<div class='Name'";
-			$lDataFile .= "onclick='openFile22(this, \"".$lDirName[3]."\");'>";
+			$lDataFile .= "<div class='Name'>";
 			$lDataFile .= $lDirName[1];
 			$lDataFile .= "</div>";
 			$lDataFile .= "</div>";
@@ -48,6 +47,7 @@
 		$lDataFile .= "</div>";
 		
 		$lFilePath = GFilesystem::Instance()->getPath2($lRootPath, $lDirPath);
+        
 		$lDataMenu = '';
 		$lDataMenu .= '<div class="DataViewLink">';
 		$lDataMenu .= '<div class="Link" onclick="openLink(this);">';

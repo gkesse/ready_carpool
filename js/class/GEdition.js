@@ -86,6 +86,7 @@ var GEdition = (function() {
                         var lDataMap = JSON.parse(lData);
                         lBackgroundMod1ModifyData.innerHTML = lDataMap["file"];
                         lBackgroundMod1ModifyLabel.innerHTML = lDataMap["menu"];
+                        m_curDir = lDataMap["dir"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
@@ -144,7 +145,7 @@ var GEdition = (function() {
                     obj.className += " Active";
 					return;
 				}
-                m_curDir = name;
+                m_curDir += "/" + name;
 				this.openBackgroundMod1Modify(obj);
             },
             //===============================================
