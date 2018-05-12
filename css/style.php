@@ -4,7 +4,7 @@
     $lCssData = GJson::Instance()->getData("data/json/css.json");
 ?>
 /* ============================================== */
-/* Html Body */
+/* HtmlBody */
 /* ============================================== */
 * {
     margin: 0;
@@ -270,6 +270,14 @@ textarea:-webkit-autofill:focus {
     background-color: rgba(0,0,0,0.4);
 }
 
+.Modal .Body .Text .ButtonMap.Left {
+    text-align: left;
+}
+
+.Modal .Body .Text .ButtonMap.Center {
+    text-align: center;
+}
+
 .Modal .Msg {
     background-color: rgba(0,0,0,0.4);
     margin: auto;
@@ -379,6 +387,36 @@ textarea:-webkit-autofill:focus {
     z-index: 1;
     color: #ff9933;
 }
+/* ============================================== */
+/* DataView */
+/* ============================================== */
+.DataView {
+
+}
+
+.DataView .DataRow {
+    border-top: 1px dotted rgba(0,0,0,0.2);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.DataView .DataRow:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.DataView .DataRow:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.DataView .DataRow .Icon {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.DataView .DataRow .Name {
+    display: inline-block;
+}
+
 /* ============================================== */
 /* Parallax */
 /* ============================================== */

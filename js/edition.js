@@ -13,6 +13,20 @@ function saveBackgroundMod1(obj) {
 	GEdition.Instance().saveBackgroundMod1(obj);
 }
 //===============================================
+// BackgroundMod1Modify
+//===============================================
+function openBackgroundMod1Modify(obj) {
+	GEdition.Instance().openBackgroundMod1Modify(obj);
+}
+//===============================================
+function closeBackgroundMod1Modify(obj) {
+	GEdition.Instance().closeBackgroundMod1Modify(obj);
+}
+//===============================================
+function saveBackgroundMod1Modify(obj) {
+	GEdition.Instance().saveBackgroundMod1Modify(obj);
+}
+//===============================================
 // BackgroundMod2
 //===============================================
 function openBackgroundMod2(obj) {
