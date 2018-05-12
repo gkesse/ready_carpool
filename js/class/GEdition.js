@@ -59,9 +59,7 @@ var GEdition = (function() {
             },
             //===============================================
             saveBackgroundMod1: function(obj) {
-				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
 				var lBackgroundMod1Msg = document.getElementById("BackgroundMod1Msg");
-                var lImg = lBackgroundMod1Img.value;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -78,9 +76,9 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"SAVE_BACKGROUNDMOD"+
+					"req="+"SAVE_BACKGROUND_MOD"+
 					"&item="+"item1"+
-					"&img="+lImg                    
+					"&img="+m_selectFile                   
                     );        
             },
             //===============================================

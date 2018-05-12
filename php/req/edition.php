@@ -79,7 +79,7 @@
 		print_r(json_encode($lDataMap));		
 	}
 	//===============================================
-	else if($lReq == "SAVE_BACKGROUNDMOD") {
+	else if($lReq == "SAVE_BACKGROUND_MOD") {
         $lItem = $_REQUEST["item"];
         $lImg = $_REQUEST["img"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");
