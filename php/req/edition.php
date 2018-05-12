@@ -23,7 +23,7 @@
 			$lDataFile .= "<div class='DataCol'>";
 			$lDataFile .= "<div class='Block'>";
 			//$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
-			$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:auto;height:100%;'/></div>";
+			$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";
 			$lDataFile .= "<div class='Name'";
 			$lDataFile .= "onclick='openFile(this, \"".$lDirName[3]."\");'>";
 			$lDataFile .= $lDirName[1];
