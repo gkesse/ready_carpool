@@ -14,7 +14,7 @@ var GEdition = (function() {
                 m_curDir = "";
                 m_rootDir = "img";
                 m_viewType = "icon";
-                m_selectFile = "";
+                m_selectFile = "vvvvvvvvvvv";
             },
             //===============================================
             // BackgroundMod1
@@ -35,13 +35,14 @@ var GEdition = (function() {
                         var lHtml = "";
                         lHtml += "<div class='Block Overflow'>";
                         lHtml += "<div class='Icon'>";
-                        lHtml += "<img class='ImgView' src='"+lDataMap['img']+"'/>";
+                        lHtml += "<img class='ImgView' id='BackgroundMod1ImgSrc' src='"+lDataMap['img']+"'/>";
                         lHtml += "</div>";
                         lHtml += "<div class='Name'>";
                         lHtml += lName;
                         lHtml += "</div>";
                         lHtml += "</div>";
                         lBackgroundMod1Img.innerHTML = lHtml;
+                        m_selectFile = lDataMap['img'];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
@@ -86,12 +87,15 @@ var GEdition = (function() {
             // BackgroundMod1Modify
             //===============================================
             openBackgroundMod1Modify: function(obj) {
+                var lBackgroundMod1ModifyFile = document.getElementById("BackgroundMod1ModifyFile");
+				var lBackgroundMod1ImgSrc = document.getElementById("BackgroundMod1ImgSrc");
 				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
 				var lBackgroundMod1ModifyData = document.getElementById("BackgroundMod1ModifyData");
 				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
 				var lBackgroundMod1ModifyLabel = document.getElementById("BackgroundMod1ModifyLabel");
 				lModalBackgroundMod1Modify.style.display = "block";	
-				lBackgroundMod1ModifyMsg.style.display = "none";	
+				lBackgroundMod1ModifyMsg.style.display = "none";
+                lBackgroundMod1ModifyFile.innerHTML = m_selectFile;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
