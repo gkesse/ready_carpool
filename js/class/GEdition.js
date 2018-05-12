@@ -86,7 +86,8 @@ var GEdition = (function() {
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUND_MODIFY"+
 					"&root="+"img"+
-					"&dir="+""
+					"&dir="+""+
+					"&view="+"icon"
                     );    
             },
             //===============================================
@@ -119,6 +120,24 @@ var GEdition = (function() {
 					"&item="+"item1"+
 					"&img="+lImg                    
                     );        
+            },
+            //===============================================
+            openFile: function(obj, type) {
+				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
+				/*var lFileEdit = document.getElementById("FileEdit");
+                var lDirName = obj.innerHTML;
+				var lEditorDir = GConfig.Instance().getData("EditorDir");
+				var lDirPath = lEditorDir + "/" + lDirName;
+				var lObjParent = obj.parentNode;*/
+				for(var i = 0; i < lDataViewBlock.length; i++) {
+					var lBlock = lDataViewBlock[i];
+					lBlock.className = lBlock.className.replace(" Active", "");
+				}
+				if(!type) {
+                    obj.className += " Active";
+					return;
+				}
+				/*this.selectFile(lDirPath);*/
             },
             //===============================================
             // BackgroundMod2
