@@ -166,6 +166,7 @@ textarea:-webkit-autofill:focus {
     height: 100vh;
     background-image: url("<?php echo $lCssData["modal"]["img"]; ?>");
     background-color: rgba(255,255,255,0.2);
+    overflow: auto;
 }
 
 .Modal .Body {
@@ -177,10 +178,9 @@ textarea:-webkit-autofill:focus {
 
 .Modal .Body .Title {
     background-color: rgba(0,0,0,0.2);
-    padding: 0px 10px;
+    padding: 10px 35px 10px 10px;
     font-family: Anton;
     font-size: 25px;
-    line-height: 50px;
 }
 
 .Modal .Body .Text {
@@ -199,13 +199,6 @@ textarea:-webkit-autofill:focus {
     position: relative;
 }
 
-.Modal .Body .Text .Col {
-    background-color: rgba(0,0,0,0.0);
-    border: 1px solid rgba(0,0,0,0.2);
-    margin: 4px 0px;
-    position: relative;
-}
-
 .Modal .Body .Text .Row .Label {
     background-color: rgba(0,0,0,0.2);
     min-width: 150px; 
@@ -216,23 +209,11 @@ textarea:-webkit-autofill:focus {
     left: 0px;
 }
 
-.Modal .Body .Text .Col .Label {
-    background-color: rgba(0,0,0,0.2);
-    line-height: 30px;   
-    padding: 0px 10px;
-}
-
 .Modal .Body .Text .Row .Field {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;   
     margin-left: 150px;
-}
-
-.Modal .Body .Text .Col .Field {
-    background-color: rgba(0,0,0,0.0);
-    border: 1px solid rgba(0,0,0,0.2);
-    min-height: 300px;   
 }
 
 .Modal .Body .Text .Row .Field .Data {
@@ -241,6 +222,25 @@ textarea:-webkit-autofill:focus {
     height: 100%;   
     width: 100%;
     padding: 5px 10px;
+}
+
+.Modal .Body .Text .Col {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 4px 0px;
+    position: relative;
+}
+
+.Modal .Body .Text .Col .Label {
+    background-color: rgba(0,0,0,0.2);
+    line-height: 30px;   
+    padding: 0px 10px;
+}
+
+.Modal .Body .Text .Col .Field {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    min-height: 300px;   
 }
 
 .Modal .Body .Text .Col .Field .Data {
@@ -490,6 +490,20 @@ textarea:-webkit-autofill:focus {
     .Header .Menu.RWD .Link {
         display: block;
         text-align: left;
+    }
+    /* ============================================== */
+}
+/* ============================================== */
+@media screen and (max-width: 450px) {
+    /* ============================================== */
+    /* Modal */
+    /* ============================================== */
+    .Modal .Body .Text .Row .Label {
+        position: static;
+    }
+
+    .Modal .Body .Text .Row .Field {
+        margin-left: 0px;
     }
     /* ============================================== */
 }
