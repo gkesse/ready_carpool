@@ -251,6 +251,10 @@ textarea:-webkit-autofill:focus {
     overflow: auto; 
 }
 
+.Modal .Body .Text .Col .Field .Data.View {
+    padding: 5px;
+}
+
 .Modal .Body .Text .ButtonMap {
     text-align: right;
     font-size: 0px;
@@ -391,13 +395,14 @@ textarea:-webkit-autofill:focus {
 /* DataView */
 /* ============================================== */
 .DataView {
-
+    font-size: 0px;
 }
 
 .DataView .DataRow {
     border-top: 1px dotted rgba(0,0,0,0.2);
     padding: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .DataView .DataRow:hover {
@@ -417,6 +422,35 @@ textarea:-webkit-autofill:focus {
     display: inline-block;
 }
 
+.DataView .DataCol {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.DataView .DataCol .Block {
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px;
+}
+
+.DataView .DataRow:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.DataView .DataRow:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.DataView .DataRow .Icon {
+    padding-right: 10px;
+}
+
+.DataView .DataRow .Name {
+
+}
 /* ============================================== */
 /* Parallax */
 /* ============================================== */

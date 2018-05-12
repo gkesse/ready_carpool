@@ -28,7 +28,7 @@
             <div class="Desc">Sélectionner le nouveau fichier.</div>
             <div class="Col">
                 <div class="Label">Root</div>
-                <div class="Field"><div class="Data" id="DataBackgroundMod1Modify"></div></div>
+                <div class="Field"><div class="Data View" id="DataBackgroundMod1Modify"></div></div>
             </div>
             <div class="ButtonMap">
                 <div class="Item" onclick="saveBackgroundMod1Modify(this)"><i class="fa fa-floppy-o"></i> Enregistrer</div>

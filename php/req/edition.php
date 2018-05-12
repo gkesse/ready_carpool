@@ -19,11 +19,13 @@
 		$lDataFile .= "<div class='DataView'>";
 		for($i = 0; $i < count($lDirMap); $i++) {
 			$lDirName = $lDirMap[$i];
-			$lDataFile .= "<div class='DataRow'>";
+			$lDataFile .= "<div class='DataCol'>";
+			$lDataFile .= "<div class='Block'>";
 			$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
 			$lDataFile .= "<div class='Name'";
 			$lDataFile .= "onclick='openFile(this, \"".$lDirName[3]."\");'>";
 			$lDataFile .= $lDirName[1];
+			$lDataFile .= "</div>";
 			$lDataFile .= "</div>";
 			$lDataFile .= "</div>";
 		}
