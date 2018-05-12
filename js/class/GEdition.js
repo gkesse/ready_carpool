@@ -74,8 +74,9 @@ var GEdition = (function() {
             //===============================================
             openBackgroundMod1Modify: function(obj) {
 				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
-				var lDataBackgroundMod1Modify = document.getElementById("DataBackgroundMod1Modify");
+				var lBackgroundMod1ModifyData = document.getElementById("BackgroundMod1ModifyData");
 				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
+				var lBackgroundMod1ModifyLabel = document.getElementById("BackgroundMod1ModifyLabel");
 				lModalBackgroundMod1Modify.style.display = "block";	
 				lBackgroundMod1ModifyMsg.style.display = "none";	
                 var lXmlhttp = new XMLHttpRequest();
@@ -83,7 +84,8 @@ var GEdition = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        lDataBackgroundMod1Modify.innerHTML = lDataMap["file"];
+                        lBackgroundMod1ModifyData.innerHTML = lDataMap["file"];
+                        lBackgroundMod1ModifyLabel.innerHTML = lDataMap["menu"];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);

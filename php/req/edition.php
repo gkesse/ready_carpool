@@ -49,19 +49,24 @@
 		
 		$lFilePath = GFilesystem::Instance()->getPath2($lRootPath, $lDirPath);
 		$lDataMenu = '';
-		$lDataMenu .= '<div class="pgCr05 dibm cspt FilesystemLink" onclick="openLink(this);">';
-		$lDataMenu .= '<i class="fa fa-folder clrg"></i></div> ';
+		$lDataMenu .= '<div class="DataViewLink">';
+		$lDataMenu .= '<div class="Link" onclick="openLink(this);">';
+		$lDataMenu .= '<i class="fa fa-folder clrg"></i>';
+		$lDataMenu .= '</div> ';
 		if($lFilePath != "") {
 			$lFilePathArr = explode("/", $lFilePath);
 			for($i = 0; $i < count($lFilePathArr); $i++) {
 				$lFilePathItem = $lFilePathArr[$i];
 				if($lFilePathItem == "") continue;
-				$lDataMenu .= '<div class="pgCr05 dibm">';
-				$lDataMenu .= '<i class="fa fa-chevron-right clrg"></i></div> ';
-				$lDataMenu .= '<div class="pgCr05 dibm hvra cspt clrg FilesystemLink" onclick="openLink(this);">';
-				$lDataMenu .= $lFilePathItem.'</div> ';
+				$lDataMenu .= '<div class="Sep">';
+				$lDataMenu .= '<i class="fa fa-chevron-right"></i>';
+				$lDataMenu .= '</div>';
+				$lDataMenu .= '<div class="Link" onclick="openLink(this);">';
+				$lDataMenu .= $lFilePathItem;
+				$lDataMenu .= '</div> ';
 			}
 		}
+		$lDataMenu .= '</div> ';
 		$lDataMap = array();
 		$lDataMap["menu"] = $lDataMenu;
 		$lDataMap["file"] = $lDataFile;

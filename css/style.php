@@ -471,6 +471,31 @@ textarea:-webkit-autofill:focus {
 .DataView .DataCol .Block .Name {
     word-break: break-all;
 }
+
+.DataViewLink {
+
+}
+
+.DataViewLink .Link {
+    display: inline-block;
+    cursor: pointer;
+    color: #051039;
+    font-weight: bold;
+}
+
+.DataViewLink .Link:hover {
+    color: rgba(0,0,150,0.8);
+}
+
+.DataViewLink .Link:active {
+    color: rgba(0,0,150,0.4);
+}
+
+.DataViewLink .Sep {
+    display: inline-block;
+    padding: 0px 5px;
+    color: rgba(150,0,0,1.0);
+}
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
