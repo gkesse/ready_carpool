@@ -453,10 +453,19 @@ textarea:-webkit-autofill:focus {
     background-color: rgba(255,0,0,0.0);
 }
 
+.DataView .DataCol .Block .Icon .IconView {
+    font-size: 50px;
+    color: #051039;
+}
+
+.DataView .DataCol .Block .Icon .ImgView {
+    width:50px;
+    height:50px;
+}
+
 .DataView .DataCol .Block .Name {
     word-break: break-all;
 }
-
 /* ============================================== */
 /* Parallax */
 /* ============================================== */

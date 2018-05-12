@@ -122,6 +122,32 @@ var GEdition = (function() {
                     );        
             },
             //===============================================
+            openFile: function(obj, type) {
+                alert(type);
+				/*var lFileList = document.getElementsByClassName("FileList");
+				var lFileEdit = document.getElementById("FileEdit");
+                var lDirName = obj.innerHTML;
+				var lEditorDir = GConfig.Instance().getData("EditorDir");
+				var lDirPath = lEditorDir + "/" + lDirName;
+				var lObjParent = obj.parentNode;
+				for(var i = 0; i < lFileList.length; i++) {
+					var lNode = lFileList[i];
+					lNode.className = lNode.className.replace(" bgrc", "");
+				}
+				if(!dir) {
+					var lRes = confirm("Êtes-vous sûr de vouloir sélectionner ce fichier ?");
+					if(!lRes) return;
+					lObjParent.className += " bgrc";
+					var lEditorFile = lDirPath;
+					lEditorFile = lEditorFile.replace(/\\/gi, "/");
+					lFileEdit.innerHTML = lEditorFile;
+					GConfig.Instance().setData("EditorFile", lEditorFile);
+					this.readFile();
+					return;
+				}
+				this.selectFile(lDirPath);*/
+            },
+            //===============================================
             // BackgroundMod2
             //===============================================
             openBackgroundMod2: function(obj) {

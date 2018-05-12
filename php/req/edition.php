@@ -20,15 +20,26 @@
 		$lDataFile .= "<div class='DataView'>";
 		for($i = 0; $i < count($lDirMap); $i++) {
 			$lDirName = $lDirMap[$i];
-            if($lDirName[3] != "img") continue;
-			$lFileName = "/".$lDirName[3]."/".$lDirName[1];
+            if($lDirName[3] != "img" && $lDirName[3] != "dir") continue;
+			$lFileName = "/".$lRootPath."/".$lDirPath."/".$lDirName[1];
             if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
-            else if($lViewType == "icon"){$lDataFile .= "<div class='DataCol'>";}
-			$lDataFile .= "<div class='Block'>";
-            if($lViewType == "list") {$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";}
-            else if($lViewType == "icon"){$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";}
+            else if($lViewType == "icon"){
+                $lDataFile .= "<div class='DataCol'>";
+            }
+			$lDataFile .= "<div class='Block' onclick='openFile(this, ".$lDirName[0].");'>";
+            if($lViewType == "list") {
+                $lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
+            }
+            else if($lViewType == "icon"){
+                if($lDirName[3] == "img") {
+                    $lDataFile .= "<div class='Icon'><img class='ImgView' src='".$lFileName."'/></div>";
+                }
+                else if($lDirName[3] == "dir") {
+                    $lDataFile .= "<div class='Icon'><i class='IconView fa fa-".$lDirName[2]."'></i></div>";
+                }
+            }
 			$lDataFile .= "<div class='Name'";
-			$lDataFile .= "onclick='openFile(this, \"".$lDirName[3]."\");'>";
+			$lDataFile .= "onclick='openFile22(this, \"".$lDirName[3]."\");'>";
 			$lDataFile .= $lDirName[1];
 			$lDataFile .= "</div>";
 			$lDataFile .= "</div>";
