@@ -423,7 +423,6 @@ textarea:-webkit-autofill:focus {
 }
 
 .DataView .DataCol {
-    cursor: pointer;
     display: inline-block;
     vertical-align: top;
     width: 33.33%;
@@ -434,23 +433,23 @@ textarea:-webkit-autofill:focus {
 .DataView .DataCol .Block {
     background-color: rgba(0,0,0,0.2);
     padding: 5px;
+    cursor: pointer;
+    text-align: center;
 }
 
-.DataView .DataRow:hover {
+.DataView .DataCol .Block:hover {
     background-color: rgba(0,0,0,0.4);
 }
 
-.DataView .DataRow:active {
+.DataView .DataCol .Block:active {
     background-color: rgba(0,0,0,0.2);
 }
 
-.DataView .DataRow .Icon {
-    padding-right: 10px;
+.DataView .DataCol .Block .Icon {
+    height:50px;
+    background-color: rgba(255,0,0,0.0);
 }
 
-.DataView .DataRow .Name {
-
-}
 /* ============================================== */
 /* Parallax */
 /* ============================================== */
