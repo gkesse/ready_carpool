@@ -446,8 +446,11 @@ textarea:-webkit-autofill:focus {
 }
 
 .DataView .DataCol .Block .Icon {
-    height:50px;
     background-color: rgba(255,0,0,0.0);
+}
+
+.DataView .DataCol .Block .Name {
+    word-break: break-all;
 }
 
 /* ============================================== */
@@ -575,6 +578,12 @@ textarea:-webkit-autofill:focus {
 
     .Modal .Body .Text .Row .Field {
         margin-left: 0px;
+    }
+    /* ============================================== */
+    /* DataView */
+    /* ============================================== */
+    .DataView .DataCol {
+        width: 50%;
     }
     /* ============================================== */
 }
