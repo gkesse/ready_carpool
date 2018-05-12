@@ -26,7 +26,7 @@ var GEdition = (function() {
                         lBackgroundMod1Img.value = lDataMap["img"];
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUNDMOD"+
@@ -56,7 +56,63 @@ var GEdition = (function() {
                         location.reload();
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"SAVE_BACKGROUNDMOD"+
+					"&item="+"item1"+
+					"&img="+lImg                    
+                    );        
+            },
+            //===============================================
+            // BackgroundMod1Modify
+            //===============================================
+            openBackgroundMod1Modify: function(obj) {
+				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
+				var lDataBackgroundMod1Modify = document.getElementById("DataBackgroundMod1Modify");
+				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
+				lModalBackgroundMod1Modify.style.display = "block";	
+				lBackgroundMod1ModifyMsg.style.display = "none";	
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        lDataBackgroundMod1Modify.innerHTML = lDataMap["file"];
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"OPEN_BACKGROUND_MODIFY"+
+					"&root="+"img"+
+					"&dir="+""
+                    );    
+            },
+            //===============================================
+            closeBackgroundMod1Modify: function(obj) {
+				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
+				lModalBackgroundMod1Modify.style.display = "none";	
+            },
+            //===============================================
+            saveBackgroundMod1Modify: function(obj) {
+				var lBackgroundMod1ModifyImg = document.getElementsByName("BackgroundMod1ModifyImg")[0];
+				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
+                var lImg = lBackgroundMod1ModifyImg.value;
+                var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        var lDataMap = JSON.parse(lData);
+                        var lHtml = "<i class='fa fa-check-circle'></i> "; 
+                        lHtml += lDataMap["msg"]; 
+                        lBackgroundMod1ModifyMsg.innerHTML = lHtml;
+                        lBackgroundMod1ModifyMsg.style.display = "block";
+                        lBackgroundMod1ModifyMsg.style.color = "#339933";
+                        location.reload();
+                    }
+                }
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"SAVE_BACKGROUNDMOD"+
@@ -81,7 +137,7 @@ var GEdition = (function() {
                         lBackgroundMod2Img.value = lDataMap["img"];
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUNDMOD"+
@@ -111,7 +167,7 @@ var GEdition = (function() {
                         location.reload();
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"SAVE_BACKGROUNDMOD"+
@@ -136,7 +192,7 @@ var GEdition = (function() {
                         lBackgroundMod3Img.value = lDataMap["img"];
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"OPEN_BACKGROUNDMOD"+
@@ -166,7 +222,7 @@ var GEdition = (function() {
                         location.reload();
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"SAVE_BACKGROUNDMOD"+
@@ -209,7 +265,7 @@ var GEdition = (function() {
                         location.reload();
                     }
                 }
-                lXmlhttp.open("POST", "/php/edition.php", true);
+                lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"SAVE_HOMETEXT"+

@@ -1,45 +1,40 @@
-<?php
-    require $_SERVER["DOCUMENT_ROOT"]."/php/class/GAutoloadRegister.php";	
-	//===============================================
-	$lReq = $_REQUEST["req"];
-	//===============================================
-	if($lReq == "CONNECT") {
-		$lEmail= $_REQUEST["email"];
-		$lPassword = $_REQUEST["password"];
-        $lUserMap = GJson::Instance()->getData("data/json/users.json");
-        $lExist = GGlobal::Instance()->existData($lUserMap["users"], "email", $lEmail);
-        $lData = array();
-        if(!$lExist) {
-            $lData["status"] = false;
-            $lData["msg"] = "Email n'existe pas";
-            print_r(json_encode($lData));
-            return;
-        }
-        $lEncrypt = md5($lEmail."|".$lPassword);
-        $lExist = GGlobal::Instance()->existData($lUserMap["users"], "password", $lEncrypt);
-        if(!$lExist) {
-            $lData["status"] = false;
-            $lData["msg"] = "Mot de passe est incorrect";
-            print_r(json_encode($lData));
-            return;
-        }
-        $lData["status"] = true;
-        $lData["msg"] = "Bonne Connexion";
-        $lGroup = GGlobal::Instance()->getData($lUserMap["users"], "email", $lEmail, "group");
-        if(!isset($_SESSION["login"])) {
-            $_SESSION["login"] = array(
-            "email" => $lEmail,
-            "group" => $lGroup
-            );
-        }
-        print_r(json_encode($lData));
-	}
-	//===============================================
-	if($lReq == "DISCONNECT") {
-        if(isset($_SESSION["login"])) {
-            unset($_SESSION["login"]);
-        }
-        print_r("Bonne Déconnexion");
-	}
-	//===============================================
-?>
+<!-- ============================================ -->
+<div class="Modal Connection" id="ModalConnection" onkeypress="keyConnection(this, event)">
+    <div class="Body">
+        <div class="Button Close" onclick="closeConnection(this)"><i class="fa fa-close"></i></div>
+        <div class="Title">Connexion</div>
+        <form class="Text" id="ConnectionForm" method="post">
+            <div class="Desc">Entrez vos identifiants de connexion.</div>
+            <div class="Row">
+                <div class="Label">Email :</div>
+                <div class="Field"><input class="Data" type="text" name="Email"/></div>
+            </div>
+            <div class="Row">
+                <div class="Label">Mot de passe :</div>
+                <div class="Field"><input class="Data" type="password" name="Password"/></div>
+            </div>
+            <div class="ButtonMap">
+                <div class="Item" onclick="connect(this)"><i class="fa fa-paper-plane-o"></i> Se Connecter</div>
+            </div>
+        </form>
+    </div>
+    <div class="Msg" id="ConnectionMsg"></div>
+</div>
+<!-- ============================================ -->
+<div class="Modal Disconnection" id="ModalDisconnection">
+    <div class="Body">
+        <div class="Button Close" onclick="closeDisconnection(this)"><i class="fa fa-close"></i></div>
+        <div class="Title">Déconnexion</div>
+        <div class="Text" id="ConnectionForm" method="post" action="">
+            <div class="Desc">Êtes-vous sûr de vous déconnecter ?</div>
+            <div class="ButtonMap">
+                <div class="Item" onclick="disconnect(this)"><i class="fa fa-power-off"></i> Se Déconnecter</div>
+            </div>
+        </div>
+    </div>
+    <div class="Msg" id="DisconnectionMsg"></div>
+</div>
+<!-- ============================================ -->
+<script src="/js/class/GConnection.js"></script>
+<script src="/js/connection.js"></script>
+<!-- ============================================ -->

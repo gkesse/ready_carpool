@@ -4,7 +4,7 @@
     $lCssData = GJson::Instance()->getData("data/json/css.json");
 ?>
 /* ============================================== */
-/* Html Body */
+/* HtmlBody */
 /* ============================================== */
 * {
     margin: 0;
@@ -166,6 +166,7 @@ textarea:-webkit-autofill:focus {
     height: 100vh;
     background-image: url("<?php echo $lCssData["modal"]["img"]; ?>");
     background-color: rgba(255,255,255,0.2);
+    overflow: auto;
 }
 
 .Modal .Body {
@@ -177,10 +178,9 @@ textarea:-webkit-autofill:focus {
 
 .Modal .Body .Title {
     background-color: rgba(0,0,0,0.2);
-    padding: 0px 10px;
+    padding: 10px 35px 10px 10px;
     font-family: Anton;
     font-size: 25px;
-    line-height: 50px;
 }
 
 .Modal .Body .Text {
@@ -199,13 +199,6 @@ textarea:-webkit-autofill:focus {
     position: relative;
 }
 
-.Modal .Body .Text .Col {
-    background-color: rgba(0,0,0,0.0);
-    border: 1px solid rgba(0,0,0,0.2);
-    margin: 4px 0px;
-    position: relative;
-}
-
 .Modal .Body .Text .Row .Label {
     background-color: rgba(0,0,0,0.2);
     min-width: 150px; 
@@ -216,23 +209,11 @@ textarea:-webkit-autofill:focus {
     left: 0px;
 }
 
-.Modal .Body .Text .Col .Label {
-    background-color: rgba(0,0,0,0.2);
-    line-height: 30px;   
-    padding: 0px 10px;
-}
-
 .Modal .Body .Text .Row .Field {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.2);
     height: 30px;   
     margin-left: 150px;
-}
-
-.Modal .Body .Text .Col .Field {
-    background-color: rgba(0,0,0,0.0);
-    border: 1px solid rgba(0,0,0,0.2);
-    min-height: 300px;   
 }
 
 .Modal .Body .Text .Row .Field .Data {
@@ -243,12 +224,35 @@ textarea:-webkit-autofill:focus {
     padding: 5px 10px;
 }
 
+.Modal .Body .Text .Col {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 4px 0px;
+    position: relative;
+}
+
+.Modal .Body .Text .Col .Label {
+    background-color: rgba(0,0,0,0.2);
+    line-height: 30px;   
+    padding: 0px 10px;
+}
+
+.Modal .Body .Text .Col .Field {
+    background-color: rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.2);
+    min-height: 300px;   
+}
+
 .Modal .Body .Text .Col .Field .Data {
     background-color: rgba(0,0,0,0.0);
     border: 1px solid rgba(0,0,0,0.0);
     height: 300px;   
     padding: 5px 10px;
     overflow: auto; 
+}
+
+.Modal .Body .Text .Col .Field .Data.View {
+    padding: 5px;
 }
 
 .Modal .Body .Text .ButtonMap {
@@ -268,6 +272,14 @@ textarea:-webkit-autofill:focus {
 
 .Modal .Body .Text .ButtonMap .Item:hover {
     background-color: rgba(0,0,0,0.4);
+}
+
+.Modal .Body .Text .ButtonMap.Left {
+    text-align: left;
+}
+
+.Modal .Body .Text .ButtonMap.Center {
+    text-align: center;
 }
 
 .Modal .Msg {
@@ -380,6 +392,65 @@ textarea:-webkit-autofill:focus {
     color: #ff9933;
 }
 /* ============================================== */
+/* DataView */
+/* ============================================== */
+.DataView {
+    font-size: 0px;
+}
+
+.DataView .DataRow {
+    border-top: 1px dotted rgba(0,0,0,0.2);
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.DataView .DataRow:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.DataView .DataRow:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.DataView .DataRow .Icon {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.DataView .DataRow .Name {
+    display: inline-block;
+}
+
+.DataView .DataCol {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.DataView .DataCol .Block {
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.DataView .DataCol .Block:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.DataView .DataCol .Block:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.DataView .DataCol .Block .Icon {
+    height:50px;
+    background-color: rgba(255,0,0,0.0);
+}
+
+/* ============================================== */
 /* Parallax */
 /* ============================================== */
 .Parallax {
@@ -490,6 +561,20 @@ textarea:-webkit-autofill:focus {
     .Header .Menu.RWD .Link {
         display: block;
         text-align: left;
+    }
+    /* ============================================== */
+}
+/* ============================================== */
+@media screen and (max-width: 450px) {
+    /* ============================================== */
+    /* Modal */
+    /* ============================================== */
+    .Modal .Body .Text .Row .Label {
+        position: static;
+    }
+
+    .Modal .Body .Text .Row .Field {
+        margin-left: 0px;
     }
     /* ============================================== */
 }

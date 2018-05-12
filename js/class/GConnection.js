@@ -78,7 +78,7 @@ var GConnection = (function() {
                         location.reload();
                     }
                 }
-                lXmlhttp.open("POST", "/php/connection.php", true);
+                lXmlhttp.open("POST", "/php/req/connection.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"DISCONNECT"
@@ -118,7 +118,7 @@ var GConnection = (function() {
                         }
                     }
                 }
-                lXmlhttp.open("POST", "/php/connection.php", true);
+                lXmlhttp.open("POST", "/php/req/connection.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"CONNECT"+
