@@ -3,7 +3,7 @@
 	//===============================================
 	$lReq = $_REQUEST["req"];
 	//===============================================
-	if($lReq == "OPEN_BACKGROUNDMOD") {
+	if($lReq == "OPEN_BACKGROUND_MOD") {
         $lItem = $_REQUEST["item"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");
         $lDataMap = array();
@@ -22,11 +22,12 @@
 			$lDirName = $lDirMap[$i];
             if($lDirName[3] != "img" && $lDirName[3] != "dir") continue;
 			$lFileName = "/".$lRootPath."/".$lDirPath."/".$lDirName[1];
+            $lFileName = GFilesystem::Instance()->getPath($lFileName);
             if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
             else if($lViewType == "icon"){
                 $lDataFile .= "<div class='DataCol'>";
             }
-			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\")'>";
+			$lDataFile .= "<div class='Block DataViewBlock' onclick='openFile(this,".$lDirName[0].",\"".$lDirName[1]."\",\"".$lFileName."\")'>";
             if($lViewType == "list") {
                 $lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";
             }
@@ -78,7 +79,7 @@
 		print_r(json_encode($lDataMap));		
 	}
 	//===============================================
-	else if($lReq == "SAVE_BACKGROUNDMOD") {
+	else if($lReq == "SAVE_BACKGROUND_MOD") {
         $lItem = $_REQUEST["item"];
         $lImg = $_REQUEST["img"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");

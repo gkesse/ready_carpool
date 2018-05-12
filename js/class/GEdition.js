@@ -5,6 +5,7 @@ var GEdition = (function() {
     var m_curDir;
     var m_rootDir;
     var m_viewType;
+    var m_selectFile;
     //===============================================
     var Container = function() {
         return {
@@ -13,13 +14,14 @@ var GEdition = (function() {
                 m_curDir = "";
                 m_rootDir = "img";
                 m_viewType = "icon";
+                m_selectFile = "vvvvvvvvvvv";
             },
             //===============================================
             // BackgroundMod1
             //===============================================
             openBackgroundMod1: function(obj) {
 				var lModalBackgroundMod1 = document.getElementById("ModalBackgroundMod1");
-				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
+				var lBackgroundMod1Img = document.getElementById("BackgroundMod1Img");
 				var lBackgroundMod1Msg = document.getElementById("BackgroundMod1Msg");
 				lModalBackgroundMod1.style.display = "block";	
 				lBackgroundMod1Msg.style.display = "none";	
@@ -28,13 +30,25 @@ var GEdition = (function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
                         var lDataMap = JSON.parse(lData);
-                        lBackgroundMod1Img.value = lDataMap["img"];
+                        var lNameMap = lDataMap['img'].split("/");
+                        var lName = lNameMap[lNameMap.length - 1];
+                        var lHtml = "";
+                        lHtml += "<div class='Block Overflow'>";
+                        lHtml += "<div class='Icon'>";
+                        lHtml += "<img class='ImgView' id='BackgroundMod1ImgSrc' src='"+lDataMap['img']+"'/>";
+                        lHtml += "</div>";
+                        lHtml += "<div class='Name'>";
+                        lHtml += lName;
+                        lHtml += "</div>";
+                        lHtml += "</div>";
+                        lBackgroundMod1Img.innerHTML = lHtml;
+                        m_selectFile = lDataMap['img'];
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item1"
                     );    
             },
@@ -45,9 +59,7 @@ var GEdition = (function() {
             },
             //===============================================
             saveBackgroundMod1: function(obj) {
-				var lBackgroundMod1Img = document.getElementsByName("BackgroundMod1Img")[0];
 				var lBackgroundMod1Msg = document.getElementById("BackgroundMod1Msg");
-                var lImg = lBackgroundMod1Img.value;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -64,21 +76,24 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"SAVE_BACKGROUNDMOD"+
+					"req="+"SAVE_BACKGROUND_MOD"+
 					"&item="+"item1"+
-					"&img="+lImg                    
+					"&img="+m_selectFile                   
                     );        
             },
             //===============================================
             // BackgroundMod1Modify
             //===============================================
             openBackgroundMod1Modify: function(obj) {
+                var lBackgroundMod1ModifyFile = document.getElementById("BackgroundMod1ModifyFile");
+				var lBackgroundMod1ImgSrc = document.getElementById("BackgroundMod1ImgSrc");
 				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
 				var lBackgroundMod1ModifyData = document.getElementById("BackgroundMod1ModifyData");
 				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
 				var lBackgroundMod1ModifyLabel = document.getElementById("BackgroundMod1ModifyLabel");
 				lModalBackgroundMod1Modify.style.display = "block";	
-				lBackgroundMod1ModifyMsg.style.display = "none";	
+				lBackgroundMod1ModifyMsg.style.display = "none";
+                lBackgroundMod1ModifyFile.innerHTML = m_selectFile;
                 var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
@@ -105,39 +120,40 @@ var GEdition = (function() {
             },
             //===============================================
             saveBackgroundMod1Modify: function(obj) {
-				var lBackgroundMod1ModifyImg = document.getElementsByName("BackgroundMod1ModifyImg")[0];
-				var lBackgroundMod1ModifyMsg = document.getElementById("BackgroundMod1ModifyMsg");
-                var lImg = lBackgroundMod1ModifyImg.value;
-                var lXmlhttp = new XMLHttpRequest();
-                lXmlhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        var lData = this.responseText;
-                        var lDataMap = JSON.parse(lData);
-                        var lHtml = "<i class='fa fa-check-circle'></i> "; 
-                        lHtml += lDataMap["msg"]; 
-                        lBackgroundMod1ModifyMsg.innerHTML = lHtml;
-                        lBackgroundMod1ModifyMsg.style.display = "block";
-                        lBackgroundMod1ModifyMsg.style.color = "#339933";
-                        location.reload();
-                    }
-                }
-                lXmlhttp.open("POST", "/php/req/edition.php", true);
-                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                lXmlhttp.send(
-					"req="+"SAVE_BACKGROUNDMOD"+
-					"&item="+"item1"+
-					"&img="+lImg                    
-                    );        
+				var lModalBackgroundMod1Modify = document.getElementById("ModalBackgroundMod1Modify");
+				var lBackgroundMod1Img = document.getElementById("BackgroundMod1Img");
+                if(m_selectFile == "") return;
+                var lHtml = this.getHtml(m_selectFile);
+                lBackgroundMod1Img.innerHTML = lHtml;
+                lModalBackgroundMod1Modify.style.display = "none";
             },
             //===============================================
-            openFile: function(obj, type, name) {
+            getHtml: function(filePath) {
+                var lNameMap = filePath.split("/");
+                var lName = lNameMap[lNameMap.length - 1];
+                var lHtml = "";
+                lHtml += "<div class='Block Overflow'>";
+                lHtml += "<div class='Icon'>";
+                lHtml += "<img class='ImgView' src='"+filePath+"'/>";
+                lHtml += "</div>";
+                lHtml += "<div class='Name'>";
+                lHtml += lName;
+                lHtml += "</div>";
+                lHtml += "</div>";
+                return lHtml;
+            },
+            //===============================================
+            openFile: function(obj, type, name, filename) {
 				var lDataViewBlock = document.getElementsByClassName("DataViewBlock");
+				var lBackgroundMod1ModifyFile = document.getElementById("BackgroundMod1ModifyFile");
 				for(var i = 0; i < lDataViewBlock.length; i++) {
 					var lBlock = lDataViewBlock[i];
 					lBlock.className = lBlock.className.replace(" Active", "");
 				}
 				if(!type) {
                     obj.className += " Active";
+                    m_selectFile = filename;
+                    BackgroundMod1ModifyFile.innerHTML = m_selectFile;
 					return;
 				}
                 m_curDir += "/" + name;
@@ -176,7 +192,7 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item2"
                     );       
             },
@@ -231,7 +247,7 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item3"
                     );       
             },

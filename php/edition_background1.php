@@ -5,9 +5,9 @@
         <div class="Title">Modification du fond d'écran du haut</div>
         <div class="Text" id="ConnectionForm" method="post" action="">
             <div class="Desc">Saisissez les nouvelles données.</div>
-            <div class="Row">
+            <div class="Col">
                 <div class="Label">Fond d'écran :</div>
-                <div class="Field"><input class="Data" type="text" name="BackgroundMod1Img" readonly="true"/></div>
+                <div class="Field"><div class="Data Min Center" id="BackgroundMod1Img"></div></div>
             </div>
             <div class="ButtonMap Left">
                 <div class="Item" onclick="openBackgroundMod1Modify(this)"><i class="fa fa-floppy-o"></i> Modifier</div>
@@ -28,6 +28,7 @@
             <div class="Desc">Sélectionner le nouveau fichier.</div>
             <div class="Col">
                 <div class="Label" id="BackgroundMod1ModifyLabel"></div>
+                <div class="Label File"><span>File : </span><span id="BackgroundMod1ModifyFile"></span></div>
                 <div class="Field"><div class="Data View" id="BackgroundMod1ModifyData"></div></div>
             </div>
             <div class="ButtonMap">

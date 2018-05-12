@@ -1,4 +1,4 @@
-<!-- ============================================ -->
+﻿<!-- ============================================ -->
 <div class="Modal BackgroundMod3" id="ModalBackgroundMod3">
     <div class="Body">
         <div class="Button Close" onclick="closeBackgroundMod3(this)"><i class="fa fa-close"></i></div>

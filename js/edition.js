@@ -27,8 +27,8 @@ function saveBackgroundMod1Modify(obj) {
 	GEdition.Instance().saveBackgroundMod1Modify(obj);
 }
 //===============================================
-function openFile(obj, type, name) {
-	GEdition.Instance().openFile(obj, type, name);
+function openFile(obj, type, name, filename) {
+	GEdition.Instance().openFile(obj, type, name, filename);
 }
 //===============================================
 function openLink(obj, index) {
