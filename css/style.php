@@ -481,6 +481,7 @@ textarea:-webkit-autofill:focus {
     cursor: pointer;
     color: #051039;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .DataViewLink .Link:hover {
