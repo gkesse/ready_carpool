@@ -36,7 +36,7 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item1"
                     );    
             },
@@ -141,6 +141,7 @@ var GEdition = (function() {
 				if(!type) {
                     obj.className += " Active";
                     m_selectFile = filename;
+                    alert(m_selectFile);
 					return;
 				}
                 m_curDir += "/" + name;
@@ -179,7 +180,7 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item2"
                     );       
             },
@@ -234,7 +235,7 @@ var GEdition = (function() {
                 lXmlhttp.open("POST", "/php/req/edition.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
-					"req="+"OPEN_BACKGROUNDMOD"+
+					"req="+"OPEN_BACKGROUND_MOD"+
 					"&item="+"item3"
                     );       
             },

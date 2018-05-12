@@ -3,7 +3,7 @@
 	//===============================================
 	$lReq = $_REQUEST["req"];
 	//===============================================
-	if($lReq == "OPEN_BACKGROUNDMOD") {
+	if($lReq == "OPEN_BACKGROUND_MOD") {
         $lItem = $_REQUEST["item"];
         $lCssData = GJson::Instance()->getData("data/json/css.json");
         $lDataMap = array();
@@ -22,6 +22,7 @@
 			$lDirName = $lDirMap[$i];
             if($lDirName[3] != "img" && $lDirName[3] != "dir") continue;
 			$lFileName = "/".$lRootPath."/".$lDirPath."/".$lDirName[1];
+            $lFileName = GFilesystem::Instance()->getPath($lFileName);
             if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
             else if($lViewType == "icon"){
                 $lDataFile .= "<div class='DataCol'>";
