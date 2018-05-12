@@ -87,7 +87,7 @@ var GEdition = (function() {
 					"req="+"OPEN_BACKGROUND_MODIFY"+
 					"&root="+"img"+
 					"&dir="+""+
-					"&view="+"list"
+					"&view="+"icon"
                     );    
             },
             //===============================================

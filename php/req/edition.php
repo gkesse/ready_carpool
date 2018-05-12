@@ -23,10 +23,10 @@
             if($lDirName[3] != "img") continue;
 			$lFileName = "/".$lDirName[3]."/".$lDirName[1];
             if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
-            else {$lDataFile .= "<div class='DataCol'>";}
+            else if($lViewType == "icon"){$lDataFile .= "<div class='DataCol'>";}
 			$lDataFile .= "<div class='Block'>";
             if($lViewType == "list") {$lDataFile .= "<div class='Icon'><i class='fa fa-".$lDirName[2]."'></i></div>";}
-            else {$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";}
+            else if($lViewType == "icon"){$lDataFile .= "<div class='Icon'><img src='".$lFileName."' style='width:50px;height:50px;'/></div>";}
 			$lDataFile .= "<div class='Name'";
 			$lDataFile .= "onclick='openFile(this, \"".$lDirName[3]."\");'>";
 			$lDataFile .= $lDirName[1];
