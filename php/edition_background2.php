@@ -1,12 +1,12 @@
-<!-- ============================================ -->
+ï»¿<!-- ============================================ -->
 <div class="Modal BackgroundMod2" id="ModalBackgroundMod2">
     <div class="Body">
         <div class="Button Close" onclick="closeBackgroundMod2(this)"><i class="fa fa-close"></i></div>
-        <div class="Title">Modification du fond d'écran du milieu</div>
+        <div class="Title">Modification du fond d'Ã©cran du milieu</div>
         <div class="Text" id="ConnectionForm" method="post" action="">
-            <div class="Desc">Saisissez les nouvelles données.</div>
+            <div class="Desc">Saisissez les nouvelles donnÃ©es.</div>
             <div class="Row">
-                <div class="Label">Fond d'écran :</div>
+                <div class="Label">Fond d'Ã©cran :</div>
                 <div class="Field"><input class="Data" type="text" name="BackgroundMod2Img"/></div>
             </div>
             <div class="ButtonMap">
