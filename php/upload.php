@@ -1,9 +1,10 @@
+<?php var_dump($_POST); ?>
 <!-- ============================================ -->
 <div class="Modal Upload" id="ModalUpload" onkeypress="keyUpload(this, event)">
     <div class="Body">
         <div class="Button Close" onclick="closeUpload(this)"><i class="fa fa-close"></i></div>
         <div class="Title">Chargement de fichiers</div>
-        <form class="Text" id="UploadForm" method="post">
+        <div class="Text">
             <div class="Desc">Sélectionnez le type de fichier.</div>
             <div class="ButtonMap Left">
                 <div class="Item UploadItem Active" onclick="uploadItem(this, 'image/*');return"><i class="fa fa-file-image-o"></i> Image</div>
@@ -12,10 +13,18 @@
                 <div class="Item UploadItem" onclick="uploadItem(this, '*')"><i class="fa fa-file-text-o"></i> Document</div>
                 <div class="None"><input type="file" id="UploadBrowse" multiple="true" onchange="uploadFile(this)"></div>
             </div>
-            <div class="ButtonMap">
-                <div class="Item" onclick="connect(this)"><i class="fa fa-floppy-o"></i> Enregistrer</div>
+            <div class="DataView">
+                <div class="DataRow">
+                    <div class="Block">
+                        <div class="Icon"><img class="ImgView" src="/img/background.jpg"/></div>
+                        <div class="Name"></div>
+                    </div>
+                </div>
             </div>
-        </form>
+            <div class="ButtonMap">
+                <div class="Item" onclick="connect(this)"><i class="fa fa-floppy-o"></i> Charger</div>
+            </div>
+        </div>
     </div>
     <div class="Msg" id="UploadMsg"></div>
 </div>

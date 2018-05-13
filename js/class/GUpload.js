@@ -30,7 +30,12 @@ var GUpload = (function() {
             //===============================================
             uploadFile: function(obj) {
 				var lFiles = obj.files;
-                alert(lFiles.length);
+                var lLength = lFiles.length;
+                if(lLength > 5) {
+                    alert("Vous pouvez charger au maximum 5 fichiers");
+                    return;
+                }
+                location.reload();
             },
             //===============================================
             connect: function(obj) {

@@ -13,3 +13,7 @@ function uploadFile(obj) {
 	GUpload.Instance().uploadFile(obj);
 }
 //===============================================
+function closeUpload(obj) {
+	GUpload.Instance().closeUpload(obj);
+}
+//===============================================
