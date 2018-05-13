@@ -111,6 +111,7 @@
 			if($lDirLen <= $lRootLen) return "";
 			$lDir = substr($lDir, $lRootLen);
 			$lDir = str_replace("\\", "/", $lDir);
+            if($lDir != "" && $lDir[0] != "/") $lDir = "/".$lDir;
             return $lDir;
         }
         //===============================================
@@ -125,6 +126,7 @@
 			if($lDirLen <= $lRootLen) return "";
 			$lDir = substr($lDir, $lRootLen);
 			$lDir = str_replace("\\", "/", $lDir);
+            if($lDir != "" && $lDir[0] != "/") $lDir = "/".$lDir;
             return $lDir;
         }
         //===============================================
