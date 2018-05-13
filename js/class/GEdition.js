@@ -14,7 +14,7 @@ var GEdition = (function() {
                 m_curDir = "";
                 m_rootDir = "img";
                 m_viewType = "icon";
-                m_selectFile = "vvvvvvvvvvv";
+                m_selectFile = "";
             },
             //===============================================
             // BackgroundMod1
