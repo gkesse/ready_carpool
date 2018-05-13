@@ -23,7 +23,7 @@
             if($lDirName[3] != "img" && $lDirName[3] != "dir") continue;
 			$lFileName = "/".$lRootPath."/".$lDirPath."/".$lDirName[1];
             $lFileName = GFilesystem::Instance()->getPath($lFileName);
-            if($lFileName != "" && $lFileName[0] != "/") $lFileName = "/".$lFileName;
+            $lFileName = "/".$lFileName;
             if($lViewType == "list") {$lDataFile .= "<div class='DataRow'>";}
             else if($lViewType == "icon"){
                 $lDataFile .= "<div class='DataCol'>";
