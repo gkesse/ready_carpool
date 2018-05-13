@@ -281,6 +281,7 @@ textarea:-webkit-autofill:focus {
     line-height: 30px; 
     font-size: 16px;
     cursor: pointer;
+    margin: 5px;
 }
 
 .Modal .Body .Text .ButtonMap .Item:hover {
@@ -293,10 +294,6 @@ textarea:-webkit-autofill:focus {
 
 .Modal .Body .Text .ButtonMap.Left {
     text-align: left;
-}
-
-.Modal .Body .Text .ButtonMap.Left .Item {
-    margin-right: 5px;
 }
 
 .Modal .Body .Text .ButtonMap.Center {
@@ -315,6 +312,12 @@ textarea:-webkit-autofill:focus {
     padding: 5px 10px;
     font-family: Archivo Narrow;
     color: white;
+    display: none;
+}
+/* ============================================== */
+/* DisplayNone */
+/* ============================================== */
+.None {
     display: none;
 }
 /* ============================================== */

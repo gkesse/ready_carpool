@@ -17,17 +17,19 @@ var GUpload = (function() {
             //===============================================
             uploadItem: function(obj) {
 				var lUploadItemMap = document.getElementsByClassName("UploadItem");
+				var lUploadBrowse = document.getElementById("UploadBrowse");
 				for(var i = 0; i < lUploadItemMap.length; i++) {
                     lUploadItem = lUploadItemMap[i];
                     var lClassName = lUploadItem.className;
                     lUploadItem.className = lClassName.replace(" Active", "");
                 }        
                 obj.className += " Active";
-                var lBrowse = document.createElement("INPUT");
-                lBrowse.setAttribute("type", "file");
-                lBrowse.setAttribute("multiple", "true");
-                lBrowse.setAttribute("size", "2");
-                lBrowse.click();
+                lUploadBrowse.click();
+            },
+            //===============================================
+            uploadFile: function(obj) {
+				var lFiles = obj.files;
+                alert(lFiles.length);
             },
             //===============================================
             connect: function(obj) {
