@@ -3,7 +3,6 @@
 
     GMetaData::Instance()->getData();
     $lTitle = GConfig::Instance()->getData("title"); 
-    GUrl::Instance()->lastUrl();
     
     $lExiststMenu = GConfig::Instance()->existData("menu");
     if($lExiststMenu == true) {
@@ -138,6 +137,7 @@
             <!-- ============================================ -->
             <?php require $_SERVER["DOCUMENT_ROOT"]."/php/connection.php"; ?>
             <?php require $_SERVER["DOCUMENT_ROOT"]."/php/edition.php"; ?>
+            <?php require $_SERVER["DOCUMENT_ROOT"]."/php/upload.php"; ?>
             <!-- ============================================ -->
             <div class="BodyPage Mrg Pdd">
                 <!-- ============================================ -->
@@ -167,6 +167,7 @@
                         <?php  if(!isset($_SESSION["login"])) {?>
                         <div class="Link"><div class="Item" onclick="openConnection(this)">Connexion</div></div>
                         <?php } else { ?>
+                        <div class="Link"><div class="Item" onclick="openUpload(this)">Charger</div></div>
                         <div class="Link"><div class="Item" onclick="openDisconnection(this)">Déconnexion</div></div>
                         <?php } ?>
                         <div class="Link Icon" onclick="openHeaderMenu(this)"><i class="fa fa-bars"></i></div>

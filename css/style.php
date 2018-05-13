@@ -287,12 +287,25 @@ textarea:-webkit-autofill:focus {
     background-color: rgba(0,0,0,0.4);
 }
 
+.Modal .Body .Text .ButtonMap .Item:active {
+    background-color: rgba(0,0,0,0.2);
+}
+
 .Modal .Body .Text .ButtonMap.Left {
     text-align: left;
 }
 
+.Modal .Body .Text .ButtonMap.Left .Item {
+    margin-right: 5px;
+}
+
 .Modal .Body .Text .ButtonMap.Center {
     text-align: center;
+}
+
+.Modal .Body .Text .ButtonMap .UploadItem.Active {
+    background-color: #051039;
+    color: white;
 }
 
 .Modal .Msg {
