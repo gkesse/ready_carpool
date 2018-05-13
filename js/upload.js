@@ -5,8 +5,8 @@ function openUpload(obj) {
 	GUpload.Instance().openUpload(obj);
 }
 //===============================================
-function uploadItem(obj) {
-	GUpload.Instance().uploadItem(obj);
+function uploadItem(obj, mimeType) {
+	GUpload.Instance().uploadItem(obj, mimeType);
 }
 //===============================================
 function uploadFile(obj) {

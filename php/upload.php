@@ -6,10 +6,10 @@
         <form class="Text" id="UploadForm" method="post">
             <div class="Desc">Sélectionnez le type de fichier.</div>
             <div class="ButtonMap Left">
-                <div class="Item UploadItem Active" onclick="uploadItem(this);return"><i class="fa fa-file-image-o"></i> Image</div>
-                <div class="Item UploadItem" onclick="uploadItem(this)"><i class="fa fa-file-audio-o"></i> Audio</div>
-                <div class="Item UploadItem" onclick="uploadItem(this)"><i class="fa fa-file-video-o"></i> Vidéo</div>
-                <div class="Item UploadItem" onclick="uploadItem(this)"><i class="fa fa-file-text-o"></i> Document</div>
+                <div class="Item UploadItem Active" onclick="uploadItem(this, 'image/*');return"><i class="fa fa-file-image-o"></i> Image</div>
+                <div class="Item UploadItem" onclick="uploadItem(this, 'audio/*')"><i class="fa fa-file-audio-o"></i> Audio</div>
+                <div class="Item UploadItem" onclick="uploadItem(this, 'video/*')"><i class="fa fa-file-video-o"></i> Vidéo</div>
+                <div class="Item UploadItem" onclick="uploadItem(this, '*')"><i class="fa fa-file-text-o"></i> Document</div>
                 <div class="None"><input type="file" id="UploadBrowse" multiple="true" onchange="uploadFile(this)"></div>
             </div>
             <div class="ButtonMap">

@@ -15,7 +15,7 @@ var GUpload = (function() {
 				lModalUpload.style.display = "block";	
             },
             //===============================================
-            uploadItem: function(obj) {
+            uploadItem: function(obj, mimeType) {
 				var lUploadItemMap = document.getElementsByClassName("UploadItem");
 				var lUploadBrowse = document.getElementById("UploadBrowse");
 				for(var i = 0; i < lUploadItemMap.length; i++) {
@@ -24,6 +24,7 @@ var GUpload = (function() {
                     lUploadItem.className = lClassName.replace(" Active", "");
                 }        
                 obj.className += " Active";
+                lUploadBrowse.setAttribute("accept", mimeType);
                 lUploadBrowse.click();
             },
             //===============================================
