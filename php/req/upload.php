@@ -4,9 +4,23 @@
 	$lReq = $_REQUEST["req"];
 	//===============================================
 	if($lReq == "UPLOAD_FILE") {
-        $lDataMap = array();
-        $lDataMap["msg"] = "Vos fichiers ont été chargés avec succes";
-        print_r(json_encode($lDataMap));
+        /*$lRoot = $_REQUEST["root"];
+        $lNames = $_REQUEST["names"];
+        $lFiles = $_REQUEST["files"];
+        
+        $lFile = $lFiles;
+        $lName = $lNames;
+
+        $lFileMap = explode(",", $lFile);
+        $lFileData = $lFileMap[1];
+        
+        $lPath = $_SERVER["DOCUMENT_ROOT"]."/".$lRoot."/".$lName;
+        
+        file_put_contents($lPath, $lFilePath, FILE_APPEND);
+
+        $lDataMap = $_FILES;
+        print_r(json_encode($lDataMap));*/
+        var_dump($_FILES);
 	}
 	//===============================================
 ?>

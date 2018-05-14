@@ -6,6 +6,8 @@ DirectoryIndex index.php
 RewriteEngine on
 </IfModule>
 #================================================
+php_flag file_uploads 1
+#================================================
 php_value memory_limit 30M
 php_value upload_max_filesize 20M
 php_value post_max_size 20M

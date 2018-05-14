@@ -2,12 +2,13 @@
 var GUpload = (function() {
     //===============================================
     var m_instance;
+    var m_upload;
     //===============================================
     var Container = function() {
         return {
             //===============================================
             init: function(obj) {
-
+                m_upload = false;
             },
             //===============================================
             openUpload: function(obj) {
@@ -42,12 +43,13 @@ var GUpload = (function() {
                     (function(file){
                         var lFileReader = new FileReader();
                         lFileReader.addEventListener('load', function() {
-                            var lImgSrc = this.result;
+                            var lPath = this.result;
+                            var lName = file.name;
                             var lHtml = '';
                             lHtml += '<div class="DataCol">';
                             lHtml += '<div class="Block">';
-                            lHtml += '<div class="Icon"><img class="ImgView" src="'+lImgSrc+'"/></div>';
-                            lHtml += '<div class="Name">'+file.name+'</div>';
+                            lHtml += '<div class="Icon"><img class="ImgView" src="'+lPath+'"/></div>';
+                            lHtml += '<div class="Name">'+lName+'</div>';
                             lHtml += '</div>';
                             lHtml += '</div>';
                             lUploadView.innerHTML += lHtml;
@@ -55,23 +57,30 @@ var GUpload = (function() {
                         lFileReader.readAsDataURL(file);
                     })(lFile);
                 }
+                m_upload = true;
             },
             //===============================================
             saveUploadFile: function(obj) {
-                var lXmlhttp = new XMLHttpRequest();
+                if(!m_upload) return;
+                var lUploadForm = document.getElementById("UploadForm");
+                /*var lXmlhttp = new XMLHttpRequest();
                 lXmlhttp.onreadystatechange = function() {
                     if(this.readyState == 4 && this.status == 200) {
                         var lData = this.responseText;
-                        var lDataMap = JSON.parse(lData);
-                        alert(lDataMap["msg"]);
+                        //var lDataMap = JSON.parse(lData);
+                        //alert(lDataMap["msg"]);
+                        alert(lData);
                     }
                 }
                 lXmlhttp.open("POST", "/php/req/upload.php", true);
                 lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 lXmlhttp.send(
 					"req="+"UPLOAD_FILE"+
-					"&root="+"upload/img"
-                    );            
+					"&root="+"upload/img"+
+					"&names="+m_names+
+					"&files="+m_files
+                    ); */ 
+                lUploadForm.submit();
             },
             //===============================================
             closeUpload: function(obj) {

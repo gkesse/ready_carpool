@@ -1,5 +1,6 @@
 <?php    
     GPostRedirectGet::Instance()->redirect();
+    GUpload::Instance()->upload();
 
     GMetaData::Instance()->getData();
     $lTitle = GConfig::Instance()->getData("title"); 
