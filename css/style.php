@@ -28,7 +28,7 @@ html {
 }
 
 body {
-    color: orange;
+    color: black;
     background: #051039;
     font-family: arial;
     font-size: 16px;
@@ -79,7 +79,7 @@ textarea:-webkit-autofill:focus {
 .BodyPage .Logo .Img {
     height: 150px;
     background-color: rgba(0,0,0,0.0);
-    background-image: url("/img/logo.jpg");
+    background-image: url("<?php echo $lCssData["logo"]["img"]; ?>");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

@@ -63,23 +63,6 @@ var GUpload = (function() {
             saveUploadFile: function(obj) {
                 if(!m_upload) return;
                 var lUploadForm = document.getElementById("UploadForm");
-                /*var lXmlhttp = new XMLHttpRequest();
-                lXmlhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        var lData = this.responseText;
-                        //var lDataMap = JSON.parse(lData);
-                        //alert(lDataMap["msg"]);
-                        alert(lData);
-                    }
-                }
-                lXmlhttp.open("POST", "/php/req/upload.php", true);
-                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                lXmlhttp.send(
-					"req="+"UPLOAD_FILE"+
-					"&root="+"upload/img"+
-					"&names="+m_names+
-					"&files="+m_files
-                    ); */ 
                 lUploadForm.submit();
             },
             //===============================================
