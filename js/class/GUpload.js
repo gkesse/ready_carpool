@@ -11,8 +11,10 @@ var GUpload = (function() {
             },
             //===============================================
             openUpload: function(obj) {
+				var lUploadView = document.getElementById("UploadView");
 				var lModalUpload = document.getElementById("ModalUpload");
-				lModalUpload.style.display = "block";	
+				lModalUpload.style.display = "block";
+                lUploadView.innerHTML = "";
             },
             //===============================================
             uploadItem: function(obj, mimeType) {
@@ -29,13 +31,30 @@ var GUpload = (function() {
             },
             //===============================================
             uploadFile: function(obj) {
-				var lFiles = obj.files;
-                var lLength = lFiles.length;
-                if(lLength > 5) {
+				var lUploadView = document.getElementById("UploadView");
+                if(obj.files.length > 5) {
                     alert("Vous pouvez charger au maximum 5 fichiers");
                     return;
                 }
-                location.reload();
+                lUploadView.innerHTML = "";
+                for(var i = 0; i < obj.files.length; i++) {
+                    var lFile = obj.files[i];
+                    (function(file){
+                        var lFileReader = new FileReader();
+                        lFileReader.addEventListener('load', function(e) {
+                            var lImgSrc = e.target.result;
+                            var lHtml = '';
+                            lHtml += '<div class="DataCol">';
+                            lHtml += '<div class="Block">';
+                            lHtml += '<div class="Icon"><img class="ImgView" src="'+lImgSrc+'"/></div>';
+                            lHtml += '<div class="Name">'+file.name+'</div>';
+                            lHtml += '</div>';
+                            lHtml += '</div>';
+                            lUploadView.innerHTML += lHtml;
+                        });
+                        lFileReader.readAsDataURL(file);
+                    })(lFile);
+                }
             },
             //===============================================
             connect: function(obj) {

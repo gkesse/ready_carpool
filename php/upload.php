@@ -1,4 +1,3 @@
-<?php var_dump($_POST); ?>
 <!-- ============================================ -->
 <div class="Modal Upload" id="ModalUpload" onkeypress="keyUpload(this, event)">
     <div class="Body">
@@ -13,14 +12,7 @@
                 <div class="Item UploadItem" onclick="uploadItem(this, '*')"><i class="fa fa-file-text-o"></i> Document</div>
                 <div class="None"><input type="file" id="UploadBrowse" multiple="true" onchange="uploadFile(this)"></div>
             </div>
-            <div class="DataView">
-                <div class="DataRow">
-                    <div class="Block">
-                        <div class="Icon"><img class="ImgView" src="/img/background.jpg"/></div>
-                        <div class="Name"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="DataView" id="UploadView"></div>
             <div class="ButtonMap">
                 <div class="Item" onclick="connect(this)"><i class="fa fa-floppy-o"></i> Charger</div>
             </div>
