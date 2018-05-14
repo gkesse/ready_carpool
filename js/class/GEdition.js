@@ -12,7 +12,7 @@ var GEdition = (function() {
             //===============================================
             init: function(obj) {
                 m_curDir = "";
-                m_rootDir = "img";
+                m_rootDir = "data/img";
                 m_viewType = "icon";
                 m_selectFile = "";
             },

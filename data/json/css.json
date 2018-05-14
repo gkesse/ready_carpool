@@ -1,31 +1,38 @@
 {
+    "logo": {
+        "img": "\/data\/img\/defaults\/logo.jpg"
+    },
     "background": {
         "item1": {
+<<<<<<< HEAD
             "img": "\/img\/img_parallax4.jpg"
+=======
+            "img": "\/data\/img\/defaults\/texture_green.jpg"
+>>>>>>> 10b4520d53590fbf90f9f212735c95fbd140ba64
         },
         "item2": {
-            "img": "\/img\/background2.jpg"
+            "img": "\/data\/img\/defaults\/texture_black.jpg"
         },
         "item3": {
-            "img": "\/img\/background3.jpg"
+            "img": "\/data\/img\/defaults\/texture_green.jpg"
         }
     },
     "modal": {
-        "img": "\/img\/modal.jpg"
+        "img": "\/data\/img\/defaults\/texture_green.jpg"
     },
     "home": {
-        "img": "\/img\/img_parallax.jpg"
+        "img": "\/data\/img\/defaults\/img_home.jpg"
     },
     "presentation": {
-        "img": "\/img\/img_parallax2.jpg"
+        "img": "\/data\/img\/defaults\/img_presentation.jpg"
     },
     "ministry": {
-        "img": "\/img\/img_parallax3.jpg"
+        "img": "\/data\/img\/defaults\/img_ministry.jpg"
     },
     "events": {
-        "img": "\/img\/img_parallax4.jpg"
+        "img": "\/data\/img\/defaults\/img_events.jpg"
     },
     "error": {
-        "img": "\/img\/erreur.jpg"
+        "img": "\/data\/img\/defaults\/img_error.jpg"
     }
 }

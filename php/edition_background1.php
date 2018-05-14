@@ -25,7 +25,7 @@
         <div class="Button Close" onclick="closeBackgroundMod1Modify(this)"><i class="fa fa-close"></i></div>
         <div class="Title">Modification du fond d'écran du haut</div>
         <div class="Text">
-            <div class="Desc">Sélectionner le nouveau fichier.</div>
+            <div class="Desc">Sélectionnez le nouveau fichier.</div>
             <div class="Col">
                 <div class="Label" id="BackgroundMod1ModifyLabel"></div>
                 <div class="Label File"><span>File : </span><span id="BackgroundMod1ModifyFile"></span></div>

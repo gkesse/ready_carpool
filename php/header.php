@@ -1,6 +1,6 @@
 <?php    
-    GPostRedirectGet::Instance()->redirect();
     GUpload::Instance()->upload();
+    GPostRedirectGet::Instance()->redirect();
 
     GMetaData::Instance()->getData();
     $lTitle = GConfig::Instance()->getData("title"); 
@@ -152,7 +152,6 @@
                 <div class="Header">
                     <div class="Menu" id="HeaderMenu">
                         <?php
-                            
                             for($i = 0; $i < count($lHeaderData["menu"]); $i++) {
                                 $lName = $lHeaderData["menu"][$i]["name"];
                                 $lHref = $lHeaderData["menu"][$i]["link"];
