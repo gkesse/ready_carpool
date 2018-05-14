@@ -2,12 +2,13 @@
 var GUpload = (function() {
     //===============================================
     var m_instance;
+    var m_upload;
     //===============================================
     var Container = function() {
         return {
             //===============================================
             init: function(obj) {
-
+                m_upload = false;
             },
             //===============================================
             openUpload: function(obj) {
@@ -41,13 +42,14 @@ var GUpload = (function() {
                     var lFile = obj.files[i];
                     (function(file){
                         var lFileReader = new FileReader();
-                        lFileReader.addEventListener('load', function(e) {
-                            var lImgSrc = e.target.result;
+                        lFileReader.addEventListener('load', function() {
+                            var lPath = this.result;
+                            var lName = file.name;
                             var lHtml = '';
                             lHtml += '<div class="DataCol">';
                             lHtml += '<div class="Block">';
-                            lHtml += '<div class="Icon"><img class="ImgView" src="'+lImgSrc+'"/></div>';
-                            lHtml += '<div class="Name">'+file.name+'</div>';
+                            lHtml += '<div class="Icon"><img class="ImgView" src="'+lPath+'"/></div>';
+                            lHtml += '<div class="Name">'+lName+'</div>';
                             lHtml += '</div>';
                             lHtml += '</div>';
                             lUploadView.innerHTML += lHtml;
@@ -55,35 +57,30 @@ var GUpload = (function() {
                         lFileReader.readAsDataURL(file);
                     })(lFile);
                 }
+                m_upload = true;
             },
             //===============================================
-            connect: function(obj) {
-				var lEmail = document.getElementsByName("Email")[0];
-				var lPassword = document.getElementsByName("Password")[0];
-				var lUploadMsg = document.getElementById("UploadMsg");
-                var lRegExp = /\S+@\S+\.\S+/;
-                var lMessage = "";
-
-                if(!lEmail.value.length) {
-                    lMessage = "Email est obligatoire";
+            saveUploadFile: function(obj) {
+                if(!m_upload) return;
+                var lUploadForm = document.getElementById("UploadForm");
+                /*var lXmlhttp = new XMLHttpRequest();
+                lXmlhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        var lData = this.responseText;
+                        //var lDataMap = JSON.parse(lData);
+                        //alert(lDataMap["msg"]);
+                        alert(lData);
+                    }
                 }
-                else if(!lRegExp.test(lEmail.value)) {
-                    lMessage = "Email est incorrect";
-                }
-                else if(!lPassword.value.length) {
-                    lMessage = "Mot de passe est obligatoire";
-                }
-                
-                if(lMessage.length) {
-                    var lHtml = "<i class='fa fa-exclamation-triangle'></i> "; 
-                    lHtml += lMessage; 
-                    lUploadMsg.innerHTML = lHtml;
-                    lUploadMsg.style.display = "block";
-                    lUploadMsg.style.color = "#ff9933";
-                }
-                else {
-                    this.sendUpload(lEmail.value, lPassword.value);
-                }
+                lXmlhttp.open("POST", "/php/req/upload.php", true);
+                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                lXmlhttp.send(
+					"req="+"UPLOAD_FILE"+
+					"&root="+"upload/img"+
+					"&names="+m_names+
+					"&files="+m_files
+                    ); */ 
+                lUploadForm.submit();
             },
             //===============================================
             closeUpload: function(obj) {
@@ -91,80 +88,6 @@ var GUpload = (function() {
 				var lUploadMsg = document.getElementById("UploadMsg");
                 lUploadMsg.style.display = "none";
 				lModalUpload.style.display = "none";	
-            },
-            //===============================================
-            keyUpload: function(obj, e) {
-                if(e.keyCode == 13) {
-                    connect(obj);
-                }
-            },
-            //===============================================
-            openDisUpload: function(obj) {
-				var lModalDisUpload = document.getElementById("ModalDisUpload");
-				lModalDisUpload.style.display = "block";	
-            },
-            //===============================================
-            disconnect: function(obj) {
-				var lDisUploadMsg = document.getElementById("DisUploadMsg");
-                var lXmlhttp = new XMLHttpRequest();
-                lXmlhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        var lData = this.responseText;
-                        var lHtml = "<i class='fa fa-power-off'></i> "; 
-                        lHtml += lData; 
-                        lDisUploadMsg.innerHTML = lHtml;
-                        lDisUploadMsg.style.color = "#339933";
-                        lDisUploadMsg.style.display = "block";
-                        location.reload();
-                    }
-                }
-                lXmlhttp.open("POST", "/php/req/Upload.php", true);
-                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                lXmlhttp.send(
-					"req="+"DISCONNECT"
-                    );            
-            },
-            //===============================================
-            closeDisUpload: function(obj) {
-				var lModalDisUpload = document.getElementById("ModalDisUpload");
-				var lDisUploadMsg = document.getElementById("DisUploadMsg");
-                lDisUploadMsg.style.display = "none";
-				lModalDisUpload.style.display = "none";	
-            },
-            //===============================================
-            sendUpload: function(email, pass) {
-				var lUploadMsg = document.getElementById("UploadMsg");
-				var lUploadForm = document.getElementById("UploadForm");
-                lUploadMsg.style.display = "none";
-                var lXmlhttp = new XMLHttpRequest();
-                lXmlhttp.onreadystatechange = function() {
-                    if(this.readyState == 4 && this.status == 200) {
-                        var lData = this.responseText;
-                        var lDataMap = JSON.parse(lData);
-                        if(!lDataMap["status"]) {
-                            var lHtml = "<i class='fa fa-exclamation-triangle'></i> "; 
-                            lHtml += lDataMap["msg"]; 
-                            lUploadMsg.innerHTML = lHtml;
-                            lUploadMsg.style.color = "#ff9933";
-                            lUploadMsg.style.display = "block";
-                        }
-                        else {
-                            var lHtml = "<i class='fa fa-check-circle'></i> "; 
-                            lHtml += lDataMap["msg"]; 
-                            lUploadMsg.innerHTML = lHtml;
-                            lUploadMsg.style.display = "block";
-                            lUploadMsg.style.color = "#339933";
-                            lUploadForm.submit();
-                        }
-                    }
-                }
-                lXmlhttp.open("POST", "/php/req/Upload.php", true);
-                lXmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                lXmlhttp.send(
-					"req="+"CONNECT"+
-					"&email="+email+
-					"&password="+pass
-                    );            
             }
             //===============================================
         };

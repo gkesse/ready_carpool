@@ -28,7 +28,7 @@ html {
 }
 
 body {
-    color: black;
+    color: orange;
     background: #051039;
     font-family: arial;
     font-size: 16px;

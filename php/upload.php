@@ -10,11 +10,13 @@
                 <div class="Item UploadItem" onclick="uploadItem(this, 'audio/*')"><i class="fa fa-file-audio-o"></i> Audio</div>
                 <div class="Item UploadItem" onclick="uploadItem(this, 'video/*')"><i class="fa fa-file-video-o"></i> Vidéo</div>
                 <div class="Item UploadItem" onclick="uploadItem(this, '*')"><i class="fa fa-file-text-o"></i> Document</div>
-                <div class="None"><input type="file" id="UploadBrowse" multiple="true" onchange="uploadFile(this)"></div>
+                <form class="None" id="UploadForm"  method="post" enctype="multipart/form-data">
+                    <input type="file" name="FileToUpload[]" id="UploadBrowse" multiple="true" onchange="uploadFile(this)">
+                </form>
             </div>
             <div class="DataView" id="UploadView"></div>
             <div class="ButtonMap">
-                <div class="Item" onclick="connect(this)"><i class="fa fa-floppy-o"></i> Charger</div>
+                <div class="Item" onclick="saveUploadFile(this)"><i class="fa fa-floppy-o"></i> Charger</div>
             </div>
         </div>
     </div>
