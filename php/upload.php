@@ -14,7 +14,7 @@
             </div>
             <div class="DataView" id="UploadView"></div>
             <div class="ButtonMap">
-                <div class="Item" onclick="connect(this)"><i class="fa fa-floppy-o"></i> Charger</div>
+                <div class="Item" onclick="saveUploadFile(this)"><i class="fa fa-floppy-o"></i> Charger</div>
             </div>
         </div>
     </div>
