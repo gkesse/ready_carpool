@@ -4,11 +4,7 @@
     },
     "background": {
         "item1": {
-<<<<<<< HEAD
-            "img": "\/img\/img_parallax4.jpg"
-=======
             "img": "\/data\/img\/defaults\/texture_green.jpg"
->>>>>>> 10b4520d53590fbf90f9f212735c95fbd140ba64
         },
         "item2": {
             "img": "\/data\/img\/defaults\/texture_black.jpg"
