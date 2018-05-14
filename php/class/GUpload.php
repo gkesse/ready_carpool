@@ -7,7 +7,7 @@
         //===============================================
         private function __construct() {
             $this->m_root = $_SERVER["DOCUMENT_ROOT"];
-            $this->m_root .= "/upload/img/";
+            $this->m_root .= "/data/img/uploads/";
             $this->m_size = 2*1024*1024; // 2Mo
         }
         //===============================================
@@ -39,19 +39,8 @@
                 if($lSize > $this->m_size) continue;
                 
                 $lTmpFile = $_FILES["FileToUpload"]["tmp_name"][$i];
-                
-                print_r("lFullpath: ".$lFullpath."</br>");
-                print_r("lTmpFile: ".$lTmpFile."</br>");
-                print_r("</br>");
-                
-                if(move_uploaded_file($lTmpFile, $lFullpath)) {
-                    print_r("OKKKKKKKKKKKKKKK</br></br>");
-                }
-                else {
-                    print_r("EROOOOOOOOOOOOOOR</br></br>");
-                }
+                move_uploaded_file($lTmpFile, $lFullpath);
             }
-            var_dump($_FILES["FileToUpload"]);
         }
         //===============================================
     }
