@@ -244,14 +244,14 @@ thead tr:first-child {
 
 .Header1 {
     border: 1px solid transparent;
-    background-color: #555555;
+    background-color: #2f3959;
     min-height: 50px;
     padding: 0px 10px;
 }
 
 .Header2 {
     border: 1px solid transparent;
-    background-color: #777777;
+    background-color: #2f3959;
     max-width: 800px;
     min-height: 50px;
     position: relative;
@@ -309,7 +309,7 @@ thead tr:first-child {
 }
 
 .Header8 {
-	border: 1px solid white;
+	border: 1px solid transparent;
 	position: absolute;
     top: 50%;
     right: 0px;
@@ -320,7 +320,8 @@ thead tr:first-child {
 }
 
 .Header9 {
-	border: 1px solid white;
+	border: 1px solid #051039;
+	background-color: #051039;
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 30px;
@@ -338,14 +339,41 @@ thead tr:first-child {
 }
 
 .Header11 {
-    border: 1px solid white;
-    background-color: #550055;
+    border: 1px solid transparent;
+    background-color: #2f3959;
+    display: none;
     position: absolute;
     top: 100%;
     right: 0px;
     margin-top: 5px;
-    height: 50px;
     width: 250px;
+	font-size: 16px;
+}
+
+.Header12 {
+    border: 1px solid transparent;
+    display: block;
+    position: relative;
+    height: 40px;
+}
+
+.Header13 {
+    border: 1px solid transparent;
+	position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.Header14 {
+    border: 1px solid transparent;
+	position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+	font-size: 20px;
 }
 
 /* ============================================== */

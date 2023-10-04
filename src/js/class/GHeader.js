@@ -18,7 +18,17 @@ class GHeader extends GObject {
     }
     //===============================================
     runConnectIcon(_obj, _data) {
-        this.m_logs.addLog("runConnectIcon...");
+        var lChevron = _obj.firstElementChild.nextElementSibling;
+        var lMenu = _obj.nextElementSibling;
+
+        if(lChevron.classList.contains("fa-chevron-down")) {
+            lChevron.className = "Header10 fa fa-chevron-up";
+            lMenu.style.display = "block";
+        }
+        else {
+            lChevron.className = "Header10 fa fa-chevron-down";
+            lMenu.style.display = "none";
+        }        
     }
     //===============================================
 }
