@@ -2,7 +2,9 @@
 class GObject {
     //===============================================
     constructor() {
-
+        this.m_logs = new GLog();
+        this.m_dataLogs = new GLog();
+        this.m_map = [];
     }
     //===============================================
 }

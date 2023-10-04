@@ -21,8 +21,6 @@ class GTest extends GObject {
     }
     //===============================================
     public function runJs($_module, $_method) {
-        $lObj = new GTestJs();
-        $lObj->run($_module, $_method);
         $this->setTestJs(true);
     }
     //===============================================

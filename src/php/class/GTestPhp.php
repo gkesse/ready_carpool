@@ -13,7 +13,8 @@ class GTestPhp extends GObject {
     }
     //===============================================
     public function runLog($_module, $_method) {
-        echo sprintf("runLog...");
+        $lLogUi = new GLogUi();
+        $lLogUi->run();
     }
     //===============================================
 }

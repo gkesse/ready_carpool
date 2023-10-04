@@ -24,7 +24,7 @@ class GProcess extends GObject {
     //===============================================
     public function runJs() {
         if($this->isTestJs()) {
-            echo sprintf("<script>callServer('test', '%s');</script>\n", $this->m_method);
+            echo sprintf("<script>call_server('test', '%s');</script>\n", $this->m_method);
         }
     }
     //===============================================
