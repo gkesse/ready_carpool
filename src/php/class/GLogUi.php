@@ -1,9 +1,9 @@
 <?php
 //===============================================
-class GLogUi {
+class GLogUi extends GObject {
     //===============================================
     public function __construct() {
-        
+        parent::__construct();
     }
     //===============================================
     public function run() {

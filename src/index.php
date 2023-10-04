@@ -1,6 +1,7 @@
 <?php
 //===============================================
 require "./php/class/autoload.php";
+require "./php/functions.php";
 //===============================================
 echo sprintf("<!DOCTYPE html>\n");
 echo sprintf("<html>\n");
@@ -23,15 +24,22 @@ echo sprintf("</head>\n");
 echo sprintf("<body>\n");
 //===============================================
 $lProcess = new GProcess();
-$lProcess->run("test", "php", "log");
+$lLogUi = new GLogUi();
+//===============================================
+$lLogUi->run();
+$lProcess->run("test", "php", "header");
 //===============================================
 echo sprintf("<script src='/js/scripts.js'></script>\n");
 echo sprintf("<script src='/js/functions.js'></script>\n");
-echo sprintf("<script src='/js/class/GObject.js'></script>\n");
 echo sprintf("<script src='/js/class/GLog.js'></script>\n");
+echo sprintf("<script src='/js/class/GXml.js'></script>\n");
+echo sprintf("<script src='/js/class/GCode.js'></script>\n");
+echo sprintf("<script src='/js/class/GObject.js'></script>\n");
 echo sprintf("<script src='/js/class/GServer.js'></script>\n");
 echo sprintf("<script src='/js/class/GTest.js'></script>\n");
+echo sprintf("<script src='/js/class/GHeader.js'></script>\n");
 //===============================================
+$lProcess->getLogs()->showLogs();
 $lProcess->runJs();
 //===============================================
 echo sprintf("</body>\n");

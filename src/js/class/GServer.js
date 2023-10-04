@@ -9,11 +9,14 @@ class GServer extends GObject {
         if(_module == "") {
             this.m_logs.addError("Le module est obligatoire.");
         }
-        if(_module == "test") {
+        else if(_module == "test") {
             this.runTest(_method, _obj, _data);
         }
         else if(_module == "logs") {
             this.runLogs(_method, _obj, _data);
+        }
+        else if(_module == "header") {
+            this.runHeader(_method, _obj, _data);
         }
         else {
             this.m_logs.addError("Le module est inconnu.");
@@ -29,6 +32,12 @@ class GServer extends GObject {
     runLogs(_method, _obj, _data) {
         var lObj = new GLog();
         lObj.run(_method, _obj, _data);
+    }
+    //===============================================
+    runHeader(_method, _obj, _data) {
+        var lObj = new GHeader();
+        lObj.run(_method, _obj, _data);
+        this.m_logs.addLogs(lObj.m_logs);
     }
     //===============================================
 }

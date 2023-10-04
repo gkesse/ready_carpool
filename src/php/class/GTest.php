@@ -7,11 +7,17 @@ class GTest extends GObject {
     }
     //===============================================
     public function run($_module, $_method) {
-        if($_module == "php") {
+        if($_module == "") {
+            $this->m_logs->addError("Le module est obligatoire.");
+        }
+        else if($_module == "php") {
             $this->runPhp($_module, $_method);
         }
         else if($_module == "js") {
             $this->runJs($_module, $_method);
+        }
+        else {
+            $this->m_logs->addError("Le module est inconnu.");
         }
     }
     //===============================================

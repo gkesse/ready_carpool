@@ -1,5 +1,5 @@
 /* ============================================== */
-/* global */
+/* Global */
 /* ============================================== */
 
 * {
@@ -72,7 +72,7 @@ body {
 button {
     background-color: transparent;
     border: none;
-    padding: 5px 10px 5px 5px;
+	padding: 0px;
     font-size: 16px;
     color: white;
     cursor: pointer;
@@ -173,11 +173,187 @@ thead tr:first-child {
 }
 
 /* ============================================== */
+/* Animate */
+/* ============================================== */
+
+.AnimateShow {
+    animation-name: AnimateShow;
+    animation-duration: 0.4s
+    -webkit-animation-name: AnimateShow;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-name: AnimateShow;
+    -moz-animation-duration: 0.4s;
+    -o-animation-name: AnimateShow;
+    -o-animation-duration: 0.4s;
+}
+
+@keyframes AnimateShow {
+    from {top:-400px; opacity:0;}
+    to {top:0; opacity:1}
+}
+
+@-webkit-keyframes AnimateShow {
+    from {top:-400px; opacity:0;} 
+    to {top:0; opacity:1;}
+}
+
+@-moz-keyframes AnimateShow {
+    from {top:-400px; opacity:0;} 
+    to {top:0; opacity:1;}
+}
+
+@-o-keyframes AnimateShow {
+    from {top:-400px; opacity:0;} 
+    to {top:0; opacity:1;}
+}
+
+.AnimateHide {
+    animation-name: AnimateHide;
+    animation-duration: 0.4s
+    -webkit-animation-name: AnimateHide;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-name: AnimateHide;
+    -moz-animation-duration: 0.4s;
+    -o-animation-name: AnimateHide;
+    -o-animation-duration: 0.4s;
+}
+
+@keyframes AnimateHide {
+    from {top:0; opacity:1}
+    to {top:-400px; opacity:0}
+}
+
+@-webkit-keyframes AnimateHide {
+    from {top:0; opacity:1}
+    to {top:-400px; opacity:0}
+}
+
+@-moz-keyframes AnimateHide {
+    from {top:0; opacity:1}
+    to {top:-400px; opacity:0}
+}
+
+@-o-keyframes AnimateHide {
+    from {top:0; opacity:1}
+    to {top:-400px; opacity:0}
+}
+
+/* ============================================== */
+/* Header */
+/* ============================================== */
+
+.Header1 {
+    border: 1px solid transparent;
+    background-color: #555555;
+    min-height: 50px;
+    padding: 0px 10px;
+}
+
+.Header2 {
+    border: 1px solid transparent;
+    background-color: #777777;
+    max-width: 800px;
+    min-height: 50px;
+    position: relative;
+    margin: auto;
+}
+
+.Header3 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translate(0, -50%);
+	text-align: left;
+	font-size: 0px;
+	word-spacing: 0px;
+}
+
+.Header4 {
+    border: 1px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	height: 40px;
+	font-size: 16px;
+}
+
+.Header5 {
+	border: 1px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 25px;
+	font-family: akronim;
+}
+
+.Header6 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 160px;
+    transform: translate(0, -50%);
+	text-align: left;
+	font-size: 0px;
+	word-spacing: 10px;
+}
+
+.Header7 {
+	border: 1px solid white;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	word-spacing: 0px;
+	font-weight: bold;
+	height: 30px;
+	padding: 5px 5px;
+}
+
+.Header8 {
+	border: 1px solid white;
+	position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(0, -50%);
+	text-align: right;
+	font-size: 0px;
+	word-spacing: 5px;
+}
+
+.Header9 {
+	border: 1px solid white;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 30px;
+	width: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.Header10 {
+	border: 1px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+}
+
+.Header11 {
+    border: 1px solid white;
+    background-color: #550055;
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    margin-top: 5px;
+    height: 50px;
+    width: 250px;
+}
+
+/* ============================================== */
 /* Log */
 /* ============================================== */
 
 .Log1 {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 2;
     padding: 10px;
