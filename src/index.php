@@ -9,6 +9,7 @@ echo sprintf("<head>\n");
 //===============================================
 echo sprintf("<title>ReadyHalte</title>\n");
 echo sprintf("<link rel='icon' type='image/x-icon' href='/data/img/logo.png'>\n");
+echo sprintf("<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no'/>\n");
 //===============================================
 echo sprintf("<link rel='stylesheet' href='/libs/google_fonts/Aclonica/css.css'/>\n");
 echo sprintf("<link rel='stylesheet' href='/libs/google_fonts/Akronim/css.css'/>\n");
