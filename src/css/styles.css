@@ -353,7 +353,7 @@ thead tr:first-child {
 }
 
 .Header7 {
-	border: 1px solid #2f3959;
+	border: 1px solid white;
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 16px;
@@ -407,6 +407,7 @@ thead tr:first-child {
 
 .Header12 {
     border: 1px solid #2f3959;
+	background-color: #2f3959;
     display: block;
     position: relative;
     height: 40px;
@@ -415,6 +416,11 @@ thead tr:first-child {
 .Header12:hover {
     border: 1px solid #1f2949;
 	background-color: #1f2949;
+}
+
+.Header12:active {
+    border: 1px solid #2f3959;
+	background-color: #2f3959;
 }
 
 .Header13 {
@@ -528,7 +534,7 @@ thead tr:first-child {
     border: 1px solid #051039;
     background-color: #051039;
     min-height: 50px;
-    padding: 50px 10px;
+    padding: 30px 10px;
     position: absolute;
     left: 0;
     right: 0;
