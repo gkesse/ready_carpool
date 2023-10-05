@@ -298,18 +298,14 @@ thead tr:first-child {
 /* ============================================== */
 
 .Header1 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     background-color: #2f3959;
     min-height: 50px;
     padding: 0 10px;
-    /*position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;*/
 }
 
 .Header2 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     background-color: #2f3959;
     max-width: 800px;
     min-height: 50px;
@@ -318,7 +314,7 @@ thead tr:first-child {
 }
 
 .Header3 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     position: absolute;
     top: 50%;
     left: 0;
@@ -329,7 +325,7 @@ thead tr:first-child {
 }
 
 .Header4 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
 	display: inline-block;
 	vertical-align: middle;
 	width: auto;
@@ -338,7 +334,7 @@ thead tr:first-child {
 }
 
 .Header5 {
-	border: 1px solid transparent;
+	border: 1px solid #2f3959;
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 25px;
@@ -346,7 +342,7 @@ thead tr:first-child {
 }
 
 .Header6 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     position: absolute;
     top: 50%;
     left: 160px;
@@ -357,7 +353,7 @@ thead tr:first-child {
 }
 
 .Header7 {
-	border: 1px solid white;
+	border: 1px solid #2f3959;
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 16px;
@@ -368,7 +364,7 @@ thead tr:first-child {
 }
 
 .Header8 {
-	border: 1px solid transparent;
+	border: 1px solid #2f3959;
 	position: absolute;
     top: 50%;
     right: 0;
@@ -391,14 +387,14 @@ thead tr:first-child {
 }
 
 .Header10 {
-	border: 1px solid transparent;
+	border: 1px solid #2f3959;
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 20px;
 }
 
 .Header11 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     background-color: #2f3959;
     display: none;
     position: absolute;
@@ -410,10 +406,15 @@ thead tr:first-child {
 }
 
 .Header12 {
-    border: 1px solid transparent;
+    border: 1px solid #2f3959;
     display: block;
     position: relative;
     height: 40px;
+}
+
+.Header12:hover {
+    border: 1px solid #1f2949;
+	background-color: #1f2949;
 }
 
 .Header13 {
