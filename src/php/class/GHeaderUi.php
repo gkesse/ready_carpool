@@ -16,8 +16,8 @@ class GHeaderUi extends GObject {
         echo sprintf("</a>\n");
         //
         echo sprintf("<div class='Header6'>\n");
-        echo sprintf("<a class='Header7' href='/search_trip'><i class='fa fa-search'></i> Trouver un trajet</a>\n");
-        echo sprintf("<a class='Header7' href='/add_trip'><i class='fa fa-plus'></i> Proposer un trajet</a>\n");
+        echo sprintf("<a class='Header7' href='/trouver-un-trajet'><i class='fa fa-road'></i> Trouver un trajet</a>\n");
+        echo sprintf("<a class='Header7' href='/proposer-un-trajet'><i class='fa fa-car'></i> Proposer un trajet</a>\n");
         echo sprintf("</div>\n");
         //
         echo sprintf("<div class='Header8'>\n");
@@ -29,13 +29,13 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("<div class='Header11'>\n");
         //
-        echo sprintf("<a class='Header12' href='/login'>\n");
-        echo sprintf("<div class='Header13'>Connexion</div>\n");
+        echo sprintf("<a class='Header12' href='/connexion'>\n");
+        echo sprintf("<div class='Header13'>Se connecter</div>\n");
         echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
         echo sprintf("</a>\n");
         //
-        echo sprintf("<a class='Header12' href='/register'>\n");
-        echo sprintf("<div class='Header13'>Inscription</div>\n");
+        echo sprintf("<a class='Header12' href='/inscription'>\n");
+        echo sprintf("<div class='Header13'>S'inscrire</div>\n");
         echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
         echo sprintf("</a>\n");
         //

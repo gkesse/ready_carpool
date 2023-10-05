@@ -24,6 +24,7 @@ class GTest extends GObject {
     public function runPhp($_module, $_method) {
         $lObj = new GTestPhp();
         $lObj->run($_module, $_method);
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runJs($_module, $_method) {

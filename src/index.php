@@ -7,7 +7,7 @@ echo sprintf("<!DOCTYPE html>\n");
 echo sprintf("<html>\n");
 echo sprintf("<head>\n");
 //===============================================
-echo sprintf("<title>ReadyApp</title>\n");
+echo sprintf("<title>ReadyHalte</title>\n");
 echo sprintf("<link rel='icon' type='image/x-icon' href='/data/img/logo.png'>\n");
 //===============================================
 echo sprintf("<link rel='stylesheet' href='/libs/google_fonts/Aclonica/css.css'/>\n");
@@ -25,9 +25,11 @@ echo sprintf("<body>\n");
 //===============================================
 $lProcess = new GProcess();
 $lLogUi = new GLogUi();
+$lHeaderUi = new GHeaderUi();
 //===============================================
 $lLogUi->run();
-$lProcess->run("test", "php", "header");
+$lHeaderUi->run();
+$lProcess->run("test", "php", "page");
 //===============================================
 echo sprintf("<script src='/js/scripts.js'></script>\n");
 echo sprintf("<script src='/js/functions.js'></script>\n");
