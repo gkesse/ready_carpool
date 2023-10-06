@@ -3,6 +3,11 @@
 require "./php/class/autoload.php";
 require "./php/functions.php";
 //===============================================
+$lApp = new GApp();
+$lProcess = new GProcess();
+$lLogUi = new GLogUi();
+$lHeaderUi = new GHeaderUi();
+//===============================================
 echo sprintf("<!DOCTYPE html>\n");
 echo sprintf("<html lang='fr'>\n");
 echo sprintf("<head>\n");
@@ -15,6 +20,21 @@ echo sprintf("<link rel='icon' type='image/x-icon' href='/data/img/logo.png'>\n"
 echo sprintf("<meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no'/>\n");
 // charset
 echo sprintf("<meta charset='UTF-8'/>\n");
+// google
+echo sprintf("<meta name='description' content=\"%s\"/>\n", $lApp->toDescription());
+//===============================================
+// facebook
+echo sprintf("<meta property='og:type' content=\"website\"/>\n");
+echo sprintf("<meta property='og:image' content=\"%s\"/>\n", $lApp->toBanner());
+echo sprintf("<meta property='og:image:secure_url' content=\"%s\"/>\n", $lApp->toBanner());
+echo sprintf("<meta property='og:image:type' content=\"image/png\"/>\n");
+echo sprintf("<meta property='og:image:width' content=\"440\"/>\n");
+echo sprintf("<meta property='og:image:height' content=\"440\"/>\n");
+echo sprintf("<meta property='og:locale' content=\"fr_FR\"/>\n");
+echo sprintf("<meta property='og:url' content=\"%s\"/>\n", $lApp->toUrl());
+echo sprintf("<meta property='og:title' content=\"%s\"/>\n", $lApp->toTitle());
+echo sprintf("<meta property='og:site_name' content=\"%s\"/>\n", $lApp->toSiteName());
+echo sprintf("<meta property='og:description' content=\"%s\"/>\n", $lApp->toDescription());
 //===============================================
 // google_fonts
 echo sprintf("<link rel='stylesheet' href='/libs/google_fonts/Aclonica/css.css'/>\n");
@@ -31,10 +51,6 @@ echo sprintf("<link rel='stylesheet' href='/css/styles.css'>\n");
 //===============================================
 echo sprintf("</head>\n");
 echo sprintf("<body>\n");
-//===============================================
-$lProcess = new GProcess();
-$lLogUi = new GLogUi();
-$lHeaderUi = new GHeaderUi();
 //===============================================
 $lLogUi->run();
 $lHeaderUi->run();
