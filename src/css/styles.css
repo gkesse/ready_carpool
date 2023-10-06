@@ -263,7 +263,7 @@ thead tr:first-child {
 
 .Error3 {
     border: 1px solid transparent;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .Error4 {
@@ -278,7 +278,7 @@ thead tr:first-child {
 
 .Error5 {
     border: 1px solid transparent;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .Error6 {
@@ -617,6 +617,34 @@ thead tr:first-child {
     right: 10px;
     transform: translate(0, -50%);
 	font-size: 20px;
+}
+
+/* ============================================== */
+/* Mobile */ 
+/* ============================================== */
+
+@media (max-width:1024px) {
+
+}
+
+/* ============================================== */
+
+@media (max-width:960px) {
+
+}
+
+/* ============================================== */
+
+@media (max-width:640px) {
+    /* ---------------------------------------------- */
+    /* Header */
+    /* ---------------------------------------------- */
+    
+    .Header6 {
+        display: none;
+    }
+
+    /* ---------------------------------------------- */
 }
 
 /* ============================================== */
