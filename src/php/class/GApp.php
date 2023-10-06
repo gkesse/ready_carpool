@@ -32,7 +32,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toSiteName() {
-        return "ReadyDev";
+        return "ReadyHalte";
     }
     //===============================================
 }
