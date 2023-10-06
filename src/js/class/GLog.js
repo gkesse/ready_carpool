@@ -149,6 +149,11 @@ class GLog {
         return false;
     }
     //===============================================
+    isTestEnv() {
+        var lIsTestEnv = document.getElementById("gIsTestEnv");
+        return lIsTestEnv.value;
+    }
+    //===============================================
     getErrors() {
         var lErrors = "";
         for(var i = 0; i < this.m_map.length; i++) {
@@ -195,14 +200,16 @@ class GLog {
         else if(this.hasErrors()) lTitle += "Erreurs";
         else if(this.hasLogs()) lTitle += "Logs";
         
-        lTitle += "-";
-        
-        if(this.hasServerCpp()) lTitle += "Cpp";
-        else if(this.hasServerC()) lTitle += "C";
-        else if(this.hasServerJava()) lTitle += "Java";
-        else if(this.hasServerPhp()) lTitle += "PHP";
-        else if(this.hasServerPython()) lTitle += "Python";
-        else if(this.hasClientJs()) lTitle += "JS";
+        if(this.isTestEnv()) {
+            lTitle += "-";
+            
+            if(this.hasServerCpp()) lTitle += "Cpp";
+            else if(this.hasServerC()) lTitle += "C";
+            else if(this.hasServerJava()) lTitle += "Java";
+            else if(this.hasServerPhp()) lTitle += "PHP";
+            else if(this.hasServerPython()) lTitle += "Python";
+            else if(this.hasClientJs()) lTitle += "JS";
+        }
             
         return lTitle;
     }

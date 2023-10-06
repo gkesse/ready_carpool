@@ -28,8 +28,8 @@ echo sprintf("<meta property='og:type' content=\"website\"/>\n");
 echo sprintf("<meta property='og:image' content=\"%s\"/>\n", $lApp->toBanner());
 echo sprintf("<meta property='og:image:secure_url' content=\"%s\"/>\n", $lApp->toBanner());
 echo sprintf("<meta property='og:image:type' content=\"image/png\"/>\n");
-echo sprintf("<meta property='og:image:width' content=\"440\"/>\n");
-echo sprintf("<meta property='og:image:height' content=\"440\"/>\n");
+echo sprintf("<meta property='og:image:width' content=\"600\"/>\n");
+echo sprintf("<meta property='og:image:height' content=\"330\"/>\n");
 echo sprintf("<meta property='og:locale' content=\"fr_FR\"/>\n");
 echo sprintf("<meta property='og:url' content=\"%s\"/>\n", $lApp->toUrl());
 echo sprintf("<meta property='og:title' content=\"%s\"/>\n", $lApp->toTitle());
@@ -51,6 +51,9 @@ echo sprintf("<link rel='stylesheet' href='/css/styles.css'>\n");
 //===============================================
 echo sprintf("</head>\n");
 echo sprintf("<body>\n");
+//===============================================
+// envs
+echo sprintf("<input type='hidden' id='gIsTestEnv' value='%s'/>\n", $lApp->isTestEnv());
 //===============================================
 $lLogUi->run();
 $lHeaderUi->run();

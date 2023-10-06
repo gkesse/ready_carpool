@@ -35,6 +35,12 @@ class GApp extends GObject {
         return "ReadyHalte";
     }
     //===============================================
+    public function isTestEnv() {
+        $lEnvType = getenv("ENV_TYPE");
+        if($lEnvType == "TEST") return true;
+        return false;
+    }
+    //===============================================
 }
 //===============================================
 ?>
