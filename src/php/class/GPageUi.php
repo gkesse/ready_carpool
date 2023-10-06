@@ -17,6 +17,9 @@ class GPageUi extends GObject {
         else if($lPageId == "inscription") {
             $this->runRegister();
         }
+        else if($lPageId == "inscription/email") {
+            $this->runRegisterEmail();
+        }
         else if($lPageId == "trouver-un-trajet") {
             $this->runSearchTrip();
         }
@@ -43,7 +46,13 @@ class GPageUi extends GObject {
     }
     //===============================================
     public function runRegister() {
-        
+        $lObj = new GRegisterUi();
+        $lObj->run();
+    }
+    //===============================================
+    public function runRegisterEmail() {
+        $lObj = new GRegisterEmailUi();
+        $lObj->run();
     }
     //===============================================
     public function runSearchTrip() {
