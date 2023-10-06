@@ -321,7 +321,7 @@ thead tr:first-child {
     transform: translate(0, -50%);
 	text-align: left;
 	font-size: 0;
-	word-spacing: 0;
+	word-spacing: 0px;
 }
 
 .Header4 {
@@ -329,7 +329,7 @@ thead tr:first-child {
 	display: inline-block;
 	vertical-align: middle;
 	width: auto;
-	height: 40px;
+	height: 28px;
 	font-size: 16px;
 }
 
@@ -441,6 +441,10 @@ thead tr:first-child {
     right: 10px;
     transform: translate(0, -50%);
 	font-size: 20px;
+}
+
+.Header15 {
+	display: none;
 }
 
 /* ============================================== */
@@ -642,6 +646,10 @@ thead tr:first-child {
     
     .Header6 {
         display: none;
+    }
+
+    .Header15 {
+        display: block;
     }
 
     /* ---------------------------------------------- */
