@@ -590,6 +590,11 @@ thead tr:first-child {
     background-color: #051039;
 }
 
+.Login5:active .Login6 {
+    border: 1px solid #2f3959;
+    background-color: #2f3959;
+}
+
 .Login6 {
     border: 1px solid #2f3959;
     background-color: #2f3959;
