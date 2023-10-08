@@ -18,30 +18,25 @@ class GRegisterEmailUi extends GObject {
         echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='email'>Email:</label></div>\n");
         echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail9' type='text' id='email'/></div>\n");
         echo sprintf("</div>\n");
-        // firstname
+        // password
         echo sprintf("<div class='RegisterEmail5'>\n");
-        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='firstname'>Prénom:</label></div>\n");
-        echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail9' type='text' id='lastname'/></div>\n");
+        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='password'>Mot de passe:</label></div>\n");
+        echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail9' type='password' id='password'/></div>\n");
         echo sprintf("</div>\n");
-        // lastname
+        // confirm
         echo sprintf("<div class='RegisterEmail5'>\n");
-        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='lastname'>Nom:</label></div>\n");
-        echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail9' type='text' id='lastname'/></div>\n");
+        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='confirm'>Confirmation:</label></div>\n");
+        echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail9' type='password' id='confirm'/></div>\n");
         echo sprintf("</div>\n");
-        // birthday
-        echo sprintf("<div class='RegisterEmail5'>\n");
-        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='gender'>Date de naissance:</label></div>\n");
-        echo sprintf("<div class='RegisterEmail8'><input class='RegisterEmail10' type='date' id='gender'/></div>\n");
-        echo sprintf("</div>\n");
-        // gender
-        echo sprintf("<div class='RegisterEmail5'>\n");
-        echo sprintf("<div class='RegisterEmail6'><label class='RegisterEmail7' for='gender'>Civilité:</label></div>\n");
-        echo sprintf("<div class='RegisterEmail8'>\n");
-        echo sprintf("<select class='RegisterEmail9' id='gender' name='gender'>\n");
-        echo sprintf("<option value='0'>Sélectionner une civilité...</option>\n");
-        echo sprintf("<option value='M'>Masculin</option>\n");
-        echo sprintf("<option value='F'>Féminin</option>\n");
-        echo sprintf("</select>\n");
+        // buttons
+        echo sprintf("<div class='RegisterEmail10'>\n");
+        echo sprintf("<div class='RegisterEmail11'>\n");
+        //
+        echo sprintf("<button class='RegisterEmail12'>\n");
+        echo sprintf("<i class='RegisterEmail13 fa fa-user'></i>\n");
+        echo sprintf("<span class='RegisterEmail14'>Créer</span>\n");
+        echo sprintf("</button>\n");
+        //
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
         //

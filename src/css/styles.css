@@ -803,17 +803,46 @@ thead tr:first-child {
 }
 
 .RegisterEmail10 {
-    border: 1px solid #2f3959;
-    background-color: #1f2949;
-    background-image: url("/data/img/calendar.png");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 10px) center;
+    border: 1px solid transparent;
+    height: 70px;
+    position: relative;
+}
+
+.RegisterEmail11 {
+    border: 1px solid transparent;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 1;
+    transform: translate(0, -50%);
+}
+
+.RegisterEmail12 {
+    border: 1px solid transparent;
+    background-color: #2f3959;
+    padding: 0px 10px;
+}
+
+.RegisterEmail12:hover {
+    background-color: #3f4969;
+}
+
+.RegisterEmail12:active {
+    background-color: #2f3959;
+}
+
+.RegisterEmail13 {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.RegisterEmail14 {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* ============================================== */
