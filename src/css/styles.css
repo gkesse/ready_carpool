@@ -820,6 +820,7 @@ thead tr:first-child {
 .RegisterEmail12 {
     border: 1px solid transparent;
     background-color: #2f3959;
+    line-height: 30px;
     padding: 0px 10px;
 }
 
@@ -829,20 +830,6 @@ thead tr:first-child {
 
 .RegisterEmail12:active {
     background-color: #2f3959;
-}
-
-.RegisterEmail13 {
-    border: 1px solid transparent;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 30px;
-    font-size: 20px;
-}
-
-.RegisterEmail14 {
-    border: 1px solid transparent;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 /* ============================================== */

@@ -18,6 +18,9 @@ class GServer extends GObject {
         else if(_module == "header") {
             this.runHeader(_method, _obj, _data);
         }
+        else if(_module == "register") {
+            this.runRegister(_method, _obj, _data);
+        }
         else {
             this.m_logs.addError("Le module est inconnu.");
         }
@@ -36,6 +39,12 @@ class GServer extends GObject {
     //===============================================
     runHeader(_method, _obj, _data) {
         var lObj = new GHeader();
+        lObj.run(_method, _obj, _data);
+        this.m_logs.addLogs(lObj.m_logs);
+    }
+    //===============================================
+    runRegister(_method, _obj, _data) {
+        var lObj = new GRegister();
         lObj.run(_method, _obj, _data);
         this.m_logs.addLogs(lObj.m_logs);
     }

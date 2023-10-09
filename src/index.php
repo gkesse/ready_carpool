@@ -1,7 +1,6 @@
 <?php
 //===============================================
-require "./php/class/autoload.php";
-require "./php/functions.php";
+require $_SERVER["DOCUMENT_ROOT"]."/php/class/GInclude.php";
 //===============================================
 $lApp = new GApp();
 $lProcess = new GProcess();
@@ -66,9 +65,12 @@ echo sprintf("<script src='/js/class/GLog.js'></script>\n");
 echo sprintf("<script src='/js/class/GXml.js'></script>\n");
 echo sprintf("<script src='/js/class/GCode.js'></script>\n");
 echo sprintf("<script src='/js/class/GObject.js'></script>\n");
+echo sprintf("<script src='/js/class/GAjax.js'></script>\n");
+echo sprintf("<script src='/js/class/GLoader.js'></script>\n");
 echo sprintf("<script src='/js/class/GServer.js'></script>\n");
 echo sprintf("<script src='/js/class/GTest.js'></script>\n");
 echo sprintf("<script src='/js/class/GHeader.js'></script>\n");
+echo sprintf("<script src='/js/class/GRegister.js'></script>\n");
 //===============================================
 $lProcess->getLogs()->showLogs();
 $lProcess->runJs();
