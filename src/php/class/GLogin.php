@@ -10,12 +10,6 @@ class GLogin extends GManager {
         parent::__construct();
     }
     //===============================================
-    public function setId($_id) {
-        if($_id != "") {
-            $this->m_id = intval($_id);
-        }
-    }
-    //===============================================
     public function loadUser() {
         $lEmail = strtolower($this->m_email);
         $lPassword = sprintf("%s|%s", $lEmail, $this->m_password);
@@ -26,14 +20,20 @@ class GLogin extends GManager {
         where 1 = 1
         and _email = '%s'
         and _password = '%s'", $lEmail, $lPassword));
-        $this->setId($lId);
+        $this->m_id = intval($lId);
         $this->m_logs->addLogs($lMySQL->getLogs());
         return !$this->m_logs->hasErrors();
     }
     //===============================================
     public function loginOn() {
-        if($this->isLogin()) return false;
-        if($this->m_id == 0) return false;
+        if($this->isLogin()) {
+            $this->m_logs->addError("Vous êtes déjà connecté.");
+            return false;
+        }
+        if($this->m_id == 0) {
+            $this->m_logs->addError("Les identifiants sont incorrects.");
+            return false;
+        }
         $this->setSession("user_id", $this->m_id);
         return true;
     }
@@ -52,7 +52,7 @@ class GLogin extends GManager {
         parent::deserialize($_data);
         $lDom = new GCode();
         $lDom->loadXml($_data);
-        $this->m_id = $lDom->getData($_code, "id");
+        $this->m_id = intval($lDom->getData($_code, "id"));
         $this->m_email = $lDom->getData($_code, "email");
         $this->m_password = $lDom->getData($_code, "password");
         $lDom->getMap($_code, $this->m_map, $this);
@@ -103,8 +103,8 @@ class GLogin extends GManager {
             return false;
         }
         
-        $this->loadUser();
-        $this->loginOn();
+        if(!$this->loadUser()) return false;
+        if(!$this->loginOn()) return false;
         return true;
     }
     //===============================================
