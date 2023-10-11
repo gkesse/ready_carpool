@@ -53,6 +53,11 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("</div>\n");
         //
+        echo sprintf("<div class='Header12' onclick='call_server(\"header\", \"disconnect\", this)'>\n");
+        echo sprintf("<div class='Header13'>Se déconnecter</div>\n");
+        echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
+        echo sprintf("</div>\n");
+        //
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
         //

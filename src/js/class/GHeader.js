@@ -10,14 +10,17 @@ class GHeader extends GObject {
             this.m_logs.addError("La méthode est obligatoire.");
         }
         else if(_method == "connect_icon") {
-            this.runConnectIcon(_obj, _data);
+            this.onConnectIcon(_obj, _data);
+        }
+        else if(_method == "disconnect") {
+            this.onDisconnect(_obj, _data);
         }
         else {
             this.m_logs.addError("La méthode est inconnue.");
         }
     }
     //===============================================
-    runConnectIcon(_obj, _data) {
+    onConnectIcon(_obj, _data) {
         var lChevron = _obj.firstElementChild.nextElementSibling;
         var lMenu = _obj.nextElementSibling;
 
@@ -29,6 +32,11 @@ class GHeader extends GObject {
             lChevron.className = "Header10 fa fa-chevron-down";
             lMenu.style.display = "none";
         }        
+    }
+    //===============================================
+    onDisconnect(_obj, _data) {
+        var lAjax = new GAjax();
+        lAjax.callServer("header", "disconnect");
     }
     //===============================================
 }

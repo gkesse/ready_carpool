@@ -20,7 +20,7 @@ class GAjax extends GObject {
         return true;
     }
     //===============================================
-    call(_module, _method, _params, _callback, _type) {
+    callServer(_module, _method, _params = "", _callback = null) {
         if(_module == "") {
             this.m_logs.addError("Le module est obligatoire.");            
             return false;
@@ -35,21 +35,11 @@ class GAjax extends GObject {
         lDom.addData("manager", "method", _method);
         lDom.loadData(_params);
         var lData = lDom.toString();
-        this.callServer(lData, _callback);
+        this.callAjax(lData, _callback);
         return !this.m_logs.hasErrors();
     }
     //===============================================
-    callLocal(_module, _method, _params, _callback = null) {
-        this.call(_module, _method, _params, _callback, "local");
-        return !this.m_logs.hasErrors();
-    }
-    //===============================================
-    callRemote(_module, _method, _params, _callback = null) {
-        this.call(_module, _method, _params, _callback, "remote");
-        return !this.m_logs.hasErrors();
-    }
-    //===============================================
-    callServer(_data, _callback) {
+    callAjax(_data, _callback) {
         if(_data == "") {
             this.m_logs.addError("La donnée est obligatoire.");            
             return false;

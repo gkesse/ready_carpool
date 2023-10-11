@@ -1,26 +1,33 @@
 <?php   
 //===============================================
-class GRegister extends GManager {
+class GLogin extends GManager {
     //===============================================
     private $m_id = 0;
     private $m_email = "";
     private $m_password = "";
-    private $m_confirm = "";
     //===============================================
     public function __construct() {
         parent::__construct();
     }
     //===============================================
-    public function insertUser() {
+    public function setId($_id) {
+        if($_id != "") {
+            $this->m_id = intval($_id);
+        }
+    }
+    //===============================================
+    public function loadUser() {
         $lEmail = strtolower($this->m_email);
         $lPassword = sprintf("%s|%s", $lEmail, $this->m_password);
         $lPassword = md5($lPassword);
         $lMySQL = new GMySQL();
-        $lMySQL->execQuery(sprintf("
-            insert into _user (_email, _password)
-            values ('%s', '%s')", $lEmail, $lPassword));
+        $lId = $lMySQL->readData(sprintf("
+        select _id from _user
+        where 1 = 1
+        and _email = '%s'
+        and _password = '%s'", $lEmail, $lPassword));
+        $this->setId($lId);
         $this->m_logs->addLogs($lMySQL->getLogs());
-        $this->m_id = $lMySQL->getId();
         return !$this->m_logs->hasErrors();
     }
     //===============================================
@@ -37,7 +44,6 @@ class GRegister extends GManager {
         $lDom->addData($_code, "id", $this->m_id);
         $lDom->addData($_code, "email", $this->m_email);
         $lDom->addData($_code, "password", $this->m_password);
-        $lDom->addData($_code, "confirm", $this->m_confirm);
         $lDom->addMap($_code, $this->m_map);
         return $lDom->toString();
     }
@@ -49,7 +55,6 @@ class GRegister extends GManager {
         $this->m_id = $lDom->getData($_code, "id");
         $this->m_email = $lDom->getData($_code, "email");
         $this->m_password = $lDom->getData($_code, "password");
-        $this->m_confirm = $lDom->getData($_code, "confirm");
         $lDom->getMap($_code, $this->m_map, $this);
     }
     //===============================================
@@ -97,26 +102,8 @@ class GRegister extends GManager {
             $this->m_logs->addError("Le mot de passe est trop grand.");
             return false;
         }
-        // confirm
-        else if($this->m_confirm == "") {
-            $this->m_logs->addError("La confirmation est obligatoire.");
-            return false;
-        }
-        else if(strlen($this->m_confirm) < 8) {
-            $this->m_logs->addError("La confirmation est trop petite.");
-            return false;
-        }
-        else if(strlen($this->m_confirm) > 50) {
-            $this->m_logs->addError("La confirmation est trop grande.");
-            return false;
-        }
-        // compare
-        else if($this->m_password != $this->m_confirm) {
-            $this->m_logs->addError("Le mot de passe est différent de la confirmation.");
-            return false;
-        }
         
-        $this->insertUser();
+        $this->loadUser();
         $this->loginOn();
         return true;
     }

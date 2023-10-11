@@ -1,31 +1,26 @@
 //===============================================
-class GRegister extends GObject {
+class GLogin extends GObject {
     //===============================================
     constructor() {
         super();
         this.m_email = "";
         this.m_password = "";
-        this.m_confirm = "";
     }
     //===============================================
     readData() {
-        var lEmail = document.getElementById("RegisterEmail_Email");
-        var lPassword = document.getElementById("RegisterEmail_Password");
-        var lConfirm = document.getElementById("RegisterEmail_Confirm");
+        var lEmail = document.getElementById("LoginEmail_Email");
+        var lPassword = document.getElementById("LoginEmail_Password");
         
         this.m_email = lEmail.value;
         this.m_password = lPassword.value;
-        this.m_confirm = lConfirm.value;
     }
     //===============================================
     writeData() {
-        var lEmail = document.getElementById("RegisterEmail_Email");
-        var lPassword = document.getElementById("RegisterEmail_Password");
-        var lConfirm = document.getElementById("RegisterEmail_Confirm");
+        var lEmail = document.getElementById("LoginEmail_Email");
+        var lPassword = document.getElementById("LoginEmail_Password");
         
         lEmail.value = this.m_email;
         lPassword.value = this.m_password;
-        lConfirm.value = this.m_confirm;
     }
     //===============================================
     serialize(_code = "register") {
@@ -33,7 +28,6 @@ class GRegister extends GObject {
         lDom.createDoc();
         lDom.addData(_code, "email", this.m_email);
         lDom.addData(_code, "password", this.m_password);
-        lDom.addData(_code, "confirm", this.m_confirm);
         lDom.addMap(_code, this.m_map);
         return lDom.toString();
     }
@@ -43,7 +37,6 @@ class GRegister extends GObject {
         lDom.loadXml(_data);
         this.m_email = lDom.getData(_code, "email");
         this.m_password = lDom.getData(_code, "password");
-        this.m_confirm = lDom.getData(_code, "confirm");
         lDom.getMap(_code, this.m_map, this);
     }
     //===============================================
@@ -63,12 +56,13 @@ class GRegister extends GObject {
         this.readData();
         var lAjax = new GAjax();
         var lData = this.serialize();
-        lAjax.callServer("register", "mail", lData, this.onMailCB);
+        lAjax.callServer("login", "mail", lData, this.onMailCB);
     }
     //===============================================
     onMailCB(_data, _isOk) {
         if(_isOk) {
-
+            var lLogin = new GLogin();
+            lLogin.redirectUrl();
         }
     }
     //===============================================

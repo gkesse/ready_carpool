@@ -7,5 +7,14 @@ class GObject {
         this.m_map = [];
     }
     //===============================================
+    isLogin() {
+        var lIsLogin = document.getElementById("gIsLogin");
+        return lIsLogin.value;
+    }
+    //===============================================
+    redirectUrl(_url = "/") {
+        location.replace(_url);
+    }
+    //===============================================
 }
 //===============================================

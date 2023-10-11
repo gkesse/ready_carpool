@@ -21,6 +21,9 @@ class GServer extends GObject {
         else if(_module == "register") {
             this.runRegister(_method, _obj, _data);
         }
+        else if(_module == "login") {
+            this.runLogin(_method, _obj, _data);
+        }
         else {
             this.m_logs.addError("Le module est inconnu.");
         }
@@ -45,6 +48,12 @@ class GServer extends GObject {
     //===============================================
     runRegister(_method, _obj, _data) {
         var lObj = new GRegister();
+        lObj.run(_method, _obj, _data);
+        this.m_logs.addLogs(lObj.m_logs);
+    }
+    //===============================================
+    runLogin(_method, _obj, _data) {
+        var lObj = new GLogin();
         lObj.run(_method, _obj, _data);
         this.m_logs.addLogs(lObj.m_logs);
     }

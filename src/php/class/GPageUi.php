@@ -12,12 +12,19 @@ class GPageUi extends GObject {
             $this->runHome();
         }
         else if($lPageId == "connexion") {
+            $this->redirectLogin();
             $this->runLogin();
         }
+        else if($lPageId == "connexion/email") {
+            $this->redirectLogin();
+            $this->runLoginMail();
+        }
         else if($lPageId == "inscription") {
+            $this->redirectLogin();
             $this->runRegister();
         }
         else if($lPageId == "inscription/email") {
+            $this->redirectLogin();
             $this->runRegisterEmail();
         }
         else if($lPageId == "trouver-un-trajet") {
@@ -42,6 +49,11 @@ class GPageUi extends GObject {
     //===============================================
     public function runLogin() {
         $lObj = new GLoginUi();
+        $lObj->run();
+    }
+    //===============================================
+    public function runLoginMail() {
+        $lObj = new GLoginEmailUi();
         $lObj->run();
     }
     //===============================================

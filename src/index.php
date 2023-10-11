@@ -5,6 +5,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/php/class/GInclude.php";
 $lApp = new GApp();
 $lProcess = new GProcess();
 $lLogUi = new GLogUi();
+$lLoaderUi = new GLoaderUi();
 $lHeaderUi = new GHeaderUi();
 //===============================================
 echo sprintf("<!DOCTYPE html>\n");
@@ -53,8 +54,10 @@ echo sprintf("<body>\n");
 //===============================================
 // envs
 echo sprintf("<input type='hidden' id='gIsTestEnv' value='%s'/>\n", $lApp->isTestEnv());
+echo sprintf("<input type='hidden' id='gIsLogin' value='%s'/>\n", $lApp->isLogin());
 //===============================================
 $lLogUi->run();
+$lLoaderUi->run();
 $lHeaderUi->run();
 $lProcess->run("test", "php", "page");
 //===============================================
@@ -71,6 +74,7 @@ echo sprintf("<script src='/js/class/GServer.js'></script>\n");
 echo sprintf("<script src='/js/class/GTest.js'></script>\n");
 echo sprintf("<script src='/js/class/GHeader.js'></script>\n");
 echo sprintf("<script src='/js/class/GRegister.js'></script>\n");
+echo sprintf("<script src='/js/class/GLogin.js'></script>\n");
 //===============================================
 $lProcess->getLogs()->showLogs();
 $lProcess->runJs();

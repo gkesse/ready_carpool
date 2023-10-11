@@ -86,7 +86,7 @@ button:disabled:hover {
 }
 
 input {
-    background-color: red;
+    background-color: transparent;
     border: none;
     border-radius: 0;
     padding: 5px 10px 5px 10px;
@@ -416,6 +416,7 @@ thead tr:first-child {
     display: block;
     position: relative;
     height: 40px;
+    cursor: pointer;
 }
 
 .Header12:hover {
@@ -450,6 +451,91 @@ thead tr:first-child {
 
 .Header15 {
 	display: none;
+}
+
+/* ============================================== */
+/* Loader */
+/* ============================================== */
+
+.Loader1 {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding: 10px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.4);
+    overflow: auto;
+    text-align: left;
+}
+
+.Loader2 {
+    background-color: #051039;
+    margin: auto;
+    max-width: 500px;
+    position: relative;
+    padding: 10px 0px;
+}
+
+.Loader3 {
+      text-align: center;
+      padding: 20px;
+}
+
+.Loader4 {
+      display: inline-block;
+}
+
+.Loader5 {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      animation: LoaderRing 2s linear infinite;
+}
+
+.Loader5:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(255,255,255,.3);
+}
+
+.Loader6 {
+    color: #f0f0f0;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 120px;
+    text-align: center;
+    animation: LoaderMsg 3s ease-in-out infinite;
+}
+
+@keyframes LoaderRing {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+}
+
+@keyframes LoaderMsg {
+    50% {
+        color: #5f5f5f;
+    }
 }
 
 /* ============================================== */
@@ -631,6 +717,107 @@ thead tr:first-child {
     right: 10px;
     transform: translate(0, -50%);
 	font-size: 20px;
+}
+
+/* ============================================== */
+/* LoginEmail */
+/* ============================================== */
+
+.LoginEmail1 {
+    border: 1px solid transparent;
+    background-color: #051039;
+    min-height: 50px;
+    padding: 30px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.LoginEmail2 {
+    border: 1px solid transparent;
+    background-color: #051039;
+    max-width: 600px;
+    min-height: 100px;
+    margin: auto;
+}
+
+.LoginEmail3 {
+    border: 1px solid transparent;
+    background-color: #051039;
+    padding: 30px 0;
+}
+
+.LoginEmail4 {
+    border: 1px solid transparent;
+    background-color: #051039;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.LoginEmail5 {
+    border: 1px solid transparent;
+}
+
+.LoginEmail6 {
+    border: 1px solid transparent;
+    height: 35px;
+    position: relative;
+}
+
+.LoginEmail7 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+}
+
+.LoginEmail8 {
+    border: 1px solid transparent;
+    height: 35px;
+    position: relative;
+}
+
+.LoginEmail9 {
+    border: 1px solid #2f3959;
+    background-color: #1f2949;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.LoginEmail10 {
+    border: 1px solid transparent;
+    height: 70px;
+    position: relative;
+}
+
+.LoginEmail11 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.LoginEmail12 {
+    border: 1px solid transparent;
+    background-color: #2f3959;
+    line-height: 30px;
+    padding: 0px 10px;
+}
+
+.LoginEmail12:hover {
+    background-color: #3f4969;
+}
+
+.LoginEmail12:active {
+    background-color: #2f3959;
 }
 
 /* ============================================== */
