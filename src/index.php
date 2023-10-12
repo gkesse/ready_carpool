@@ -13,7 +13,7 @@ echo sprintf("<html lang='fr'>\n");
 echo sprintf("<head>\n");
 //===============================================
 // title
-echo sprintf("<title>ReadyHalte</title>\n");
+echo sprintf("<title>%s</title>\n", $lApp->toTitle());
 // logo
 echo sprintf("<link rel='icon' type='image/x-icon' href='/data/img/logo.png'>\n");
 // viewport

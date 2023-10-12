@@ -12,7 +12,7 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("<a class='Header3' href='/'>\n");
         echo sprintf("<img class='Header4' src='/data/img/icon.png'/>\n");
-        echo sprintf("<div class='Header5'>ReadyHalte</div>\n");
+        echo sprintf("<div class='Header5'>ReadyServices</div>\n");
         echo sprintf("</a>\n");
         //
         echo sprintf("<div class='Header6'>\n");

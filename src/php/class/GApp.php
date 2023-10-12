@@ -8,9 +8,10 @@ class GApp extends GObject {
     //===============================================
     public function toDescription() {
         $lData = "";
-        $lData .= sprintf("Avec ReadyHalte, Choisissez un trajet\n");
-        $lData .= sprintf("et voyagez partout où vous voulez dès aujourd'hui.\n");
-        $lData .= sprintf("Plateforme de Covoiturage Continu.\n");
+        $lData .= sprintf("Avec ReadyServices, Recherchez ou Proposez\n");
+        $lData .= sprintf("gratuitement un service et Gagnez très rapidement de la clientèle\n");
+        $lData .= sprintf("dès aujourd'hui peu importe où vous êtes.\n");
+        $lData .= sprintf("Plateforme de Services en Continu.\n");
         $lData .= sprintf("Produit par Gérard KESSE.\n");
         return $lData;
     }
@@ -32,7 +33,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toSiteName() {
-        return "ReadyHalte";
+        return "ReadyServices";
     }
     //===============================================
     public function isTestEnv() {
