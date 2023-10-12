@@ -7,6 +7,9 @@ $lProcess = new GProcess();
 $lLogUi = new GLogUi();
 $lLoaderUi = new GLoaderUi();
 $lHeaderUi = new GHeaderUi();
+$lPageUi = new GPageUi();
+//===============================================
+$lPageUi->redirectPage();
 //===============================================
 echo sprintf("<!DOCTYPE html>\n");
 echo sprintf("<html lang='fr'>\n");

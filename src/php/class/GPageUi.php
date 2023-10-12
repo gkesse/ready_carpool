@@ -6,25 +6,37 @@ class GPageUi extends GObject {
         parent::__construct();
     }
     //===============================================
+    public function redirectPage() {
+        $lPageId = $this->getPageId();
+        if($lPageId == "connexion") {
+            $this->redirectLogin();
+        }
+        else if($lPageId == "connexion/email") {
+            $this->redirectLogin();
+        }
+        else if($lPageId == "inscription") {
+            $this->redirectLogin();
+        }
+        else if($lPageId == "inscription/email") {
+            $this->redirectLogin();
+        }
+    }
+    //===============================================
     public function run() {
         $lPageId = $this->getPageId();
         if($lPageId == "") {
             $this->runHome();
         }
         else if($lPageId == "connexion") {
-            $this->redirectLogin();
             $this->runLogin();
         }
         else if($lPageId == "connexion/email") {
-            $this->redirectLogin();
             $this->runLoginMail();
         }
         else if($lPageId == "inscription") {
-            $this->redirectLogin();
             $this->runRegister();
         }
         else if($lPageId == "inscription/email") {
-            $this->redirectLogin();
             $this->runRegisterEmail();
         }
         else if($lPageId == "trouver-un-trajet") {
