@@ -8,7 +8,7 @@ class GApp extends GObject {
     //===============================================
     public function toDescription() {
         $lData = "";
-        $lData .= sprintf("Avec ReadyServices, Recherchez ou Proposez\n");
+        $lData .= sprintf("Avec %s, Recherchez ou Proposez\n", $this->toSiteName());
         $lData .= sprintf("gratuitement un service et Gagnez très rapidement de la clientèle\n");
         $lData .= sprintf("dès aujourd'hui peu importe où vous êtes.\n");
         $lData .= sprintf("Plateforme de Services en Continu.\n");
@@ -33,7 +33,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toSiteName() {
-        return "ReadyServices";
+        return "ReadyLoop";
     }
     //===============================================
     public function isTestEnv() {
