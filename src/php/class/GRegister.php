@@ -25,7 +25,10 @@ class GRegister extends GManager {
     }
     //===============================================
     public function loginOn() {
-        if($this->isLogin()) return false;
+        if($this->isLogin()) {
+            $this->m_logs->addError("Vous êtes déjà connecté.");
+            return false;
+        }
         if($this->m_id == 0) return false;
         $this->setSession("user_id", $this->m_id);
         return true;
@@ -46,7 +49,7 @@ class GRegister extends GManager {
         parent::deserialize($_data);
         $lDom = new GCode();
         $lDom->loadXml($_data);
-        $this->m_id = $lDom->getData($_code, "id");
+        $this->m_id = intval($lDom->getData($_code, "id"));
         $this->m_email = $lDom->getData($_code, "email");
         $this->m_password = $lDom->getData($_code, "password");
         $this->m_confirm = $lDom->getData($_code, "confirm");
@@ -116,8 +119,8 @@ class GRegister extends GManager {
             return false;
         }
         
-        $this->insertUser();
-        $this->loginOn();
+        if(!$this->insertUser()) return false;
+        if(!$this->loginOn()) return false;
         return true;
     }
     //===============================================

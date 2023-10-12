@@ -68,7 +68,8 @@ class GRegister extends GObject {
     //===============================================
     onMailCB(_data, _isOk) {
         if(_isOk) {
-
+            var lRegister = new GRegister();
+            lRegister.redirectUrl();
         }
     }
     //===============================================
