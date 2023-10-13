@@ -23,7 +23,7 @@ class GHeader extends GObject {
             if(lIsHide) {
                 var lChevron = document.getElementById("HeaderConnectChevron");
                 var lMenu = document.getElementsByClassName("HeaderMenu")[0];
-                lChevron.className = "Header10 fa fa-chevron-down";
+                lChevron.className = "HeaderConnectIcon Header10 fa fa-chevron-down";
                 lMenu.style.display = "none";
             }
         });
@@ -49,11 +49,11 @@ class GHeader extends GObject {
         var lMenu = _obj.nextElementSibling;
 
         if(lChevron.classList.contains("fa-chevron-down")) {
-            lChevron.className = "Header10 fa fa-chevron-up";
+            lChevron.className = "HeaderConnectIcon Header10 fa fa-chevron-up";
             lMenu.style.display = "block";
         }
         else {
-            lChevron.className = "Header10 fa fa-chevron-down";
+            lChevron.className = "HeaderConnectIcon Header10 fa fa-chevron-down";
             lMenu.style.display = "none";
         }        
     }
