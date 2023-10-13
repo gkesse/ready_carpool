@@ -5,6 +5,7 @@ class GMySQL extends GObject {
     private $m_conn = null;
     private $m_errno = 0;
     private $m_id = 0;
+    private $m_cols = array();
     //===============================================
     public function __construct() {
         parent::__construct();
@@ -12,6 +13,10 @@ class GMySQL extends GObject {
     //===============================================
     public function getErrno() {
         return $this->m_errno;
+    }
+    //===============================================
+    public function getCols() {
+        return $this->m_cols;
     }
     //===============================================
     public function getId() {
@@ -25,104 +30,169 @@ class GMySQL extends GObject {
         $lDatabase = "db_carpool";
         $lPort = 3306;
         
-        @$lConn = new mysqli($lHostname, $lUsername, $lPassword, $lDatabase, $lPort);
-
-        if ($lConn->connect_error) {
+        try {
+            $lPath = sprintf("mysql:host=%s;dbname=%s;port=%d", $lHostname, $lDatabase, $lPort);
+            @$lConn = new PDO($lPath, $lUsername, $lPassword);
+            $lConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+        catch(PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
-            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $lConn->connect_error));
+            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             return false;
         }
+
         $this->m_conn = $lConn;
         return true;
     }
     //===============================================
+    //
     public function execQuery($_sql) {
         if(!$this->open()) return false;
-        if(!$this->m_conn->query($_sql)) {
-            if($this->m_conn->errno == 1062) {
+        
+        try {
+            $this->m_conn->exec($_sql);
+        }
+        catch(PDOException $e) {
+            if($e->getCode() == 23000) {
                 $this->m_logs->addError("Cette donnée existe déjà.");
             }
             else {
                 $this->m_logs->addError("La connexion au seveur de données a échoué.");
-                $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
+                $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             }
+            $this->m_errno = $e->getCode();
             $this->m_conn = null;
             return false;
         }
-        $this->m_id = $this->m_conn->insert_id;
+        
+        $this->m_id = $this->m_conn->lastInsertId();
         $this->m_conn = null;
         return true;
     }
     //===============================================
     public function readData($_sql) {
         if(!$this->open()) return false;
-        $lResult = $this->m_conn->query($_sql);
+        
         $lData = "";
-        if(!$lResult) {
+        
+        try {
+            $lStmt = $this->m_conn->prepare($_sql);
+            $lStmt->execute();
+            $lStmt->setFetchMode(PDO::FETCH_ASSOC);
+            $lResult = $lStmt->fetchAll();
+            
+            foreach($lResult as $lRow) {
+                foreach($lRow as $lCol => $lValue) {
+                    $this->m_cols[] = $lCol;
+                    $lData = $lValue;
+                    break;
+                }
+                break;
+            }
+        }
+        catch(PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
             $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
-            $this->m_conn = null;
-            return $lData;
+            $this->m_errno = $e->getCode();
         }
-        for($i = 0; $i < $lResult->num_rows; $i++) {
-            $lRow = $lResult->fetch_row();
-            $lData = $lRow[0];
-            break;
-        }
+        
         $this->m_conn = null;
         return $lData;
     }
     //===============================================
     public function readRow($_sql) {
         if(!$this->open()) return false;
-        $lResult = $this->m_conn->query($_sql);
+        
         $lData = array();
-        if(!$lResult) {
+        
+        try {
+            $lStmt = $this->m_conn->prepare($_sql);
+            $lStmt->execute();
+            $lStmt->setFetchMode(PDO::FETCH_ASSOC);
+            $lResult = $lStmt->fetchAll();
+            
+            foreach($lResult as $lRow) {
+                foreach($lRow as $lCol => $lValue) {
+                    $this->m_cols[] = $lCol;
+                    $lData[] = $lValue;
+                }
+                break;
+            }
+        }
+        catch(PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
             $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
-            $this->m_conn = null;
-            return $lData;
+            $this->m_errno = $e->getCode();
         }
-        for($i = 0; $i < $lResult->num_rows; $i++) {
-            $lData = $lResult->fetch_row();
-            break;
-        }
+        
         $this->m_conn = null;
         return $lData;
     }
     //===============================================
     public function readCol($_sql) {
         if(!$this->open()) return false;
-        $lResult = $this->m_conn->query($_sql);
+        
         $lData = array();
-        if(!$lResult) {
+        $lResult = array();
+        
+        try {
+            $lStmt = $this->m_conn->prepare($_sql);
+            $lStmt->execute();
+            $lStmt->setFetchMode(PDO::FETCH_ASSOC);
+            $lResult = $lStmt->fetchAll();
+            $lOneOnly = true;
+            
+            foreach($lResult as $lRow) {
+                $lDataRow = array();
+                foreach($lRow as $lCol => $lValue) {
+                    if($lOneOnly) {
+                        $this->m_cols[] = $lCol;
+                    }
+                    $lDataRow[] = $lValue;
+                    break;
+                }
+                $lData[] = $lDataRow;
+                $lOneOnly = false;
+            }
+        }
+        catch(PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
             $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
-            $this->m_conn = null;
-            return $lData;
+            $this->m_errno = $e->getCode();
         }
-        for($i = 0; $i < $lResult->num_rows; $i++) {
-            $lRow = $lResult->fetch_row();
-            array_push($lData, $lRow[0]);
-        }
+
         $this->m_conn = null;
         return $lData;
     }
     //===============================================
     public function readMap($_sql) {
         if(!$this->open()) return false;
-        $lResult = $this->m_conn->query($_sql);
+        
         $lData = array();
-        if(!$lResult) {
+        
+        try {
+            $lStmt = $this->m_conn->prepare($_sql);
+            $lStmt->execute();
+            $lStmt->setFetchMode(PDO::FETCH_ASSOC);
+            $lResult = $lStmt->fetchAll();
+            
+            foreach($lResult as $lRow) {
+                $lDataRow = array();
+                foreach($lRow as $lCol => $lValue) {
+                    if(empty($lData)) {
+                        $this->m_cols[] = $lCol;
+                    }
+                    $lDataRow[] = $lValue;
+                }
+                $lData[] = $lDataRow;
+            }
+        }
+        catch(PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
             $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
-            $this->m_conn = null;
-            return $lData;
+            $this->m_errno = $e->getCode();
         }
-        for($i = 0; $i < $lResult->num_rows; $i++) {
-            $lRow = $lResult->fetch_row();
-            array_push($lData, $lRow);
-        }
+
         $this->m_conn = null;
         return $lData;
     }

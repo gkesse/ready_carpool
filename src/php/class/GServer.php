@@ -14,6 +14,7 @@ class GServer extends GManager {
     //===============================================
     public function run($_data) {
         $this->deserialize($_data);
+
         if($this->m_module == "") {
             $this->m_logs->addError("Le module est obligatoire.");
         }
