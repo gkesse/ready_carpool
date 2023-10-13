@@ -7,7 +7,7 @@ class GRegisterEmailUi extends GObject {
     }
     //===============================================
     public function run() {
-        echo sprintf("<div class='RegisterEmail1'>\n");
+        echo sprintf("<div class='RegisterEmail1' onkeydown='call_server(\"register\", \"keydown\", event)'>\n");
         echo sprintf("<div class='RegisterEmail2'>\n");
         // title
         echo sprintf("<div class='RegisterEmail3'>\n");
@@ -32,7 +32,7 @@ class GRegisterEmailUi extends GObject {
         echo sprintf("<div class='RegisterEmail10'>\n");
         echo sprintf("<div class='RegisterEmail11'>\n");
         // create
-        echo sprintf("<button class='RegisterEmail12' onclick='call_server(\"register\", \"mail\", this)'>\n");
+        echo sprintf("<button class='RegisterEmail12' id='RegisterEmail_Submit' onclick='call_server(\"register\", \"mail\", this)'>\n");
         echo sprintf("Créer mon compte\n");
         echo sprintf("</button>\n");
         //

@@ -54,6 +54,9 @@ class GRegister extends GObject {
         else if(_method == "mail") {
             this.onMail(_obj, _data);
         }
+        else if(_method == "keydown") {
+            this.onKeydown(_obj, _data);
+        }
         else {
             this.m_logs.addError("La méthode est inconnue.");
         }
@@ -70,6 +73,15 @@ class GRegister extends GObject {
         if(_isOk) {
             var lRegister = new GRegister();
             lRegister.redirectUrl();
+        }
+    }
+    //===============================================
+    onKeydown(_obj, _data) {
+        var lEvent = _obj || window.event;
+        var lKeyCode = lEvent.charCode || lEvent.keyCode;
+        if(lKeyCode == 13) {
+            var lSubmit = document.getElementById("RegisterEmail_Submit")
+            lSubmit.click();
         }
     }
     //===============================================

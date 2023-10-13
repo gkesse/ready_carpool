@@ -7,7 +7,7 @@ class GLoginEmailUi extends GObject {
     }
     //===============================================
     public function run() {
-        echo sprintf("<div class='LoginEmail1'>\n");
+        echo sprintf("<div class='LoginEmail1' onkeydown='call_server(\"login\", \"keydown\", event)'>\n");
         echo sprintf("<div class='LoginEmail2'>\n");
         // title
         echo sprintf("<div class='LoginEmail3'>\n");
@@ -27,7 +27,7 @@ class GLoginEmailUi extends GObject {
         echo sprintf("<div class='LoginEmail10'>\n");
         echo sprintf("<div class='LoginEmail11'>\n");
         // connect
-        echo sprintf("<button class='LoginEmail12' onclick='call_server(\"login\", \"mail\", this)'>\n");
+        echo sprintf("<button class='LoginEmail12' id='LoginEmail_Submit' onclick='call_server(\"login\", \"mail\", this)'>\n");
         echo sprintf("Se connecter\n");
         echo sprintf("</button>\n");
         //
