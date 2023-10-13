@@ -1,8 +1,32 @@
 //===============================================
 class GHeader extends GObject {
     //===============================================
+    static m_instance = null;
+    //===============================================
     constructor() {
         super();
+    }
+    //===============================================
+    static Instance() {
+        if(this.m_instance == null) {
+            this.m_instance = new GHeader();
+        }
+        return this.m_instance;
+    }    
+    //===============================================
+    init() {
+        document.addEventListener("click", function(e) {
+            var lIsHide = true;
+            lIsHide &&= !e.target.matches(".HeaderConnectIcon");
+            lIsHide &&= !e.target.matches(".HeaderMenu");
+            
+            if(lIsHide) {
+                var lChevron = document.getElementById("HeaderConnectChevron");
+                var lMenu = document.getElementsByClassName("HeaderMenu")[0];
+                lChevron.className = "Header10 fa fa-chevron-down";
+                lMenu.style.display = "none";
+            }
+        });
     }
     //===============================================
     run(_method, _obj, _data) {
@@ -40,4 +64,6 @@ class GHeader extends GObject {
     }
     //===============================================
 }
+//===============================================
+GHeader.Instance().init();
 //===============================================

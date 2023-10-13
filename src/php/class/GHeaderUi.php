@@ -24,12 +24,12 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("<div class='Header8'>\n");
         //
-        echo sprintf("<button onclick='call_server(\"header\", \"connect_icon\", this)'>\n");
-        echo sprintf("<i class='Header9 fa fa-user'></i>\n");
-        echo sprintf("<i class='Header10 fa fa-chevron-down'></i>\n");
+        echo sprintf("<button class='HeaderConnectIcon' onclick='call_server(\"header\", \"connect_icon\", this)'>\n");
+        echo sprintf("<i class='HeaderConnectIcon Header9 fa fa-user'></i>\n");
+        echo sprintf("<i class='HeaderConnectIcon Header10 fa fa-chevron-down' id='HeaderConnectChevron'></i>\n");
         echo sprintf("</button>\n");
         //
-        echo sprintf("<div class='Header11'>\n");
+        echo sprintf("<div class='Header11 HeaderMenu'>\n");
         //
         echo sprintf("<a class='Header12' href='/connexion'>\n");
         echo sprintf("<div class='Header13'>Se connecter</div>\n");
