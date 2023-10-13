@@ -60,7 +60,14 @@ class GHeader extends GObject {
     //===============================================
     onDisconnect(_obj, _data) {
         var lAjax = new GAjax();
-        lAjax.callServer("header", "disconnect");
+        lAjax.callServer("header", "disconnect", "", this.onDisconnectCB);
+    }
+    //===============================================
+    onDisconnectCB(_data, _isOk) {
+        if(_isOk) {
+            var lHeader = new GHeader();
+            lHeader.redirectUrl();
+        }
     }
     //===============================================
 }

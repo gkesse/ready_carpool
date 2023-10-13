@@ -31,15 +31,19 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("<div class='Header11 HeaderMenu'>\n");
         //
-        echo sprintf("<a class='Header12' href='/connexion'>\n");
-        echo sprintf("<div class='Header13'>Se connecter</div>\n");
-        echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
-        echo sprintf("</a>\n");
+        if(!$this->isLogin()) {
+            echo sprintf("<a class='Header12' href='/connexion'>\n");
+            echo sprintf("<div class='Header13'>Se connecter</div>\n");
+            echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
+            echo sprintf("</a>\n");
+        }
         //
-        echo sprintf("<a class='Header12' href='/inscription'>\n");
-        echo sprintf("<div class='Header13'>S'inscrire</div>\n");
-        echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
-        echo sprintf("</a>\n");
+        if(!$this->isLogin()) {
+            echo sprintf("<a class='Header12' href='/inscription'>\n");
+            echo sprintf("<div class='Header13'>S'inscrire</div>\n");
+            echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
+            echo sprintf("</a>\n");
+        }
         //
         echo sprintf("<div class='Header15'>\n");
         //
@@ -55,10 +59,12 @@ class GHeaderUi extends GObject {
         //
         echo sprintf("</div>\n");
         //
-        echo sprintf("<div class='Header12' onclick='call_server(\"header\", \"disconnect\", this)'>\n");
-        echo sprintf("<div class='Header13'>Se déconnecter</div>\n");
-        echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
-        echo sprintf("</div>\n");
+        if($this->isLogin()) {
+            echo sprintf("<div class='Header12' onclick='call_server(\"header\", \"disconnect\", this)'>\n");
+            echo sprintf("<div class='Header13'>Se déconnecter</div>\n");
+            echo sprintf("<i class='Header14 fa fa-chevron-right'></i>\n");
+            echo sprintf("</div>\n");
+        }
         //
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
