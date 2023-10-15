@@ -5,6 +5,7 @@ class GObject {
     protected $m_logs = null;
     protected $m_dataLogs = null;
     protected $m_resp = null;
+    protected $m_access = null;
     protected $m_map = array();
     //===============================================
     private $m_isTestJs = false;
@@ -15,6 +16,7 @@ class GObject {
         $this->m_dataLogs = new GLog();
         $this->m_resp = new GCode();
         $this->m_resp->createDoc();
+        $this->m_access = new GAccessUi();
     }
     //===============================================
     public function getLogs() {
@@ -23,6 +25,14 @@ class GObject {
     //===============================================
     public function getDataLogs() {
         return $this->m_dataLogs;
+    }
+    //===============================================
+    public function toResponse() {
+        return $this->m_resp->toString();
+    }
+    //===============================================
+    public function getAccess() {
+        return $this->m_access;
     }
     //===============================================
     public function setTestJs($_isTestJs) {
@@ -50,6 +60,11 @@ class GObject {
         exit;
     }
     //===============================================
+    public function getPageId() {
+        if(!isset($_GET["pageid"])) return "";
+        return $_GET["pageid"];
+    }
+    //===============================================
     public function setSession($_key, $_value) {
         $_SESSION[$_key] = $_value;
     }
@@ -67,8 +82,9 @@ class GObject {
         return isset($_SESSION[$_key]);
     }
     //===============================================
-    public function toResponse() {
-        return $this->m_resp->toString();
+    public function initAccess() {
+        $lObj = $this->m_access;
+        $lObj->addAccess();
     }
     //===============================================
 }

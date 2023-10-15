@@ -7,6 +7,7 @@ $lProcess = new GProcess();
 $lLogUi = new GLogUi();
 $lLoaderUi = new GLoaderUi();
 $lHeaderUi = new GHeaderUi();
+$lAccessUi = new GAccessUi();
 $lPageUi = new GPageUi();
 //===============================================
 $lPageUi->redirectPage();
@@ -62,7 +63,13 @@ echo sprintf("<input type='hidden' id='gIsLogin' value='%s'/>\n", $lApp->isLogin
 $lLogUi->run();
 $lLoaderUi->run();
 $lHeaderUi->run();
+//===============================================
+echo sprintf("<div class='Page1'>\n");
+//===============================================
+$lAccessUi->run();
 $lProcess->run("test", "php", "page");
+//===============================================
+echo sprintf("</div>\n");
 //===============================================
 // scripts
 echo sprintf("<script src='/js/scripts.js'></script>\n");

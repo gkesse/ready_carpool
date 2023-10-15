@@ -6,6 +6,13 @@ class GRegisterEmailUi extends GObject {
         parent::__construct();
     }
     //===============================================
+    public function initAccess() {
+        $lObj = $this->m_access;
+        $lObj->addAccess();
+        $lObj->addAccess("Inscription", "/inscription");
+        $lObj->addAccess("Email", "/inscription/emial");
+    }
+    //===============================================
     public function run() {
         echo sprintf("<div class='RegisterEmail1' onkeydown='call_server(\"register\", \"keydown\", event)'>\n");
         echo sprintf("<div class='RegisterEmail2'>\n");
@@ -36,6 +43,12 @@ class GRegisterEmailUi extends GObject {
         echo sprintf("Créer mon compte\n");
         echo sprintf("</button>\n");
         //
+        echo sprintf("</div>\n");
+        echo sprintf("</div>\n");
+        //
+        echo sprintf("<div class='RegisterEmail13'>\n");
+        echo sprintf("<div class='RegisterEmail14'>\n");
+        echo sprintf("<a href='/connexion'>Se connecter</a>\n");
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
         //

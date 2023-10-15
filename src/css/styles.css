@@ -244,6 +244,39 @@ thead tr:first-child {
 }
 
 /* ============================================== */
+/* Access */
+/* ============================================== */
+
+.Access1 {
+    border: 1px solid transparent;
+    min-height: 40px;
+    position: relative;
+}
+
+.Access2 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.Access3 {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.Access4 {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+/* ============================================== */
 /* Error */
 /* ============================================== */
 
@@ -629,11 +662,7 @@ thead tr:first-child {
     border: 1px solid #051039;
     background-color: #051039;
     min-height: 50px;
-    padding: 30px 10px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
+    padding: 10px 10px;
 }
 
 .Login2 {
@@ -647,7 +676,7 @@ thead tr:first-child {
 .Login3 {
     border: 1px solid #051039;
     background-color: #051039;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .Login4 {
@@ -727,11 +756,7 @@ thead tr:first-child {
     border: 1px solid transparent;
     background-color: #051039;
     min-height: 50px;
-    padding: 30px 10px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
+    padding: 10px 10px;
 }
 
 .LoginEmail2 {
@@ -745,7 +770,7 @@ thead tr:first-child {
 .LoginEmail3 {
     border: 1px solid transparent;
     background-color: #051039;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .LoginEmail4 {
@@ -820,6 +845,33 @@ thead tr:first-child {
     background-color: #2f3959;
 }
 
+.LoginEmail13 {
+    border: 1px solid transparent;
+    height: 30px;
+    position: relative;
+}
+
+.LoginEmail14 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+/* ============================================== */
+/* Page */
+/* ============================================== */
+
+.Page1 {
+    border: 1px solid transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
 /* ============================================== */
 /* Register */
 /* ============================================== */
@@ -828,11 +880,7 @@ thead tr:first-child {
     border: 1px solid #051039;
     background-color: #051039;
     min-height: 50px;
-    padding: 30px 10px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
+    padding: 10px 10px;
 }
 
 .Register2 {
@@ -846,7 +894,7 @@ thead tr:first-child {
 .Register3 {
     border: 1px solid #051039;
     background-color: #051039;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .Register4 {
@@ -926,11 +974,7 @@ thead tr:first-child {
     border: 1px solid transparent;
     background-color: #051039;
     min-height: 50px;
-    padding: 30px 10px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
+    padding: 10px 10px;
 }
 
 .RegisterEmail2 {
@@ -944,7 +988,7 @@ thead tr:first-child {
 .RegisterEmail3 {
     border: 1px solid transparent;
     background-color: #051039;
-    padding: 30px 0;
+    padding: 10px 0;
 }
 
 .RegisterEmail4 {
@@ -1017,6 +1061,21 @@ thead tr:first-child {
 
 .RegisterEmail12:active {
     background-color: #2f3959;
+}
+
+.RegisterEmail13 {
+    border: 1px solid transparent;
+    height: 30px;
+    position: relative;
+}
+
+.RegisterEmail14 {
+    border: 1px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
 }
 
 /* ============================================== */

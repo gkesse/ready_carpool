@@ -50,11 +50,6 @@ class GPageUi extends GObject {
         }
     }
     //===============================================
-    public function getPageId() {
-        if(!isset($_GET["pageid"])) return "";
-        return $_GET["pageid"];
-    }
-    //===============================================
     public function runHome() {
         
     }

@@ -6,6 +6,13 @@ class GLoginEmailUi extends GObject {
         parent::__construct();
     }
     //===============================================
+    public function initAccess() {
+        $lObj = $this->m_access;
+        $lObj->addAccess();
+        $lObj->addAccess("Connexion", "/connexion");
+        $lObj->addAccess("Email", "/connexion/email");
+    }
+    //===============================================
     public function run() {
         echo sprintf("<div class='LoginEmail1' onkeydown='call_server(\"login\", \"keydown\", event)'>\n");
         echo sprintf("<div class='LoginEmail2'>\n");
@@ -31,6 +38,12 @@ class GLoginEmailUi extends GObject {
         echo sprintf("Se connecter\n");
         echo sprintf("</button>\n");
         //
+        echo sprintf("</div>\n");
+        echo sprintf("</div>\n");
+        //
+        echo sprintf("<div class='LoginEmail13'>\n");
+        echo sprintf("<div class='LoginEmail14'>\n");
+        echo sprintf("<a href='/inscription'>S'inscrire</a>\n");
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
         //

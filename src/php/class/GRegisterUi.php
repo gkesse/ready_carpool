@@ -6,6 +6,12 @@ class GRegisterUi extends GObject {
         parent::__construct();
     }
     //===============================================
+    public function initAccess() {
+        $lObj = $this->m_access;
+        $lObj->addAccess();
+        $lObj->addAccess("Inscription", "/inscription");
+    }
+    //===============================================
     public function run() {
         echo sprintf("<div class='Register1'>\n");
         echo sprintf("<div class='Register2'>\n");

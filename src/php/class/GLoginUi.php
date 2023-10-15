@@ -6,6 +6,12 @@ class GLoginUi extends GObject {
         parent::__construct();
     }
     //===============================================
+    public function initAccess() {
+        $lObj = $this->m_access;
+        $lObj->addAccess();
+        $lObj->addAccess("Connexion", "/connexion");
+    }
+    //===============================================
     public function run() {
         echo sprintf("<div class='Login1'>\n");
         echo sprintf("<div class='Login2'>\n");
