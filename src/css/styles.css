@@ -1206,6 +1206,60 @@ thead tr:first-child {
 }
 
 /* ============================================== */
+/* Terms */
+/* ============================================== */
+
+.Terms1 {
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+.Terms2 {
+    border: 1px solid transparent;
+    max-width: 600px;
+    margin: auto;
+}
+
+.Terms3 {
+    border: 1px solid transparent;
+    padding: 10px 0;
+    color: #aaaaff;
+}
+
+.Terms4 {
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 10px 0;
+}
+
+.Terms5 {
+    border: 1px solid transparent;
+    text-align: left;
+    padding: 10px 10px 10px 40px;
+}
+
+.Terms6 {
+    border: 1px solid transparent;
+    padding: 10px 0;
+    color: #aaffaa;
+    text-align: left;
+}
+
+.Terms7 {
+    border: 1px solid transparent;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.Terms8 {
+    color: lime;
+}
+
+.Terms8:hover {
+    text-decoration: underline;
+}
+
+/* ============================================== */
 /* Mobile */ 
 /* ============================================== */
 

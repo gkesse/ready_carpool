@@ -48,6 +48,9 @@ class GPageUi extends GObject {
         else if($lPageId == "politiques") {
             $this->runPolicy();
         }
+        else if($lPageId == "politiques/conditions-generales-utilisation") {
+            $this->runTerms();
+        }
         else if($lPageId == "politiques/politique-de-confidentialite") {
             $this->runPrivacyPolicy();
         }
@@ -90,6 +93,11 @@ class GPageUi extends GObject {
     //===============================================
     public function runPolicy() {
         $lObj = new GPolicyUi();
+        $lObj->run();
+    }
+    //===============================================
+    public function runTerms() {
+        $lObj = new GTermsUi();
         $lObj->run();
     }
     //===============================================

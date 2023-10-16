@@ -56,6 +56,9 @@ class GAccessUi {
         else if($lPageId == "politiques") {
             $lObj = new GPolicyUi();
         }
+        else if($lPageId == "politiques/conditions-generales-utilisation") {
+            $lObj = new GTermsUi();
+        }
         else if($lPageId == "politiques/politique-de-confidentialite") {
             $lObj = new GPrivacyPolicyUi();
         }
