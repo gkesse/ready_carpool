@@ -76,7 +76,7 @@ class GAccessUi {
         for($i = 0; $i < count($this->m_map); $i++) {
             $lObj = $this->m_map[$i];
             if($i != 0) echo sprintf("<i class='Access4 fa fa-chevron-right'></i>\n");
-            if($i == 0) echo sprintf("<a href='/'><i class='Access3 fa fa-home'></i></a>\n");
+            if($i == 0) echo sprintf("<a href='/'><i class='Access5 fa fa-home'></i></a>\n");
             else echo sprintf("<a class='Access3' href='%s'>%s</a>\n", $lObj->m_href, $lObj->m_text);
         }
         //

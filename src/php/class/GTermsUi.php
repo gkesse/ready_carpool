@@ -278,7 +278,8 @@ class GTermsUi extends GObject {
         </div>\n");
         //===============================================
         //echo sprintf("<div class='Terms7'>
-        //Généré à l'aide <a class='Terms8' target='_blank' href='https://www.termsfeed.com/privacy-policy-generator/'>
+        //Généré à l'aide <a class='Terms8' target='_blank'
+        //href='https://www.termsfeed.com/live/7935f9de-939c-45de-a39a-05981c3f7200'>
         //du générateur de politique de confidentialité TermsFeed</a>
         //</div>\n");
         //===============================================

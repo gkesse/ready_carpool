@@ -276,6 +276,14 @@ thead tr:first-child {
     padding: 0px;
 }
 
+.Access5 {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px;
+    font-size: 20px;
+}
+
 /* ============================================== */
 /* Error */
 /* ============================================== */
@@ -955,6 +963,8 @@ thead tr:first-child {
 	font-size: 18px;
 	font-weight: bold;
 	word-spacing: 0;
+	padding-right: 40px;
+	text-align: left;
 }
 
 .Policy8 {
