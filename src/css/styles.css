@@ -661,36 +661,31 @@ thead tr:first-child {
 /* ============================================== */
 
 .Login1 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     min-height: 50px;
-    padding: 10px 10px;
+    padding: 0px 10px;
 }
 
 .Login2 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     max-width: 600px;
     min-height: 100px;
     margin: auto;
 }
 
 .Login3 {
-    border: 1px solid #051039;
-    background-color: #051039;
-    padding: 10px 0;
+    border: 1px solid transparent;
+    padding: 20px 0;
 }
 
 .Login4 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     font-size: 25px;
     font-weight: bold;
 }
 
 .Login5 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     display: block;
     position: relative;
     height: 50px;
@@ -698,7 +693,7 @@ thead tr:first-child {
 }
 
 .Login5:hover {
-    border: 1px solid #2f3959;
+    border: 1px solid transparent;
     background-color: #2f3959;
 }
 
@@ -708,7 +703,7 @@ thead tr:first-child {
 }
 
 .Login5:active {
-    border: 1px solid #051039;
+    border: 1px solid transparent;
     background-color: #051039;
 }
 
@@ -879,36 +874,31 @@ thead tr:first-child {
 /* ============================================== */
 
 .Policy1 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     min-height: 50px;
-    padding: 10px 10px;
+    padding: 0 10px;
 }
 
 .Policy2 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     max-width: 600px;
     min-height: 100px;
     margin: auto;
 }
 
 .Policy3 {
-    border: 1px solid #051039;
-    background-color: #051039;
-    padding: 10px 0;
+    border: 1px solid transparent;
+    padding: 20px 0;
 }
 
 .Policy4 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     font-size: 25px;
     font-weight: bold;
 }
 
 .Policy5 {
     border: 1px solid #051039;
-    background-color: #051039;
     display: block;
     position: relative;
     height: 50px;
@@ -916,7 +906,7 @@ thead tr:first-child {
 }
 
 .Policy5:hover {
-    border: 1px solid #2f3959;
+    border: 1px solid transparent;
     background-color: #2f3959;
 }
 
@@ -926,7 +916,7 @@ thead tr:first-child {
 }
 
 .Policy5:active {
-    border: 1px solid #051039;
+    border: 1px solid transparent;
     background-color: #051039;
 }
 
@@ -1008,36 +998,31 @@ thead tr:first-child {
 /* ============================================== */
 
 .Register1 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     min-height: 50px;
-    padding: 10px 10px;
+    padding: 0px 10px;
 }
 
 .Register2 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     max-width: 600px;
     min-height: 100px;
     margin: auto;
 }
 
 .Register3 {
-    border: 1px solid #051039;
-    background-color: #051039;
-    padding: 10px 0;
+    border: 1px solid transparent;
+    padding: 20px 0;
 }
 
 .Register4 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     font-size: 25px;
     font-weight: bold;
 }
 
 .Register5 {
-    border: 1px solid #051039;
-    background-color: #051039;
+    border: 1px solid transparent;
     display: block;
     position: relative;
     height: 50px;
@@ -1045,7 +1030,7 @@ thead tr:first-child {
 }
 
 .Register5:hover {
-    border: 1px solid #2f3959;
+    border: 1px solid transparent;
     background-color: #2f3959;
 }
 
@@ -1055,7 +1040,7 @@ thead tr:first-child {
 }
 
 .Register5:active {
-    border: 1px solid #051039;
+    border: 1px solid transparent;
     background-color: #051039;
 }
 
