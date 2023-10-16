@@ -56,8 +56,8 @@ class GPrivacyPolicyUi extends GObject {
         <br><br>
         Informations que vous nous fournissez. Nous utiliserons ces informations:
         <ul class='PrivacyPolicy5'>
-        <li>Pour vous fournir les informations et/ou les services que vous nous demandez.</li>
-        <li>Pour vous contacter afin de fournir les informations demandées.</li>
+            <li>Pour vous fournir les informations et/ou les services que vous nous demandez.</li>
+            <li>Pour vous contacter afin de fournir les informations demandées.</li>
         </ul>
         </div>\n");
         //===============================================
@@ -110,7 +110,7 @@ class GPrivacyPolicyUi extends GObject {
         //===============================================
         echo sprintf("<div class='PrivacyPolicy4'>
         Les questions, commentaires et demandes concernant cette politique de confidentialité sont
-        les bienvenus et doivent être adressés à <b>readydevz@gmail.com</b>.
+        les bienvenus et doivent être adressés à readydevz@gmail.com.
         </div>\n");
         //
         echo sprintf("</div>\n");

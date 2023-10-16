@@ -273,14 +273,14 @@ class GTermsUi extends GObject {
         echo sprintf("<div class='Terms4'>
         Si vous avez des questions concernant ces conditions générales, vous pouvez nous contacter:
         <ul class='Terms5'>
-            <li>Par email : <b>readydevz@gmail.com</b></li>
+            <li>Par email : readydevz@gmail.com</li>
         </ul>
         </div>\n");
         //===============================================
-        echo sprintf("<div class='Terms7'>
-        Généré à l'aide <a class='Terms8' target='_blank' href='https://www.termsfeed.com/privacy-policy-generator/'>
-        du générateur de politique de confidentialité TermsFeed</a>
-        </div>\n");
+        //echo sprintf("<div class='Terms7'>
+        //Généré à l'aide <a class='Terms8' target='_blank' href='https://www.termsfeed.com/privacy-policy-generator/'>
+        //du générateur de politique de confidentialité TermsFeed</a>
+        //</div>\n");
         //===============================================
         echo sprintf("</div>\n");
         echo sprintf("</div>\n");
