@@ -20,7 +20,7 @@ class GLoginUi extends GObject {
         echo sprintf("<div class='Login4'>Connexion</div>\n");
         echo sprintf("</div>\n");
         //
-        echo sprintf("<div class='Login5' onclick='call_server(\"login\", \"connect_facebook\", this)'>\n");
+        echo sprintf("<div class='Login5' onclick='call_server(\"facebook\", \"login\", this)'>\n");
         echo sprintf("<i class='Login6 fa fa-facebook'></i>\n");
         echo sprintf("<div class='Login7'>Se connecter par Facebook</div>\n");
         echo sprintf("<i class='Login8 fa fa-chevron-right'></i>\n");

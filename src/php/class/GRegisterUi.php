@@ -20,7 +20,7 @@ class GRegisterUi extends GObject {
         echo sprintf("<div class='Register4'>Inscription</div>\n");
         echo sprintf("</div>\n");
         //
-        echo sprintf("<div class='Register5' onclick='call_server(\"register\", \"facebook\", this)'>\n");
+        echo sprintf("<div class='Register5' onclick='call_server(\"facebook\", \"register\", this)'>\n");
         echo sprintf("<i class='Register6 fa fa-facebook'></i>\n");
         echo sprintf("<div class='Register7'>S'inscrire par Facebook</div>\n");
         echo sprintf("<i class='Register8 fa fa-chevron-right'></i>\n");

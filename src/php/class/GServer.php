@@ -27,6 +27,9 @@ class GServer extends GManager {
         else if($this->m_module == "login") {
             $this->runLogin($_data);
         }
+        else if($this->m_module == "facebook") {
+            $this->runFacebook($_data);
+        }
         else {
             $this->m_logs->addError("Le module est inconnu.");
         }
@@ -48,6 +51,13 @@ class GServer extends GManager {
     //===============================================
     public function runLogin($_data) {
         $lObj = new GLogin();
+        $lObj->run($_data);
+        $this->m_logs->addLogs($lObj->getLogs());
+        $this->m_resp->loadData($lObj->serialize());
+    }
+    //===============================================
+    public function runFacebook($_data) {
+        $lObj = new GFacebook();
         $lObj->run($_data);
         $this->m_logs->addLogs($lObj->getLogs());
         $this->m_resp->loadData($lObj->serialize());

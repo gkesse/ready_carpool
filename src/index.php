@@ -85,6 +85,7 @@ echo sprintf("<script src='/js/class/GTest.js'></script>\n");
 echo sprintf("<script src='/js/class/GHeader.js'></script>\n");
 echo sprintf("<script src='/js/class/GRegister.js'></script>\n");
 echo sprintf("<script src='/js/class/GLogin.js'></script>\n");
+echo sprintf("<script src='/js/class/GFacebook.js'></script>\n");
 //===============================================
 $lProcess->getLogs()->showLogs();
 $lProcess->runJs();

@@ -45,6 +45,12 @@ class GPageUi extends GObject {
         else if($lPageId == "proposer-un-trajet") {
             $this->runAddTrip();
         }
+        else if($lPageId == "politiques") {
+            $this->runPolicy();
+        }
+        else if($lPageId == "politiques/politique-de-confidentialite") {
+            $this->runPrivacyPolicy();
+        }
         else {
             $this->runError();
         }
@@ -80,6 +86,16 @@ class GPageUi extends GObject {
     //===============================================
     public function runAddTrip() {
         
+    }
+    //===============================================
+    public function runPolicy() {
+        $lObj = new GPolicyUi();
+        $lObj->run();
+    }
+    //===============================================
+    public function runPrivacyPolicy() {
+        $lObj = new GPrivacyPolicyUi();
+        $lObj->run();
     }
     //===============================================
     public function runError() {

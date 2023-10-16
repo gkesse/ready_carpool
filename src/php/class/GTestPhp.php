@@ -22,6 +22,12 @@ class GTestPhp extends GObject {
         else if($_method == "page") {
             $this->runPage($_module, $_method);
         }
+        else if($_method == "facebook") {
+            $this->runFacebook($_module, $_method);
+        }
+        else if($_method == "privacy_policy") {
+            $this->runPrivacyPolicy($_module, $_method);
+        }
         else {
             $this->m_logs->addError("La méthode est inconnue.");
         }
@@ -45,6 +51,28 @@ class GTestPhp extends GObject {
     public function runPage($_module, $_method) {
         $lPageUi = new GPageUi();
         $lPageUi->run();
+    }
+    //===============================================
+    public function runFacebook($_module, $_method) {
+        $lAction = "2";
+        
+        // facebook/picture
+        if($lAction == "1") {
+            $lFacebook = new GFacebook();
+            $lFacebook->loadLogo();
+            $this->m_logs->addLogs($lFacebook->getLogs());
+            echo sprintf("<img src='%s'/>", $lFacebook->getLogoUrl());
+        }
+        else if($lAction == "2") {
+            $lFacebook = new GFacebook();
+            $lFacebook->loadUser();
+            $this->m_logs->addLogs($lFacebook->getLogs());
+        }
+    }
+    //===============================================
+    public function runPrivacyPolicy($_module, $_method) {
+        $lPrivacyPolicyUi = new GPrivacyPolicyUi();
+        $lPrivacyPolicyUi->run();
     }
     //===============================================
 }

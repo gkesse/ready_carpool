@@ -53,6 +53,12 @@ class GAccessUi {
         else if($lPageId == "inscription/email") {
             $lObj = new GRegisterEmailUi();
         }
+        else if($lPageId == "politiques") {
+            $lObj = new GPolicyUi();
+        }
+        else if($lPageId == "politiques/politique-de-confidentialite") {
+            $lObj = new GPrivacyPolicyUi();
+        }
         
         $lObj->initAccess();
         $this->loadAccess($lObj->getAccess());
