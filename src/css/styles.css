@@ -249,17 +249,11 @@ thead tr:first-child {
 
 .Access1 {
     border: 1px solid transparent;
-    min-height: 40px;
-    position: relative;
+    padding: 10px;
 }
 
 .Access2 {
     border: 1px solid transparent;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translate(0, -50%);
 }
 
 .Access3 {
