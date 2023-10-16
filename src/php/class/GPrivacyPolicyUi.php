@@ -21,7 +21,7 @@ class GPrivacyPolicyUi extends GObject {
         //===============================================
         echo sprintf("<div class='PrivacyPolicy4'>
         Cette politique de confidentialité est préparée
-        par <b>ReadyLoop</b> et dont l'adresse enregistrée est <b>Abidjan, Côte d'Ivoire</b>.
+        par <b>ReadyLoop</b> et dont l'adresse enregistrée est <b>ReadyLoop, Abidjan, Côte d'Ivoire</b>.
         Nous nous engageons à protéger et à préserver la vie privée de nos visiteurs
         lorsqu'ils visitent notre site ou communiquent par voie électronique avec nous.
         <br><br>
