@@ -1,5 +1,7 @@
 <?php   
 //===============================================
+namespace App;
+//===============================================
 class GRegister extends GManager {
     //===============================================
     private $m_id = 0;
@@ -30,7 +32,7 @@ class GRegister extends GManager {
             return false;
         }
         if($this->m_id == 0) return false;
-        $this->setSession("user_id", $this->m_id);
+        $this->setLogin($this->m_id);
         return true;
     }
     //===============================================

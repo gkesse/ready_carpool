@@ -1,5 +1,7 @@
 <?php
 //===============================================
+namespace App;
+//===============================================
 class GPageUi extends GObject {
     //===============================================
     public function __construct() {
@@ -54,33 +56,13 @@ class GPageUi extends GObject {
         else if($lPageId == "politiques/politique-de-confidentialite") {
             $this->runPrivacyPolicy();
         }
+        else if($lPageId == "callback/facebook/login" && $this->isFacebookLogin()) {
+            $this->runCallbackFacebookLogin();
+        }
+        //===============================================
         else {
             $this->runError();
         }
-    }
-    //===============================================
-    public function runHome() {
-        
-    }
-    //===============================================
-    public function runLogin() {
-        $lObj = new GLoginUi();
-        $lObj->run();
-    }
-    //===============================================
-    public function runLoginMail() {
-        $lObj = new GLoginEmailUi();
-        $lObj->run();
-    }
-    //===============================================
-    public function runRegister() {
-        $lObj = new GRegisterUi();
-        $lObj->run();
-    }
-    //===============================================
-    public function runRegisterEmail() {
-        $lObj = new GRegisterEmailUi();
-        $lObj->run();
     }
     //===============================================
     public function runSearchTrip() {
@@ -91,24 +73,81 @@ class GPageUi extends GObject {
         
     }
     //===============================================
+    public function runHome() {
+        
+    }
+    //===============================================
+    // login
+    //===============================================
+    public function runLogin() {
+        $lObj = new GLoginUi();
+        $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    public function runLoginMail() {
+        $lObj = new GLoginEmailUi();
+        $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    // register
+    //===============================================
+    public function runRegister() {
+        $lObj = new GRegisterUi();
+        $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    public function runRegisterEmail() {
+        $lObj = new GRegisterEmailUi();
+        $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    // policy
+    //===============================================
     public function runPolicy() {
         $lObj = new GPolicyUi();
         $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runTerms() {
         $lObj = new GTermsUi();
         $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runPrivacyPolicy() {
         $lObj = new GPrivacyPolicyUi();
         $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
     }
+    //===============================================
+    // facebook
+    //===============================================
+    public function runCallbackFacebookLogin() {
+        $lObj = new GFacebook();
+        $lObj->loginCallback();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    // error
     //===============================================
     public function runError() {
         $lObj = new GErrorUi();
         $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
 }

@@ -1,5 +1,7 @@
 <?php   
 //===============================================
+namespace App;
+//===============================================
 class GLogin extends GManager {
     //===============================================
     private $m_id = 0;
@@ -34,11 +36,11 @@ class GLogin extends GManager {
             $this->m_logs->addError("Les identifiants sont incorrects.");
             return false;
         }
-        $this->setSession("user_id", $this->m_id);
-        return true;
+        $this->setLogin($this->m_id);
+        return !$this->m_logs->hasErrors();
     }
     //===============================================
-    public function serialize($_code = "register") {
+    public function serialize($_code = "login") {
         $lDom = new GCode();
         $lDom->createDoc();
         $lDom->addData($_code, "id", $this->m_id);
@@ -48,7 +50,7 @@ class GLogin extends GManager {
         return $lDom->toString();
     }
     //===============================================
-    public function deserialize($_data, $_code = "register") {
+    public function deserialize($_data, $_code = "login") {
         parent::deserialize($_data);
         $lDom = new GCode();
         $lDom->loadXml($_data);
@@ -105,7 +107,7 @@ class GLogin extends GManager {
         
         if(!$this->loadUser()) return false;
         if(!$this->loginOn()) return false;
-        return true;
+        return !$this->m_logs->hasErrors();
     }
     //===============================================
  }

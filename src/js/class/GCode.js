@@ -63,7 +63,7 @@ class GCode extends GXml {
         var lDom = new GXml();
         lDom.m_node = this.getNode(this, sprintf("/rdv/datas/data[code='%s']/%s", _code, _name));
         if(!lDom.m_node) return "";
-        var lData = lDom.getValue();
+        var lData = lDom.getValue(_isCData);
         return lData;
     }
     //===============================================

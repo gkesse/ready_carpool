@@ -3,6 +3,22 @@ class GFacebook extends GObject {
     //===============================================
     constructor() {
         super();
+        this.m_loginUrl = "";
+    }
+    //===============================================
+    serialize(_code = "facebook") {
+        var lDom = new GCode();
+        lDom.createDoc();
+        lDom.addData(_code, "login_url", this.m_loginUrl, true);
+        lDom.addMap(_code, this.m_map);
+        return lDom.toString();
+    }
+    //===============================================
+    deserialize(_data, _code = "facebook") {
+        var lDom = new GCode();
+        lDom.loadXml(_data);
+        this.m_loginUrl = lDom.getData(_code, "login_url", true);
+        lDom.getMap(_code, this.m_map, this);
     }
     //===============================================
     run(_method, _obj, _data) {
@@ -38,7 +54,9 @@ class GFacebook extends GObject {
     //===============================================
     onLoginCB(_data, _isOk) {
         if(_isOk) {
-
+            var lFBook = new GFacebook();
+            lFBook.deserialize(_data);
+            lFBook.redirectUrl(lFBook.m_loginUrl);
         }
     }
     //===============================================

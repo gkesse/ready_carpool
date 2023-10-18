@@ -23,7 +23,7 @@ class GLogin extends GObject {
         lPassword.value = this.m_password;
     }
     //===============================================
-    serialize(_code = "register") {
+    serialize(_code = "login") {
         var lDom = new GCode();
         lDom.createDoc();
         lDom.addData(_code, "email", this.m_email);
@@ -32,7 +32,7 @@ class GLogin extends GObject {
         return lDom.toString();
     }
     //===============================================
-    deserialize(_data, _code = "register") {
+    deserialize(_data, _code = "login") {
         var lDom = new GCode();
         lDom.loadXml(_data);
         this.m_email = lDom.getData(_code, "email");

@@ -1,5 +1,7 @@
 <?php
 //===============================================
+namespace App;
+//===============================================
 class GTest extends GObject {
     //===============================================
     public function __construct() {
@@ -24,6 +26,7 @@ class GTest extends GObject {
     public function runPhp($_module, $_method) {
         $lObj = new GTestPhp();
         $lObj->run($_module, $_method);
+        $this->setRedirectJs($lObj->getRedirectJs());
         $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================

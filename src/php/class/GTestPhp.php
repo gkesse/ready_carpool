@@ -1,5 +1,7 @@
 <?php
 //===============================================
+namespace App;
+//===============================================
 class GTestPhp extends GObject {
     //===============================================
     public function __construct() {
@@ -34,45 +36,86 @@ class GTestPhp extends GObject {
     }
     //===============================================
     public function runLog($_module, $_method) {
-        $lLogUi = new GLogUi();
-        $lLogUi->run();
+        $lObj = new GLogUi();
+        $lObj->run();
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runHeader($_module, $_method) {
-        $lHeaderUi = new GHeaderUi();
-        $lHeaderUi->run();
+        $lObj = new GHeaderUi();
+        $lObj->run();
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runError($_module, $_method) {
-        $lErrorUi = new GErrorUi();
-        $lErrorUi->run();
+        $lObj = new GErrorUi();
+        $lObj->run();
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runPage($_module, $_method) {
-        $lPageUi = new GPageUi();
-        $lPageUi->run();
+        $lObj = new GPageUi();
+        $lObj->run();
+        $this->setRedirectJs($lObj->getRedirectJs());
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runFacebook($_module, $_method) {
-        $lAction = "2";
+        $lAction = "4";
         
-        // facebook/picture
+        //===============================================
+        // logo
+        //===============================================
         if($lAction == "1") {
-            $lFacebook = new GFacebook();
-            $lFacebook->loadLogo();
-            $this->m_logs->addLogs($lFacebook->getLogs());
-            echo sprintf("<img src='%s'/>", $lFacebook->getLogoUrl());
+            $lObj = new GFacebook();
+            $lObj->loadLogo();
+            $this->m_logs->addLogs($lObj->getLogs());
+            echo sprintf("<div class='Test1'>");
+            echo sprintf("<div>LogoUrl-----------: <img src='%s'/></div>", $lObj->getLogoUrl());
+            echo sprintf("<div>LogoWidth---------: %d</div>", $lObj->getLogoWidth());
+            echo sprintf("<div>LogoHeight--------: %d</div>", $lObj->getLogoHeight());
+            echo sprintf("<div>isLogoSilhouette--: %d</div>", $lObj->isLogoSilhouette());
+            echo sprintf("</div>");
         }
+        //===============================================
+        // user
+        //===============================================
         else if($lAction == "2") {
-            $lFacebook = new GFacebook();
-            $lFacebook->loadUser();
-            $this->m_logs->addLogs($lFacebook->getLogs());
+            $lObj = new GFacebook();
+            $lObj->loadUser();
+            $this->m_logs->addLogs($lObj->getLogs());
+            echo sprintf("<div class='Test1'>");
+            echo sprintf("<div>UserId-----: %d</div>", $lObj->getUserId());
+            echo sprintf("<div>UserName---: %s</div>", $lObj->getUserName());
+            echo sprintf("</div>");
+        }
+        //===============================================
+        // login
+        //===============================================
+        else if($lAction == "3") {
+            $lObj = new GFacebook();
+            $lObj->loginOn();
+            $this->m_logs->addLogs($lObj->getLogs());
+            echo sprintf("<div class='Test1'>");
+            echo sprintf("<div>LoginUrl-----: %s</div>", $lObj->getLoginUrl());
+            echo sprintf("</div>");
+        }
+        //===============================================
+        // callback
+        //===============================================
+        else if($lAction == "4") {
+            echo sprintf("<div class='Test1'>");
+            echo sprintf("<div>ENV_TYPE-----: %s</div>", getenv("ENV_TYPE"));
+            echo sprintf("<div>Server-------: %s</div>", $this->getServer());
+            echo sprintf("<div>Url----------: %s</div>", $this->getUrl());
+            echo sprintf("</div>");
         }
     }
     //===============================================
     public function runPrivacyPolicy($_module, $_method) {
-        $lPrivacyPolicyUi = new GPrivacyPolicyUi();
-        $lPrivacyPolicyUi->run();
+        $lObj = new GPrivacyPolicyUi();
+        $lObj->run();
+        $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
 }

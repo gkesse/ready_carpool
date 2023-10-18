@@ -2,13 +2,13 @@
 //===============================================
 require $_SERVER["DOCUMENT_ROOT"]."/php/class/GInclude.php";
 //===============================================
-$lApp = new GApp();
-$lProcess = new GProcess();
-$lLogUi = new GLogUi();
-$lLoaderUi = new GLoaderUi();
-$lHeaderUi = new GHeaderUi();
-$lAccessUi = new GAccessUi();
-$lPageUi = new GPageUi();
+$lApp = new App\GApp();
+$lProcess = new App\GProcess();
+$lLogUi = new App\GLogUi();
+$lLoaderUi = new App\GLoaderUi();
+$lHeaderUi = new App\GHeaderUi();
+$lAccessUi = new App\GAccessUi();
+$lPageUi = new App\GPageUi();
 //===============================================
 $lPageUi->redirectPage();
 //===============================================
@@ -86,9 +86,11 @@ echo sprintf("<script src='/js/class/GHeader.js'></script>\n");
 echo sprintf("<script src='/js/class/GRegister.js'></script>\n");
 echo sprintf("<script src='/js/class/GLogin.js'></script>\n");
 echo sprintf("<script src='/js/class/GFacebook.js'></script>\n");
+echo sprintf("<script src='/js/class/GRedirect.js'></script>\n");
 //===============================================
 $lProcess->getLogs()->showLogs();
 $lProcess->runJs();
+$lProcess->runRedirectJs();
 //===============================================
 echo sprintf("</body>\n");
 echo sprintf("</html>\n");

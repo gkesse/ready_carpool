@@ -27,6 +27,9 @@ class GServer extends GObject {
         else if(_module == "facebook") {
             this.runFacebook(_method, _obj, _data);
         }
+        else if(_module == "redirect") {
+            this.runRedirect(_method, _obj, _data);
+        }
         else {
             this.m_logs.addError("Le module est inconnu.");
         }
@@ -63,6 +66,12 @@ class GServer extends GObject {
     //===============================================
     runFacebook(_method, _obj, _data) {
         var lObj = new GFacebook();
+        lObj.run(_method, _obj, _data);
+        this.m_logs.addLogs(lObj.m_logs);
+    }
+    //===============================================
+    runRedirect(_method, _obj, _data) {
+        var lObj = new GRedirect();
         lObj.run(_method, _obj, _data);
         this.m_logs.addLogs(lObj.m_logs);
     }

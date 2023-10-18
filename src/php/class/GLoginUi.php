@@ -1,5 +1,7 @@
 <?php
 //===============================================
+namespace App;
+//===============================================
 class GLoginUi extends GObject {
     //===============================================
     public function __construct() {
@@ -12,7 +14,17 @@ class GLoginUi extends GObject {
         $lObj->addAccess("Connexion", "/connexion");
     }
     //===============================================
+    public function checkFacebook() {
+        if($this->isFacebookLogin()) {
+            if($this->isFacebookLoginError()) {
+                $this->m_logs->addError("La connexion par Facebook a été annulée.");
+            }
+            $this->usetFacebookLogin();
+        }
+    }
+    //===============================================
     public function run() {
+        $this->checkFacebook();
         echo sprintf("<div class='Login1'>\n");
         echo sprintf("<div class='Login2'>\n");
         //

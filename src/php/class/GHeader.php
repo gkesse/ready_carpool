@@ -1,5 +1,7 @@
 <?php   
 //===============================================
+namespace App;
+//===============================================
 class GHeader extends GManager {
     //===============================================
     public function __construct() {
@@ -20,9 +22,7 @@ class GHeader extends GManager {
     }
     //===============================================
     public function onDisconnect($_data) {
-        if(!$this->isLogin()) return false;
-        $this->usetSession("user_id");
-        return true;
+        $this->usetLogin();
     }
     //===============================================
  }

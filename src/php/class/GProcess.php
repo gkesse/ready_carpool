@@ -1,5 +1,7 @@
 <?php
 //===============================================
+namespace App;
+//===============================================
 class GProcess extends GObject {
     //===============================================
     private $m_method = "";
@@ -26,12 +28,19 @@ class GProcess extends GObject {
         $lObj = new GTest();
         $lObj->run($_module, $_method);
         $this->setTestJs($lObj->isTestJs());
+        $this->setRedirectJs($lObj->getRedirectJs());
         $this->m_logs->addLogs($lObj->getLogs());
     }
     //===============================================
     public function runJs() {
         if($this->isTestJs()) {
             echo sprintf("<script>call_server('test', '%s');</script>\n", $this->m_method);
+        }
+    }
+    //===============================================
+    public function runRedirectJs() {
+        if($this->getRedirectJs() != "") {
+            echo sprintf("<script>call_server('redirect', 'url', null, '%s');</script>\n", $this->getRedirectJs());
         }
     }
     //===============================================
