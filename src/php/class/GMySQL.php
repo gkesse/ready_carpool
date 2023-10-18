@@ -47,16 +47,17 @@ class GMySQL extends GObject {
         return true;
     }
     //===============================================
-    //
-    public function execQuery($_sql) {
+    public function execQuery($_sql, $_params = array()) {
         if(!$this->open()) return false;
         
         try {
-            $this->m_conn->exec($_sql);
+            $lStmt = $this->m_conn->prepare($_sql);
+            $lStmt->execute($_params);
         }
         catch(\PDOException $e) {
             if($e->getCode() == 23000) {
                 $this->m_logs->addError("Cette donnée existe déjà.");
+                $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             }
             else {
                 $this->m_logs->addError("La connexion au seveur de données a échoué.");
@@ -69,17 +70,47 @@ class GMySQL extends GObject {
         
         $this->m_id = $this->m_conn->lastInsertId();
         $this->m_conn = null;
-        return true;
+        return !$this->m_logs->hasErrors();
     }
     //===============================================
-    public function readData($_sql) {
+    public function execQueries($_sql, $_params = array()) {
+        if(!$this->open()) return false;
+        
+        try {
+            $lStmt = $this->m_conn->prepare($_sql);
+            $this->m_conn->beginTransaction();
+            foreach ($_params as $lParams) {
+                $lStmt->execute($lParams);
+            }
+            $this->m_conn->commit();
+        }
+        catch(\PDOException $e) {
+            if($e->getCode() == 23000) {
+                $this->m_logs->addError("Cette donnée existe déjà.");
+            }
+            else {
+                $this->m_logs->addError("La connexion au seveur de données a échoué.");
+                $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
+            }
+            $this->m_errno = $e->getCode();
+            $this->m_conn->rollBack();
+            $this->m_conn = null;
+            return false;
+        }
+        
+        $this->m_id = $this->m_conn->lastInsertId();
+        $this->m_conn = null;
+        return !$this->m_logs->hasErrors();
+    }
+    //===============================================
+    public function readData($_sql, $_params = array()) {
         if(!$this->open()) return false;
         
         $lData = "";
         
         try {
             $lStmt = $this->m_conn->prepare($_sql);
-            $lStmt->execute();
+            $lStmt->execute($_params);
             $lStmt->setFetchMode(\PDO::FETCH_ASSOC);
             $lResult = $lStmt->fetchAll();
             
@@ -94,7 +125,7 @@ class GMySQL extends GObject {
         }
         catch(\PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
-            $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
+            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             $this->m_errno = $e->getCode();
         }
         
@@ -102,14 +133,14 @@ class GMySQL extends GObject {
         return $lData;
     }
     //===============================================
-    public function readRow($_sql) {
+    public function readRow($_sql, $_params = array()) {
         if(!$this->open()) return false;
         
         $lData = array();
         
         try {
             $lStmt = $this->m_conn->prepare($_sql);
-            $lStmt->execute();
+            $lStmt->execute($_params);
             $lStmt->setFetchMode(\PDO::FETCH_ASSOC);
             $lResult = $lStmt->fetchAll();
             
@@ -123,7 +154,7 @@ class GMySQL extends GObject {
         }
         catch(\PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
-            $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
+            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             $this->m_errno = $e->getCode();
         }
         
@@ -131,7 +162,7 @@ class GMySQL extends GObject {
         return $lData;
     }
     //===============================================
-    public function readCol($_sql) {
+    public function readCol($_sql, $_params = array()) {
         if(!$this->open()) return false;
         
         $lData = array();
@@ -139,7 +170,7 @@ class GMySQL extends GObject {
         
         try {
             $lStmt = $this->m_conn->prepare($_sql);
-            $lStmt->execute();
+            $lStmt->execute($_params);
             $lStmt->setFetchMode(\PDO::FETCH_ASSOC);
             $lResult = $lStmt->fetchAll();
             $lOneOnly = true;
@@ -159,7 +190,7 @@ class GMySQL extends GObject {
         }
         catch(\PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
-            $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
+            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             $this->m_errno = $e->getCode();
         }
 
@@ -167,14 +198,14 @@ class GMySQL extends GObject {
         return $lData;
     }
     //===============================================
-    public function readMap($_sql) {
+    public function readMap($_sql, $_params = array()) {
         if(!$this->open()) return false;
         
         $lData = array();
         
         try {
             $lStmt = $this->m_conn->prepare($_sql);
-            $lStmt->execute();
+            $lStmt->execute($_params);
             $lStmt->setFetchMode(\PDO::FETCH_ASSOC);
             $lResult = $lStmt->fetchAll();
             
@@ -191,7 +222,7 @@ class GMySQL extends GObject {
         }
         catch(\PDOException $e) {
             $this->m_logs->addError("La connexion au seveur de données a échoué.");
-            $this->m_logs->addError(sprintf("Erreur MySQL: %s", $this->m_conn->errno));
+            $this->m_dataLogs->addError(sprintf("Erreur MySQL: %s", $e->getMessage()));
             $this->m_errno = $e->getCode();
         }
 

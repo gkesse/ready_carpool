@@ -7,11 +7,13 @@ namespace App;
 //===============================================
 class GFacebook extends GManager {
     //===============================================
+    private $m_id = 0;
     private $m_loginUrl = "";
     //===============================================
-    private $m_logo = null;
-    private $m_user = null;
-    private $m_error = null;
+    private $m_logoData = null;
+    private $m_userData = null;
+    private $m_errorData = null;
+    private $m_loginData = null;
     //===============================================
     private $m_accessToken = "EABZAtcS6jU2EBOxZBmF2TpFgapf5nAubYtGxK73k23eEklt0bukdy23n0oFmEE9cfZB85QZBDN9xZAZBYTuhub1ZChqJ2EcHb7uFg3ZBxwp7KyXpXMzic5kg5jmDnY5bKbhBH6ZAZBeetfEsJqM5aP4wPlcD7TQSegnbup24iMB0o1ZAbyi2vQcX7thgoiiXGiBH67ZAjpScfsu5uqWas30WUdUZD";
     private $m_appId = "6312782368822113";
@@ -26,8 +28,8 @@ class GFacebook extends GManager {
     // logo
     //===============================================
     public function getLogoUrl() {
-        if(!$this->m_logo) return "";
-        return $this->m_logo->data->url;
+        if(!$this->m_logoData) return "";
+        return $this->m_logoData->data->url;
     }
     //===============================================
     public function open() {
@@ -42,33 +44,63 @@ class GFacebook extends GManager {
     }
     //===============================================
     public function getLogoWidth() {
-        if(!$this->m_logo) return 0;
-        return $this->m_logo->data->width;
+        if(!$this->m_logoData) return 0;
+        return $this->m_logoData->data->width;
     }
     //===============================================
     public function getLogoHeight() {
-        if(!$this->m_logo) return 0;
-        return $this->m_logo->data->height;
+        if(!$this->m_logoData) return 0;
+        return $this->m_logoData->data->height;
     }
     //===============================================
     public function isLogoSilhouette() {
-        if(!$this->m_logo) return false;
-        return $this->m_logo->data->is_silhouette;
+        if(!$this->m_logoData) return false;
+        return $this->m_logoData->data->is_silhouette;
     }
     //===============================================
     // user
     //===============================================
     public function getUserName() {
-        if(!$this->m_user) return "";
-        return $this->m_user->name;
+        if(!$this->m_userData) return "";
+        return $this->m_userData->name;
     }
     //===============================================
     public function getUserId() {
-        if(!$this->m_user) return "";
-        return $this->m_user->id;
+        if(!$this->m_userData) return "";
+        return $this->m_userData->id;
     }
     //===============================================
     // login
+    //===============================================
+    public function getLoginUserId() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["id"];
+    }
+    //===============================================
+    public function getLoginName() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["name"];
+    }
+    //===============================================
+    public function getLoginFirstName() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["first_name"];
+    }
+    //===============================================
+    public function getLoginLastName() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["last_name"];
+    }
+    //===============================================
+    public function getLoginEmail() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["email"];
+    }
+    //===============================================
+    public function getLoginPhoto() {
+        if(!$this->m_loginData) return "";
+        return $this->m_loginData["picture"]["url"];
+    }
     //===============================================
     public function getLoginUrl() {
         return $this->m_loginUrl;
@@ -78,26 +110,85 @@ class GFacebook extends GManager {
         return sprintf("%s%s", $this->getServer(), $this->m_callback);
     }
     //===============================================
+    public function loadLogin() {
+        $lMySQL = new GMySQL();
+        $lId = $lMySQL->readMap("select * from _facebook where _user_id = '?'"
+            , [$this->getLoginUserId()]);
+        $this->m_logs->addLogs($lMySQL->getLogs());
+        $this->m_id = intval($lId);
+        return !$this->m_logs->hasErrors();
+    }
+    //===============================================
+    public function insertLogin() {
+        if($this->m_id) return false;
+        $lMySQL = new GMySQL();
+        $lMySQL->execQuery("
+            insert into _facebook (_user_id, _name, _last_name, _first_name, _email, _photo)
+            values (?, ?, ?, ?, ?, ?)"
+            , [
+                $this->getLoginUserId()
+                , $this->getLoginName()
+                , $this->getLoginLastName()
+                , $this->getLoginFirstName()
+                , $this->getLoginEmail()
+                , $this->getLoginPhoto()
+            ]);
+        $this->m_logs->addLogs($lMySQL->getLogs());
+        $this->m_id = $lMySQL->getId();
+        return !$this->m_logs->hasErrors();
+    }
+    //===============================================
+    public function updateLogin() {
+        if(!$this->m_id) return false;
+        $lMySQL = new GMySQL();
+        $lMySQL->execQuery("
+            update _facebook set
+            _user_id = '?'
+            , _name = '?'
+            , _last_name = '?'
+            , first_name = '?'
+            , _email = '?'
+            , _photo = '?'
+            where _id = ?"
+            , [
+                $this->getLoginUserId()
+                , $this->getLoginName()
+                , $this->getLoginLastName()
+                , $this->getLoginFirstName()
+                , $this->getLoginEmail()
+                , $this->getLoginPhoto()
+                , $this->m_id
+            ]);
+        $this->m_logs->addLogs($lMySQL->getLogs());
+        return !$this->m_logs->hasErrors();
+    }
+    //===============================================
+    public function saveLogin() {
+        $this->loadLogin();
+        $this->insertLogin();
+        $this->updateLogin();
+    }
+    //===============================================
     // error
     //===============================================
     public function getErrorMessage() {
-        if(!$this->m_error) return "";
-        return $this->m_error->error->message;
+        if(!$this->m_errorData) return "";
+        return $this->m_errorData->error->message;
     }
     //===============================================
     public function getErrorCode() {
-        if(!$this->m_error) return 0;
-        return $this->m_error->error->code;
+        if(!$this->m_errorData) return 0;
+        return $this->m_errorData->error->code;
     }
     //===============================================
     public function getErrorType() {
-        if(!$this->m_error) return "";
-        return $this->m_error->error->type;
+        if(!$this->m_errorData) return "";
+        return $this->m_errorData->error->type;
     }
     //===============================================
     public function getErrorId() {
-        if(!$this->m_error) return "";
-        return $this->m_error->error->fbtrace_id;
+        if(!$this->m_errorData) return "";
+        return $this->m_errorData->error->fbtrace_id;
     }
     //===============================================
     // logo
@@ -111,10 +202,10 @@ class GFacebook extends GManager {
         
         if(!$this->m_logs->hasErrors()) {
             if($lCurl->getCodeHttp() == 200) {
-                $this->m_logo = json_decode($lData);
+                $this->m_logoData = json_decode($lData);
             }
             else {
-                $this->m_error = json_decode($lData);
+                $this->m_errorData = json_decode($lData);
                 $this->m_logs->addError("La conneion à Facebook a échoué.");
                 $this->m_logs->addError($this->getErrorMessage());
             }
@@ -134,10 +225,10 @@ class GFacebook extends GManager {
         
         if(!$this->m_logs->hasErrors()) {
             if($lCurl->getCodeHttp() == 200) {
-                $this->m_user = json_decode($lData);
+                $this->m_userData = json_decode($lData);
             }
             else {
-                $this->m_error = json_decode($lData);
+                $this->m_errorData = json_decode($lData);
                 $this->m_logs->addError("La conneion à Facebook a échoué.");
                 $this->m_logs->addError($this->getErrorMessage());
             }
@@ -147,6 +238,16 @@ class GFacebook extends GManager {
     }
     //===============================================
     // login
+    //===============================================
+    public function redirectFacebookLogin() {
+        if($this->m_id) {
+            $this->setRedirectJs();
+        }
+        else {
+            $this->setFacebookLoginError();
+            $this->setRedirectJs("/connexion");
+        }
+    }
     //===============================================
     public function loginOn() {
         $lFBook = $this->open();
@@ -164,8 +265,19 @@ class GFacebook extends GManager {
         if(!$lAccessToken) {
             $this->setFacebookLoginError();
             $this->setRedirectJs("/connexion");
+            return false;
         }
         
+        if(!$lAccessToken->isLongLived()) {
+            $lOAut = $lFBook->getOAuth2Client();
+            $lAccessToken = $lOAut->getLongLivedAccessToken($lAccessToken);
+        }
+
+        $lResponse = $lFBook->get("/me?fields=id,name,email,first_name,last_name,picture.type(large)", $lAccessToken);
+        $this->m_loginData = $lResponse->getGraphNode()->asArray();
+        $this->saveLogin();
+        $this->setLogin($this->m_id);
+        $this->redirectFacebookLogin();
         return !$this->m_logs->hasErrors();
     }
     //===============================================

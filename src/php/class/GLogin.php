@@ -22,8 +22,8 @@ class GLogin extends GManager {
         where 1 = 1
         and _email = '%s'
         and _password = '%s'", $lEmail, $lPassword));
-        $this->m_id = intval($lId);
         $this->m_logs->addLogs($lMySQL->getLogs());
+        $this->m_id = intval($lId);
         return !$this->m_logs->hasErrors();
     }
     //===============================================

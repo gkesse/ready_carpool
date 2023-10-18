@@ -30,6 +30,9 @@ class GTestPhp extends GObject {
         else if($_method == "privacy_policy") {
             $this->runPrivacyPolicy($_module, $_method);
         }
+        else if($_method == "mysql") {
+            $this->runMySQL($_module, $_method);
+        }
         else {
             $this->m_logs->addError("La méthode est inconnue.");
         }
@@ -61,7 +64,7 @@ class GTestPhp extends GObject {
     }
     //===============================================
     public function runFacebook($_module, $_method) {
-        $lAction = "4";
+        $lAction = "5";
         
         //===============================================
         // logo
@@ -101,7 +104,7 @@ class GTestPhp extends GObject {
             echo sprintf("</div>");
         }
         //===============================================
-        // callback
+        // server
         //===============================================
         else if($lAction == "4") {
             echo sprintf("<div class='Test1'>");
@@ -110,12 +113,50 @@ class GTestPhp extends GObject {
             echo sprintf("<div>Url----------: %s</div>", $this->getUrl());
             echo sprintf("</div>");
         }
+        //===============================================
+        // callback
+        //===============================================
+        else if($lAction == "5") {
+            $lObj = new GFacebook();
+            $lObj->loginCallback();
+            echo sprintf("<div class='Test1'>");
+            echo sprintf("<div>LoginUserId-----: %s</div>", $lObj->getLoginUserId());
+            echo sprintf("<div>LoginName-------: %s</div>", $lObj->getLoginName());
+            echo sprintf("<div>LoginFirstName--: %s</div>", $lObj->getLoginFirstName());
+            echo sprintf("<div>LastName--------: %s</div>", $lObj->getLoginLastName());
+            echo sprintf("<div>LoginEmail------: %s</div>", $lObj->getLoginEmail());
+            echo sprintf("<div>LoginPhoto------: %s</div>", $lObj->getLoginPhoto());
+            echo sprintf("</div>");
+        }
     }
     //===============================================
     public function runPrivacyPolicy($_module, $_method) {
         $lObj = new GPrivacyPolicyUi();
         $lObj->run();
         $this->m_logs->addLogs($lObj->getLogs());
+    }
+    //===============================================
+    public function runMySQL($_module, $_method) {
+        $lAction = 3;
+        
+        if($lAction == 1) {
+            $lObj = new GMySQL();
+            $lData = $lObj->readMap("select * from _user where _email = 'ooo' or '1' = '1'");
+            echo "<pre style='text-align:left;'>"; var_dump($lData); echo "</pre>";
+            $this->m_logs->addLogs($lObj->getLogs());
+        }
+        else if($lAction == 2) {
+            $lObj = new GMySQL();
+            $lData = $lObj->readMap(sprintf("select * from _user where _email = '%s'", "' or '1' = '1"));
+            echo "<pre style='text-align:left;'>"; var_dump($lData); echo "</pre>";
+            $this->m_logs->addLogs($lObj->getLogs());
+        }
+        else if($lAction == 3) {
+            $lObj = new GMySQL();
+            $lData = $lObj->readMap("select * from _user where _email = '?'", ["' or '1' = '1"]);
+            echo "<pre style='text-align:left;'>"; var_dump($lData); echo "</pre>";
+            $this->m_logs->addLogs($lObj->getLogs());
+        }
     }
     //===============================================
 }

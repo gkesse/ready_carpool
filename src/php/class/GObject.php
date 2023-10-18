@@ -127,6 +127,7 @@ class GObject {
     }
     //===============================================
     public function setLogin($_userId) {
+        if($_userId == 0) return;
         $this->setSession("user_id", $_userId);
     }
     //===============================================
