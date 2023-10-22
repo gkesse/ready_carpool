@@ -6,6 +6,11 @@ RewriteEngine on
 #================================================
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home$ /dev/?pageid= [L,QSA]
+RewriteRule ^home/(.*)$ /dev/?pageid=$1 [L,QSA]
+#================================================
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^services$ /app/?pageid= [L,QSA]
 RewriteRule ^services/(.*)$ /app/?pageid=$1 [L,QSA]
 #================================================

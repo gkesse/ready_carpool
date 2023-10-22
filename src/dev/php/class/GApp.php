@@ -1,6 +1,6 @@
 <?php   
 //===============================================
-namespace app;
+namespace dev;
 //===============================================
 class GApp extends GObject {
     //===============================================
@@ -11,9 +11,9 @@ class GApp extends GObject {
     public function toDescription() {
         $lData = "";
         $lData .= sprintf("Avec %s, Recherchez ou Proposez\n", $this->toSiteName());
-        $lData .= sprintf("gratuitement un service et Gagnez très rapidement de la clientèle\n");
-        $lData .= sprintf("dès aujourd'hui peu importe où vous êtes.\n");
-        $lData .= sprintf("Plateforme de Services en Continu.\n");
+        $lData .= sprintf("gratuitement des cours et des tutoriels\n");
+        $lData .= sprintf("adaptés aux sciences de l'ingénieur.\n");
+        $lData .= sprintf("Plateforme de Développement en Continu.\n");
         $lData .= sprintf("Produit par ReadyTeam.\n");
         return $lData;
     }
@@ -35,7 +35,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toSiteName() {
-        return "ReadyServices";
+        return "ReadyDev";
     }
     //===============================================
     public function isTestEnv() {
