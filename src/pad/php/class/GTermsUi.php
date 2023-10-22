@@ -42,7 +42,7 @@ class GTermsUi extends GObject {
         Aux fins des présentes Conditions générales:
         <ul class='Terms5'>
             <li><b>Application</b> désigne le logiciel fourni par la Société,
-            téléchargé par Vous sur tout appareil électronique, nommé <b>ReadyPad</b>.
+            téléchargé par Vous sur tout appareil électronique, nommé <span class='Terms9'>ReadyPad</span>.
             <br><br></li>
 
             <li><b>Application Store</b> désigne le service de distribution numérique exploité
@@ -60,7 +60,7 @@ class GTermsUi extends GObject {
             <br><br></li>
 
             <li><b>La Société</b> (appelée « la Société », « Nous », « Notre » ou « Notre » dans le présent Accord)
-            fait référence à <b>ReadyPad</b>.
+            fait référence à <span class='Terms9'>ReadyPad</span>.
             <br><br></li>
 
             <li><b>Appareil</b> désigne tout appareil pouvant accéder au Service tel qu'un ordinateur,
@@ -81,7 +81,7 @@ class GTermsUi extends GObject {
             disposition par le Service.
             <br><br></li>
 
-            <li><b>Le site Web</b> fait référence à ReadyPad,
+            <li><b>Le site Web</b> fait référence à <span class='Terms9'>ReadyPad</span>,
             accessible depuis <span class='Terms9'>https://readydev.ovh/</span>.
             <br><br></li>
 

@@ -10,16 +10,15 @@ class GApp extends GObject {
     //===============================================
     public function toDescription() {
         $lData = "";
-        $lData .= sprintf("Avec %s, Recherchez ou Proposez\n", $this->toSiteName());
-        $lData .= sprintf("gratuitement un service et Gagnez très rapidement de la clientèle\n");
-        $lData .= sprintf("dès aujourd'hui peu importe où vous êtes.\n");
-        $lData .= sprintf("Plateforme de Services en Continu.\n");
-        $lData .= sprintf("Produit par Gérard KESSE.\n");
+        $lData .= sprintf("Avec %s, Recherchez facilement une application\n", $this->toSiteName());
+        $lData .= sprintf("et Trouvez une solution adaptée à vos besoins.\n");
+        $lData .= sprintf("Plateforme d'Applications en Continu.\n");
+        $lData .= sprintf("Produit par ReadyTeam.\n");
         return $lData;
     }
     //===============================================
     public function toBanner() {
-        return "https://raw.githubusercontent.com/gkesse/ready_carpool/master/src/data/img/banner.png";
+        return "https://raw.githubusercontent.com/gkesse/ready_carpool/master/src/pad/data/img/banner.png";
     }
     //===============================================
     public function toUrl() {

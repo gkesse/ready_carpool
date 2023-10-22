@@ -14,7 +14,7 @@ class GHeaderUi extends GObject {
         echo sprintf("<div class='Header1'>\n");
         echo sprintf("<div class='Header2'>\n");
         //
-        echo sprintf("<a class='Header3' href='/services/'>\n");
+        echo sprintf("<a class='Header3' href='/services'>\n");
         echo sprintf("<img class='Header4' src='/com/data/img/icon.png'/>\n");
         echo sprintf("<div class='Header5'>%s</div>\n", $lApp->toSiteName());
         echo sprintf("</a>\n");

@@ -42,7 +42,7 @@ class GTermsUi extends GObject {
         Aux fins des présentes Conditions générales:
         <ul class='Terms5'>
             <li><b>Application</b> désigne le logiciel fourni par la Société,
-            téléchargé par Vous sur tout appareil électronique, nommé <b>ReadyLoop</b>.
+            téléchargé par Vous sur tout appareil électronique, nommé <span class='Terms9'>ReadyServices</span>.
             <br><br></li>
 
             <li><b>Application Store</b> désigne le service de distribution numérique exploité
@@ -60,7 +60,7 @@ class GTermsUi extends GObject {
             <br><br></li>
 
             <li><b>La Société</b> (appelée « la Société », « Nous », « Notre » ou « Notre » dans le présent Accord)
-            fait référence à <b>ReadyLoop</b>.
+            fait référence à <span class='Terms9'>ReadyServices</span>.
             <br><br></li>
 
             <li><b>Appareil</b> désigne tout appareil pouvant accéder au Service tel qu'un ordinateur,
@@ -81,8 +81,8 @@ class GTermsUi extends GObject {
             disposition par le Service.
             <br><br></li>
 
-            <li><b>Le site Web</b> fait référence à ReadyLoop,
-            accessible depuis https://readydev.ovh:8000/.
+            <li><b>Le site Web</b> fait référence à <span class='Terms9'>ReadyServices</span>,
+            accessible depuis <span class='Terms9'>https://readydev.ovh/services</span>.
             <br><br></li>
 
             <li><b>Vous</b> désignez la personne qui accède ou utilise le Service, ou la société
@@ -275,7 +275,7 @@ class GTermsUi extends GObject {
         echo sprintf("<div class='Terms4'>
         Si vous avez des questions concernant ces conditions générales, vous pouvez nous contacter:
         <ul class='Terms5'>
-            <li>Par email : readydevz@gmail.com</li>
+            <li>Par email : <span class='Terms9'>readydevz@gmail.com</span></li>
         </ul>
         </div>\n");
         //===============================================

@@ -19,7 +19,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toBanner() {
-        return "https://raw.githubusercontent.com/gkesse/ready_carpool/master/src/data/img/banner.png";
+        return "https://raw.githubusercontent.com/gkesse/ready_carpool/master/src/app/data/img/banner.png";
     }
     //===============================================
     public function toUrl() {
@@ -35,7 +35,7 @@ class GApp extends GObject {
     }
     //===============================================
     public function toSiteName() {
-        return "ReadyLoop";
+        return "ReadyServices";
     }
     //===============================================
     public function isTestEnv() {

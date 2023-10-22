@@ -23,7 +23,7 @@ class GPrivacyPolicyUi extends GObject {
         //===============================================
         echo sprintf("<div class='PrivacyPolicy4'>
         Cette politique de confidentialité est préparée
-        par <b>ReadyLoop</b> et dont l'adresse enregistrée est <b>ReadyLoop, Abidjan, Côte d'Ivoire</b>.
+        par <b>ReadyServices</b> et dont l'adresse enregistrée est <b>ReadyServices, Abidjan, Côte d'Ivoire</b>.
         Nous nous engageons à protéger et à préserver la vie privée de nos visiteurs
         lorsqu'ils visitent notre site ou communiquent par voie électronique avec nous.
         <br><br>
@@ -89,7 +89,7 @@ class GPrivacyPolicyUi extends GObject {
         Vous avez le droit de garantir que vos données personnelles sont traitées légalement <b>(« Droit d'accès du sujet »)</b>.
         Votre droit d'accès peut être exercé conformément aux lois et réglementations en matière de protection des données.
         <br><br>
-        Toute demande d'accès au sujet doit être adressée par écrit à <b>ReadyLoop, Abidjan, Côte d'Ivoire</b>.
+        Toute demande d'accès au sujet doit être adressée par écrit à <b>ReadyServices, Abidjan, Côte d'Ivoire</b>.
         Nous vous fournirons vos données personnelles dans les délais légaux.
         Pour nous permettre de retracer vos données personnelles que nous pourrions détenir,
         nous pourrons être amenés à vous demander des informations complémentaires.
@@ -112,7 +112,7 @@ class GPrivacyPolicyUi extends GObject {
         //===============================================
         echo sprintf("<div class='PrivacyPolicy4'>
         Les questions, commentaires et demandes concernant cette politique de confidentialité sont
-        les bienvenus et doivent être adressés à readydevz@gmail.com.
+        les bienvenus et doivent être adressés à <span class='PrivacyPolicy6'>readydevz@gmail.com</span>.
         </div>\n");
         //
         echo sprintf("</div>\n");
